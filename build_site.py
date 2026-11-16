@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 """
 Generator script for Zlata's 6-Month Anniversary Website (index.html)
-High-end, cute, tactile motion overhaul: Polaroid aesthetic, squishy 3D buttons,
-Story-style memories carousel, and authentic Celamur galaxy.
+Features:
+- Screen 1: Clean romantic hook -> Click YES triggers playful "Try NO first!" -> NO dodges with animated Telegram cat -> Unlocks YES with celebration!
+- Screen 2: Cute quiz with animated reactions and heart progress
+- Screen 3: Celamur Galaxy STARTS IN 3D DISPERSED MODE first! Morph is purely button-controlled so she can rotate the 3D galaxy without accidental triggering.
+- Screen 4: Countdown timer + verbatim quote + "Back to Galaxy" button + Stories memories carousel with instant preloading!
 """
 
 import json
@@ -47,7 +50,7 @@ html_template = f'''<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>Злата — Наша Вселенная 🤍</title>
   
-  <!-- Premium & Cute Fonts: Nunito for rounded friendly feel, Caveat & Great Vibes for romantic handwritten signature -->
+  <!-- Premium & Cute Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Great+Vibes&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -55,10 +58,10 @@ html_template = f'''<!DOCTYPE html>
   <style>
     :root {{
       --bg: #060209;
-      --card-bg: rgba(28, 16, 34, 0.75);
-      --card-border: rgba(255, 180, 210, 0.18);
+      --card-bg: rgba(28, 16, 34, 0.78);
+      --card-border: rgba(255, 180, 210, 0.2);
       --pink-primary: #ff527b;
-      --pink-glow: rgba(255, 82, 123, 0.5);
+      --pink-glow: rgba(255, 82, 123, 0.55);
       --pink-candy: linear-gradient(135deg, #ff7597 0%, #ff3b68 100%);
       --pink-shadow: #b31d42;
       --yellow-butter: #ffeaa7;
@@ -283,40 +286,28 @@ html_template = f'''<!DOCTYPE html>
       line-height: 1;
     }}
 
-    /* Floating Cute Stickers */
-    .sticker-badge {{
+    /* Animated Telegram Cat Stickers */
+    .animated-sticker-cat {{
       position: absolute;
+      width: 65px;
+      height: 65px;
       pointer-events: none;
-      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.6));
-      animation: floatStickerItem 4s infinite alternate ease-in-out;
+      filter: drop-shadow(0 6px 14px rgba(0,0,0,0.6));
       z-index: 10;
     }}
-    .st-pill-1 {{
-      top: 25px;
-      left: 5px;
-      background: rgba(255, 255, 255, 0.95);
-      color: #ff3366;
-      padding: 5px 12px;
-      border-radius: 9999px;
-      font-size: 12px;
-      font-weight: 800;
-      transform: rotate(-8deg);
+    .cat-corner-left {{
+      top: 15px;
+      left: -8px;
+      animation: floatCat 3.5s infinite alternate ease-in-out;
     }}
-    .st-pill-2 {{
-      top: 105px;
-      right: 5px;
-      background: rgba(255, 234, 167, 0.95);
-      color: #8c6d1f;
-      padding: 5px 12px;
-      border-radius: 9999px;
-      font-size: 12px;
-      font-weight: 800;
-      transform: rotate(8deg);
-      animation-delay: -2s;
+    .cat-corner-right {{
+      top: 110px;
+      right: -8px;
+      animation: floatCat 3.5s infinite alternate ease-in-out -1.7s;
     }}
-    @keyframes floatStickerItem {{
-      0% {{ transform: translateY(0) rotate(-6deg); }}
-      100% {{ transform: translateY(-10px) rotate(4deg); }}
+    @keyframes floatCat {{
+      0% {{ transform: translateY(0) rotate(-5deg); }}
+      100% {{ transform: translateY(-8px) rotate(5deg); }}
     }}
 
     .hook-name {{
@@ -335,25 +326,33 @@ html_template = f'''<!DOCTYPE html>
       margin-top: -4px;
     }}
 
-    /* Mandatory instruction to try NO first */
-    .try-no-bubble-alert {{
-      background: linear-gradient(135deg, rgba(255, 234, 167, 0.2) 0%, rgba(255, 180, 100, 0.15) 100%);
+    /* Teasing banner - APPEARS ONLY WHEN SHE TAPS YES FIRST! */
+    .tease-banner-alert {{
+      display: none;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, rgba(255, 234, 167, 0.22) 0%, rgba(255, 180, 100, 0.18) 100%);
       border: 1.5px dashed rgba(255, 234, 167, 0.7);
       color: #ffeaa7;
-      padding: 9px 18px;
+      padding: 10px 18px;
       border-radius: 18px;
       font-size: 14px;
       font-weight: 800;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 6px;
-      box-shadow: 0 4px 15px rgba(255, 234, 167, 0.15);
-      animation: alertPulse 2s infinite ease-in-out;
+      margin-top: 8px;
+      box-shadow: 0 4px 18px rgba(255, 234, 167, 0.2);
+      animation: popIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
     }}
-    @keyframes alertPulse {{
-      0%, 100% {{ transform: scale(1); }}
-      50% {{ transform: scale(1.03); }}
+    .tease-banner-alert.show {{
+      display: flex;
+    }}
+    .tease-cat-icon {{
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+    }}
+    @keyframes popIn {{
+      0% {{ transform: scale(0.85); opacity: 0; }}
+      100% {{ transform: scale(1); opacity: 1; }}
     }}
 
     /* Button interaction area */
@@ -361,7 +360,7 @@ html_template = f'''<!DOCTYPE html>
       position: relative;
       width: 100%;
       min-height: 145px;
-      margin-top: 10px;
+      margin-top: 12px;
     }}
 
     /* Physical 3D Marshmallow Button (YES) */
@@ -386,19 +385,12 @@ html_template = f'''<!DOCTYPE html>
       transform: translateY(4px);
       box-shadow: 0 2px 0 var(--pink-shadow), 0 6px 15px var(--pink-glow);
     }}
-    .marshmallow-btn-yes.locked {{
-      background: rgba(255, 255, 255, 0.08);
-      color: rgba(255, 255, 255, 0.35);
-      box-shadow: 0 4px 0 rgba(0,0,0,0.3);
-      cursor: not-allowed;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }}
     .marshmallow-btn-yes.ready-pulse {{
       animation: readyPulseAnim 1.1s infinite alternate ease-in-out;
     }}
     @keyframes readyPulseAnim {{
       0% {{ transform: scale(1); box-shadow: 0 6px 0 var(--pink-shadow), 0 10px 25px var(--pink-glow); }}
-      100% {{ transform: scale(1.05); box-shadow: 0 6px 0 var(--pink-shadow), 0 16px 40px rgba(255, 82, 123, 0.8); }}
+      100% {{ transform: scale(1.05); box-shadow: 0 6px 0 var(--pink-shadow), 0 16px 40px rgba(255, 82, 123, 0.85); }}
     }}
 
     /* Dodging NO button */
@@ -423,16 +415,26 @@ html_template = f'''<!DOCTYPE html>
     .dodging-btn-no:hover, .dodging-btn-no:active {{
       background: rgba(255, 117, 151, 0.25);
     }}
+    .dodging-btn-no.highlight-wiggle {{
+      animation: wiggleNo 0.8s infinite alternate ease-in-out;
+      border-color: #ffeaa7;
+      color: #ffeaa7;
+      box-shadow: 0 0 20px rgba(255, 234, 167, 0.5);
+    }}
+    @keyframes wiggleNo {{
+      0% {{ transform: translateX(-50%) rotate(-4deg); }}
+      100% {{ transform: translateX(-50%) rotate(4deg); }}
+    }}
 
-    /* Comic speech bubble */
+    /* Comic speech bubble with animated cat */
     .comic-speech-bubble {{
       position: absolute;
-      top: -42px;
+      top: -54px;
       left: 50%;
       transform: translateX(-50%) scale(0.7);
       background: #ffffff;
       color: #1a0820;
-      padding: 7px 15px;
+      padding: 6px 14px;
       border-radius: 14px;
       font-size: 13px;
       font-weight: 800;
@@ -441,6 +443,13 @@ html_template = f'''<!DOCTYPE html>
       opacity: 0;
       pointer-events: none;
       transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }}
+    .comic-speech-bubble img {{
+      width: 26px;
+      height: 26px;
     }}
     .comic-speech-bubble::after {{
       content: '';
@@ -498,6 +507,10 @@ html_template = f'''<!DOCTYPE html>
       color: #ff9bb5;
       font-size: 12px;
       font-weight: 800;
+    }}
+    .quiz-love-badge img {{
+      width: 20px;
+      height: 20px;
     }}
     .quiz-index-pill {{
       background: rgba(255, 255, 255, 0.08);
@@ -566,6 +579,14 @@ html_template = f'''<!DOCTYPE html>
       color: #ff8fab;
       text-align: center;
       min-height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }}
+    .quiz-feedback-toast img {{
+      width: 22px;
+      height: 22px;
     }}
 
     /* ========================================================
@@ -733,15 +754,41 @@ html_template = f'''<!DOCTYPE html>
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 18px;
+      gap: 16px;
       text-align: center;
+    }}
+
+    .finale-top-nav-row {{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }}
+
+    .btn-back-galaxy {{
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      color: #f7eef7;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s ease;
+    }}
+    .btn-back-galaxy:active {{
+      transform: scale(0.95);
+      background: rgba(255, 255, 255, 0.15);
     }}
 
     .finale-cute-badge {{
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 6px 16px;
+      padding: 6px 14px;
       border-radius: 9999px;
       background: rgba(255, 82, 123, 0.15);
       border: 1px solid rgba(255, 82, 123, 0.35);
@@ -753,7 +800,7 @@ html_template = f'''<!DOCTYPE html>
 
     .finale-title-text {{
       font-family: var(--font-cursive);
-      font-size: 50px;
+      font-size: 48px;
       line-height: 1;
       color: #ffffff;
       text-shadow: 0 0 25px rgba(255, 180, 200, 0.6);
@@ -800,7 +847,7 @@ html_template = f'''<!DOCTYPE html>
       background: rgba(255, 255, 255, 0.04);
       border-left: 3.5px solid var(--pink-primary);
       border-radius: 8px 22px 22px 8px;
-      padding: 20px 22px;
+      padding: 18px 20px;
       font-size: 15px;
       line-height: 1.6;
       color: #ede2f0;
@@ -821,7 +868,7 @@ html_template = f'''<!DOCTYPE html>
       font-family: serif;
     }}
     .letter-signature-tag {{
-      margin-top: 10px;
+      margin-top: 8px;
       font-family: var(--font-hand);
       font-size: 19px;
       font-weight: 700;
@@ -943,7 +990,7 @@ html_template = f'''<!DOCTYPE html>
       width: 100%;
       height: 100%;
       object-fit: contain;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.25s ease;
     }}
 
     .story-video-element {{
@@ -953,7 +1000,7 @@ html_template = f'''<!DOCTYPE html>
     }}
 
     .story-details-footer {{
-      padding: 18px 20px 22px 20px;
+      padding: 16px 20px 20px 20px;
       display: flex;
       flex-direction: column;
       gap: 12px;
@@ -1051,9 +1098,9 @@ html_template = f'''<!DOCTYPE html>
   <div class="screen active" id="screen1">
     <div class="hook-wrapper">
       
-      <!-- Floating Cute Stickers -->
-      <div class="sticker-badge st-pill-1">✨ 6 месяцев ✨</div>
-      <div class="sticker-badge st-pill-2">183 дня 🌸</div>
+      <!-- Animated Telegram Cat Stickers -->
+      <img src="media/stickers/love.gif" class="animated-sticker-cat cat-corner-left" alt="Котик">
+      <img src="media/stickers/adore.gif" class="animated-sticker-cat cat-corner-right" alt="Котик">
 
       <!-- Tilted Aesthetic Polaroid -->
       <div class="polaroid-frame" id="polaroidCard">
@@ -1065,22 +1112,26 @@ html_template = f'''<!DOCTYPE html>
       <h1 class="hook-name">Злата</h1>
       <p class="hook-question-text">Ты меня сильно любишь?</p>
 
-      <!-- Mandatory Instruction to try NO first! -->
-      <div class="try-no-bubble-alert" id="tryNoAlert">
-        <span>👉</span> <span>(попробуй нажать «НЕТ» 😜)</span>
+      <!-- Teasing alert banner - APPEARS ONLY WHEN SHE TAPS YES FIRST! -->
+      <div class="tease-banner-alert" id="teaseAlert">
+        <img src="media/stickers/teasing.gif" class="tease-cat-icon" alt="Кот">
+        <span id="teaseAlertText">Эй, так просто не пойдёт! Попробуй сначала нажать «НЕТ» 😜👇</span>
       </div>
 
       <!-- Interactive Playground -->
       <div class="hook-playground" id="playgroundArea">
-        <!-- YES is locked until NO is dodged! -->
-        <button class="marshmallow-btn-yes locked" id="btnYes" disabled>
-          <span id="btnYesText">🔒 Сначала нажми «НЕТ» 🤭</span>
+        <!-- YES button -->
+        <button class="marshmallow-btn-yes" id="btnYes">
+          <span id="btnYesText">ДА, ОЧЕНЬ! ❤️</span>
         </button>
 
         <!-- Dodging NO button -->
         <button class="dodging-btn-no" id="btnNo">
           <span>НЕТ 💔 😜</span>
-          <div class="comic-speech-bubble" id="speechBubble">Ой! Я улетела! 🏃‍♀️💨</div>
+          <div class="comic-speech-bubble" id="speechBubble">
+            <img src="media/stickers/fast.gif" alt="Котик">
+            <span id="bubbleText">Ой! Я улетела! 🏃‍♀️💨</span>
+          </div>
         </button>
       </div>
     </div>
@@ -1094,7 +1145,8 @@ html_template = f'''<!DOCTYPE html>
       <div class="quiz-interactive-card">
         <div class="quiz-top-row">
           <div class="quiz-love-badge">
-            <span>🧸</span> <span>Тест для любимой</span>
+            <img src="media/stickers/adore.gif" alt="Котик">
+            <span>Тест для любимой</span>
           </div>
           <div class="quiz-index-pill" id="quizStepPill">Вопрос 1 из 5</div>
         </div>
@@ -1130,12 +1182,12 @@ html_template = f'''<!DOCTYPE html>
       <div class="celamur-main-title">Злата</div>
       <div class="celamur-subtitle-divine">ты выглядишь божественно</div>
       <div class="celamur-subtitle-languages">я тебя люблю на всех языках мира</div>
-      <div class="celamur-drag-hint-pill" id="celamurHint">✦ проведи пальцем вбок, и она снова станет звёздами ✦</div>
+      <div class="celamur-drag-hint-pill" id="celamurHint">✦ покрути нашу галактику ✦</div>
 
       <!-- Action buttons -->
       <div class="celamur-actions-group">
         <button class="btn-marshmallow-pink" id="btnToggleGalaxy">
-          <span id="btnToggleText">Рассыпать в звёзды 🌌</span>
+          <span id="btnToggleText">Собрать портрет ✨</span>
         </button>
         <button class="btn-marshmallow-glass" id="btnGotoFinale">
           <span>Наше время →</span>
@@ -1149,7 +1201,14 @@ html_template = f'''<!DOCTYPE html>
        ======================================================== -->
   <div class="screen" id="screen4">
     <div class="finale-box">
-      <div class="finale-cute-badge">20.05.2026 19:40 🤍</div>
+      <!-- Top navigation with return to galaxy -->
+      <div class="finale-top-nav-row">
+        <button class="btn-back-galaxy" id="btnBackToGalaxy">
+          <span>← Галактика 🌌</span>
+        </button>
+        <div class="finale-cute-badge">20.05.2026 19:40 🤍</div>
+      </div>
+
       <h1 class="finale-title-text">Полгода вместе</h1>
 
       <!-- Countdown -->
@@ -1221,6 +1280,20 @@ html_template = f'''<!DOCTYPE html>
     const GALAXY_PARTICLES = {particles_data};
     const MEMORY_FILES = {memory_files_json};
 
+    // Preload next images in background for instant 0ms latency
+    const imageCache = {{}};
+    function preloadMedia(index) {{
+      for (let offset = 1; offset <= 3; offset++) {{
+        const targetIdx = (index + offset) % MEMORY_FILES.length;
+        const itm = MEMORY_FILES[targetIdx];
+        if (!itm.name.toLowerCase().endsWith('.mp4') && !imageCache[itm.name]) {{
+          const img = new Image();
+          img.src = 'media/' + itm.name;
+          imageCache[itm.name] = img;
+        }}
+      }}
+    }}
+
     // Screen transition logic
     let currentScreen = 1;
     function goToScreen(num) {{
@@ -1249,6 +1322,11 @@ html_template = f'''<!DOCTYPE html>
         }}
       }}
     }}
+
+    // Return to galaxy from screen 4
+    document.getElementById('btnBackToGalaxy').addEventListener('click', () => {{
+      goToScreen(3);
+    }});
 
     // Ambient space canvas
     (function initAmbientSky() {{
@@ -1325,15 +1403,18 @@ html_template = f'''<!DOCTYPE html>
     document.getElementById('celamurPlayBtn').addEventListener('click', toggleMusic);
 
     // ========================================================
-    // SCREEN 1: DODGING 'NO' BUTTON & UNLOCKING 'YES'
+    // SCREEN 1: THE PLAYFUL FLOW (CLICK YES -> TEASE TO TRY NO -> DODGE -> UNLOCK YES)
     // ========================================================
     const btnNo = document.getElementById('btnNo');
     const btnYes = document.getElementById('btnYes');
     const btnYesText = document.getElementById('btnYesText');
-    const tryNoAlert = document.getElementById('tryNoAlert');
+    const teaseAlert = document.getElementById('teaseAlert');
+    const teaseAlertText = document.getElementById('teaseAlertText');
     const speechBubble = document.getElementById('speechBubble');
+    const bubbleText = document.getElementById('bubbleText');
     const playgroundArea = document.getElementById('playgroundArea');
 
+    let triedYesFirst = false;
     let noDodgeCount = 0;
     let yesUnlocked = false;
 
@@ -1345,11 +1426,44 @@ html_template = f'''<!DOCTYPE html>
       "Ладно, ладно, сдаюсь! Жми ДА! 💖"
     ];
 
+    // When user taps YES first
+    btnYes.addEventListener('click', (e) => {{
+      if (!yesUnlocked) {{
+        // She tapped YES before trying NO!
+        triedYesFirst = true;
+
+        // Show cute teasing banner
+        teaseAlert.classList.add('show');
+        teaseAlertText.textContent = "Эй, так просто не пойдёт! Попробуй сначала нажать «НЕТ» 😜👇";
+
+        // Highlight NO button
+        btnNo.classList.add('highlight-wiggle');
+
+        // Bouncy feedback on YES
+        btnYes.style.animation = 'none';
+        void btnYes.offsetWidth;
+        btnYes.style.animation = 'cardShake 0.4s ease';
+
+        spawnBurstParticles(e.clientX || window.innerWidth/2, e.clientY || window.innerHeight/2, 5, ['😜', '🐾', '✨']);
+        return;
+      }}
+
+      // YES is unlocked! Proceed with massive celebration!
+      if (!isPlayingAudio) toggleMusic();
+
+      spawnBurstParticles(e.clientX || window.innerWidth/2, e.clientY || window.innerHeight/2, 30, ['💖', '🤍', '🌸', '✨', '🥰', '💫', '🍓']);
+
+      setTimeout(() => {{
+        goToScreen(2);
+      }}, 550);
+    }});
+
+    // When user touches or hovers over NO
     function handleNoDodge(e) {{
       noDodgeCount++;
 
-      // Bubble reaction
-      speechBubble.textContent = funnyQuotes[Math.min(noDodgeCount - 1, funnyQuotes.length - 1)];
+      // Bubble reaction with cat
+      bubbleText.textContent = funnyQuotes[Math.min(noDodgeCount - 1, funnyQuotes.length - 1)];
       speechBubble.classList.add('active');
       setTimeout(() => speechBubble.classList.remove('active'), 1600);
 
@@ -1363,9 +1477,9 @@ html_template = f'''<!DOCTYPE html>
       btnNo.style.transform = `translate(${{rx}}px, ${{ry}}px) scale(${{Math.max(0.75, 1 - noDodgeCount * 0.05)}})`;
 
       // Puff of smoke & sparkles
-      spawnBurstParticles(e.clientX || rect.left + rect.width/2, e.clientY || rect.top + 70, 4, ['💨', '✨', '😜', '⭐']);
+      spawnBurstParticles(e.clientX || rect.left + rect.width/2, e.clientY || rect.top + 70, 5, ['💨', '✨', '😜', '⭐']);
 
-      // UNLOCK YES BUTTON AFTER AT LEAST 2 TRIES!
+      // UNLOCK YES BUTTON AFTER SHE TRIES NO!
       if (noDodgeCount >= 2 && !yesUnlocked) {{
         unlockYesButton();
       }}
@@ -1373,17 +1487,18 @@ html_template = f'''<!DOCTYPE html>
 
     function unlockYesButton() {{
       yesUnlocked = true;
-      btnYes.disabled = false;
-      btnYes.classList.remove('locked');
+      btnNo.classList.remove('highlight-wiggle');
+
       btnYes.classList.add('ready-pulse');
       btnYesText.textContent = "ДА, ОЧЕНЬ СИЛЬНО! ❤️✨";
 
-      tryNoAlert.style.background = "linear-gradient(135deg, rgba(46, 213, 115, 0.25) 0%, rgba(46, 213, 115, 0.15) 100%)";
-      tryNoAlert.style.borderColor = "#2ed573";
-      tryNoAlert.style.color = "#2ed573";
-      tryNoAlert.innerHTML = "<span>🎉</span> <span>Умничка! Вот теперь нажимай ДА! 🥰</span>";
+      teaseAlert.classList.add('show');
+      teaseAlert.style.background = "linear-gradient(135deg, rgba(46, 213, 115, 0.25) 0%, rgba(46, 213, 115, 0.15) 100%)";
+      teaseAlert.style.borderColor = "#2ed573";
+      teaseAlert.style.color = "#2ed573";
+      teaseAlert.innerHTML = '<img src="media/stickers/happy.gif" class="tease-cat-icon" alt="Кот"> <span>Умничка! Вот теперь нажимай ДА! 🥰</span>';
 
-      spawnBurstParticles(window.innerWidth / 2, btnYes.getBoundingClientRect().top + 25, 15, ['💖', '✨', '🤍', '🌸']);
+      spawnBurstParticles(window.innerWidth / 2, btnYes.getBoundingClientRect().top + 25, 18, ['💖', '✨', '🤍', '🌸']);
     }}
 
     btnNo.addEventListener('mouseenter', handleNoDodge);
@@ -1392,20 +1507,6 @@ html_template = f'''<!DOCTYPE html>
       handleNoDodge(e.touches[0]);
     }});
     btnNo.addEventListener('click', handleNoDodge);
-
-    // YES Button Click
-    btnYes.addEventListener('click', (e) => {{
-      if (!yesUnlocked) return;
-
-      if (!isPlayingAudio) toggleMusic();
-
-      // Confetti burst
-      spawnBurstParticles(e.clientX || window.innerWidth/2, e.clientY || window.innerHeight/2, 28, ['💖', '🤍', '🌸', '✨', '🥰', '💫']);
-
-      setTimeout(() => {{
-        goToScreen(2);
-      }}, 550);
-    }});
 
     // Physical particle explosion generator
     function spawnBurstParticles(x, y, count, symbols) {{
@@ -1427,7 +1528,7 @@ html_template = f'''<!DOCTYPE html>
         function step() {{
           curX += vx;
           curY += vy;
-          vy += 0.25; // gravity
+          vy += 0.25;
           opacity -= 0.025;
           el.style.transform = `translate(${{curX}}px, ${{curY}}px) scale(${{opacity * 1.2}})`;
           el.style.opacity = opacity;
@@ -1503,7 +1604,7 @@ html_template = f'''<!DOCTYPE html>
       const q = quizQuestions[currentQ];
       document.getElementById('quizStepPill').textContent = `Вопрос ${{currentQ + 1}} из ${{quizQuestions.length}}`;
       document.getElementById('quizQuestionText').textContent = q.q;
-      document.getElementById('quizFeedbackToast').textContent = "";
+      document.getElementById('quizFeedbackToast').innerHTML = "";
 
       const box = document.getElementById('quizOptionsBox');
       box.innerHTML = '';
@@ -1522,20 +1623,20 @@ html_template = f'''<!DOCTYPE html>
         btn.classList.add('correct');
         const rect = btn.getBoundingClientRect();
         spawnBurstParticles(rect.left + rect.width/2, rect.top + rect.height/2, 12, ['✨', '💖', '🥰', '🌸']);
-        document.getElementById('quizFeedbackToast').textContent = "В точку! Ты знаешь меня идеально 🥰";
+        document.getElementById('quizFeedbackToast').innerHTML = '<img src="media/stickers/happy.gif" alt="Кот"> <span>В точку! Ты знаешь меня идеально 🥰</span>';
 
         setTimeout(() => {{
           currentQ++;
           if (currentQ < quizQuestions.length) {{
             renderQuiz();
           }} else {{
-            document.getElementById('quizFeedbackToast').textContent = "100% совпадение! А теперь смотри... 💫";
+            document.getElementById('quizFeedbackToast').innerHTML = '<img src="media/stickers/dancing.gif" alt="Кот"> <span>100% совпадение! А теперь смотри... 💫</span>';
             setTimeout(() => goToScreen(3), 900);
           }}
         }}, 650);
       }} else {{
         btn.classList.add('wrong');
-        document.getElementById('quizFeedbackToast').textContent = "Не-а, мимо! Подумай ещё разок 😉";
+        document.getElementById('quizFeedbackToast').innerHTML = '<img src="media/stickers/giggle.gif" alt="Кот"> <span>Не-а, мимо! Подумай ещё разок 😉</span>';
         setTimeout(() => btn.classList.remove('wrong'), 600);
       }}
     }}
@@ -1543,21 +1644,22 @@ html_template = f'''<!DOCTYPE html>
 
     // ========================================================
     // SCREEN 3: CELAMUR PORTRAIT & 3D SPIRAL GALAXY
+    // STARTS IN DISPERSED 3D GALAXY MODE FIRST!
     // ========================================================
     let canvas, ctx;
     let portraitImg = new Image();
     portraitImg.src = CELAMUR_PORTRAIT_B64;
 
-    let isGalaxyMode = false;
-    let morphProgress = 1.0;
-    let targetMorph = 1.0;
+    // STARTS IN DISPERSED GALAXY MODE!
+    let isGalaxyMode = true;
+    let morphProgress = 0.0;
+    let targetMorph = 0.0;
 
     let rotY = 0.8;
     let rotX = 66 * Math.PI / 180;
     let velRotY = 0.003;
     let velRotX = 0;
     let isDragging = false;
-    let startX = 0, startY = 0;
     let lastX = 0, lastY = 0;
 
     let canvasWidth = 400;
@@ -1583,11 +1685,11 @@ html_template = f'''<!DOCTYPE html>
       resize();
       window.addEventListener('resize', resize);
 
-      // Mouse drag
+      // Dragging is 100% dedicated to FREE 3D ROTATION without accidental morphing!
       canvas.addEventListener('mousedown', (e) => {{
         isDragging = true;
-        startX = lastX = e.clientX;
-        startY = lastY = e.clientY;
+        lastX = e.clientX;
+        lastY = e.clientY;
       }});
       window.addEventListener('mousemove', (e) => {{
         if (!isDragging) return;
@@ -1600,18 +1702,15 @@ html_template = f'''<!DOCTYPE html>
         rotY += velRotY;
         rotX = Math.max(0.35, Math.min(1.45, rotX + velRotX));
       }});
-      window.addEventListener('mouseup', (e) => {{
-        if (isDragging) {{
-          if (Math.abs(e.clientX - startX) > 40) toggleGalaxy();
-        }}
+      window.addEventListener('mouseup', () => {{
         isDragging = false;
       }});
 
       // Touch drag
       canvas.addEventListener('touchstart', (e) => {{
         isDragging = true;
-        startX = lastX = e.touches[0].clientX;
-        startY = lastY = e.touches[0].clientY;
+        lastX = e.touches[0].clientX;
+        lastY = e.touches[0].clientY;
       }}, {{ passive: true }});
       canvas.addEventListener('touchmove', (e) => {{
         if (!isDragging) return;
@@ -1624,16 +1723,14 @@ html_template = f'''<!DOCTYPE html>
         rotY += velRotY;
         rotX = Math.max(0.35, Math.min(1.45, rotX + velRotX));
       }}, {{ passive: true }});
-      canvas.addEventListener('touchend', (e) => {{
-        if (isDragging) {{
-          if (Math.abs(lastX - startX) > 40) toggleGalaxy();
-        }}
+      canvas.addEventListener('touchend', () => {{
         isDragging = false;
       }});
 
       requestAnimationFrame(renderCelamur);
     }}
 
+    // Morphing happens PURELY BY BUTTON for 100% control & comfort!
     function toggleGalaxy() {{
       isGalaxyMode = !isGalaxyMode;
       targetMorph = isGalaxyMode ? 0.0 : 1.0;
@@ -1642,11 +1739,11 @@ html_template = f'''<!DOCTYPE html>
       const hint = document.getElementById('celamurHint');
       if (isGalaxyMode) {{
         btnText.textContent = "Собрать портрет ✨";
-        hint.textContent = "✦ покрути нашу галактику любви ✦";
+        hint.textContent = "✦ покрути нашу галактику ✦";
         spawnBurstParticles(window.innerWidth/2, window.innerHeight/2, 15, ['🌌', '✨', '💫']);
       }} else {{
         btnText.textContent = "Рассыпать в звёзды 🌌";
-        hint.textContent = "✦ проведи пальцем вбок, и она снова станет звёздами ✦";
+        hint.textContent = "✦ нажми кнопку, чтобы снова стать звёздами ✦";
         spawnBurstParticles(window.innerWidth/2, window.innerHeight/2, 15, ['🤍', '✨', '💖']);
       }}
     }}
@@ -1809,6 +1906,7 @@ html_template = f'''<!DOCTYPE html>
     function openMemories() {{
       storyModal.classList.add('active');
       showSlide(0);
+      preloadMedia(0);
     }}
 
     function closeMemories() {{
@@ -1849,6 +1947,9 @@ html_template = f'''<!DOCTYPE html>
         storyImg.style.display = 'block';
         storyImg.src = mediaPath;
       }}
+
+      // Preload next items
+      preloadMedia(idx);
     }}
 
     document.getElementById('btnOpenMemories').addEventListener('click', openMemories);
@@ -1880,5 +1981,5 @@ html_template = f'''<!DOCTYPE html>
 with open('d:/подарки пол года/index.html', 'w', encoding='utf-8') as f:
     f.write(html_template)
 
-print('SUCCESS! d:/подарки пол года/index.html rewritten with Polaroid, Squishy buttons, and Story viewer!')
+print('SUCCESS! d:/подарки пол года/index.html rewritten with all requested features!')
 print(f'File size: {os.path.getsize("d:/подарки пол года/index.html")} bytes')
