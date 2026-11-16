@@ -21,24 +21,24 @@ with open('d:/подарки пол года/media/galaxy_particles.json', 'r', 
 
 # Verified authentic memories (NO elevator photo! Elevator photo is exclusive to Celamur portrait)
 memory_files = [
-    {"name": "с чего все началось.jpg", "caption": "С чего всё началось 🤍", "date": "Начало нашей истории"},
-    {"name": "первые цветы.jpg", "caption": "Твои первые цветы 💐", "date": "Самый нежный момент"},
-    {"name": "свидание на природе.jpg", "caption": "Наше свидание на природе 🌿", "date": "Только ты и я 🍃"},
-    {"name": "свидание на природе 2 фото.jpg", "caption": "Наше свидание на природе 🌿", "date": "Только ты и я 🍃"},
-    {"name": "IMG_20261115_230355_318.jpg", "caption": "Золотой закат на балконе — ты невероятно красива 🌅", "date": "Не могу оторвать взгляд ✨"},
-    {"name": "IMG_20261115_230620_235.jpg", "caption": "Счастливы вместе — настоящие мы ✨", "date": "В любые трудности вместе 🤍"},
-    {"name": "IMG_20261115_232741_361.jpg", "caption": "Открытость, искренность и самые душевные разговоры 🤍", "date": "Тёплые разговоры 💌"},
-    {"name": "IMG_20261115_233109_723.jpg", "caption": "Хочу сделать так, чтобы ты всегда сияла 💫", "date": "Моё сияние ✨"},
-    {"name": "IMG_20261116_000248_096.jpg", "caption": "Навсегда в моём сердце 💌", "date": "Любимый кадр"},
-    {"name": "5462926877434519487.jpg", "caption": "Твоя любимая улыбка 🥰", "date": "Самая милая"},
-    {"name": "5462926877434519488.jpg", "caption": "Счастье в простых моментах 🍓", "date": "Вкусные радости"},
-    {"name": "5462926877434519489.jpg", "caption": "Всегда рядом с тобой 🤍", "date": "Наше тепло"},
-    {"name": "5462926877434519490.jpg", "caption": "Самая прекрасная ✨", "date": "Моё вдохновение"},
-    {"name": "5462926877434519491.jpg", "caption": "Твой любимый взгляд 💫", "date": "В твоих глазах весь мир"},
-    {"name": "мы самые яркие звезды.mp4", "caption": "Мы — самые яркие звёзды ✨", "date": "Наше сияние 🎬"},
-    {"name": "video5462926876974558922.mp4", "caption": "Полностью хуйня 😂", "date": "Живые моменты 🎬"},
-    {"name": "video5462926876974558921.mp4", "caption": "Тёплые воспоминания 🎞️", "date": "Лето нашей любви"},
-    {"name": "HnVideoEditor_2026_11_16_002803168.mp4", "caption": "Хочу мокнуть под дождём с тобой всегда 🌧️🤍", "date": "Полгода вместе 💖"}
+    {"name": "с чего все началось.jpg", "caption": "С чего всё началось 🤍", "date": "Начало нашей истории", "sticker": "hello.gif"},
+    {"name": "первые цветы.jpg", "caption": "Твои первые цветы 💐", "date": "Самый нежный момент", "sticker": "adore.gif"},
+    {"name": "свидание на природе.jpg", "caption": "Наше свидание на природе 🌿", "date": "Только ты и я 🍃", "sticker": "serene.gif"},
+    {"name": "свидание на природе 2 фото.jpg", "caption": "Наше свидание на природе 🌿", "date": "Только ты и я 🍃", "sticker": "serene.gif"},
+    {"name": "IMG_20261115_230355_318.jpg", "caption": "Золотой закат на балконе — ты невероятно красива 🌅", "date": "Не могу оторвать взгляд ✨", "sticker": "shy.gif"},
+    {"name": "IMG_20261115_230620_235.jpg", "caption": "Счастливы вместе — настоящие мы ✨", "date": "В любые трудности вместе 🤍", "sticker": "cat_love.gif"},
+    {"name": "IMG_20261115_232741_361.jpg", "caption": "Открытость, искренность и самые душевные разговоры 🤍", "date": "Тёплые разговоры 💌", "sticker": "smile.gif"},
+    {"name": "IMG_20261115_233109_723.jpg", "caption": "Хочу сделать так, чтобы ты всегда сияла 💫", "date": "Моё сияние ✨", "sticker": "glowing.gif"},
+    {"name": "IMG_20261116_000248_096.jpg", "caption": "Навсегда в моём сердце 💌", "date": "Любимый кадр", "sticker": "love.gif"},
+    {"name": "5462926877434519487.jpg", "caption": "Твоя любимая улыбка 🥰", "date": "Самая милая", "sticker": "happy.gif"},
+    {"name": "5462926877434519488.jpg", "caption": "Счастье в простых моментах 🍓", "date": "Вкусные радости", "sticker": "sushi.gif"},
+    {"name": "5462926877434519489.jpg", "caption": "Всегда рядом с тобой 🤍", "date": "Наше тепло", "sticker": "relaxed.gif"},
+    {"name": "5462926877434519490.jpg", "caption": "Самая прекрасная ✨", "date": "Моё вдохновение", "sticker": "sparkle.gif"},
+    {"name": "5462926877434519491.jpg", "caption": "Твой любимый взгляд 💫", "date": "В твоих глазах весь мир", "sticker": "wink.gif"},
+    {"name": "мы самые яркие звезды.mp4", "caption": "Мы — самые яркие звёзды ✨", "date": "Наше сияние 🎬", "sticker": "dancing.gif"},
+    {"name": "video5462926876974558922.mp4", "caption": "Полностью хуйня 😂", "date": "Живые моменты 🎬", "sticker": "laughing.gif"},
+    {"name": "video5462926876974558921.mp4", "caption": "Тёплые воспоминания 🎞️", "date": "Лето нашей любви", "sticker": "playful.gif"},
+    {"name": "HnVideoEditor_2026_11_16_002803168.mp4", "caption": "Хочу мокнуть под дождём с тобой всегда 🌧️🤍", "date": "Полгода вместе 💖", "sticker": "rain.gif"}
 ]
 
 memory_files_json = json.dumps(memory_files, ensure_ascii=False)
@@ -130,6 +130,106 @@ html_template = f'''<!DOCTYPE html>
     @keyframes floatBlobs {{
       0% {{ transform: translate(-50%, 0) scale(0.9); }}
       100% {{ transform: translate(-50%, 45px) scale(1.18); }}
+    }}
+
+    /* Ambient floating animated stickers in deep starry background */
+    .ambient-stickers-container {{
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }}
+
+    .floating-bg-sticker {{
+      position: absolute;
+      width: 66px;
+      height: auto;
+      opacity: 0.22;
+      filter: drop-shadow(0 0 16px rgba(255, 130, 180, 0.45));
+      pointer-events: none;
+      will-change: transform, opacity;
+    }}
+
+    .fbs-1 {{
+      left: 7%;
+      bottom: -80px;
+      animation: floatDriftUp1 28s infinite linear;
+    }}
+    .fbs-2 {{
+      right: 8%;
+      bottom: -90px;
+      width: 74px;
+      animation: floatDriftUp2 34s infinite linear 5s;
+    }}
+    .fbs-3 {{
+      left: 18%;
+      bottom: -85px;
+      width: 60px;
+      animation: floatDriftUp3 30s infinite linear 12s;
+    }}
+    .fbs-4 {{
+      right: 20%;
+      bottom: -80px;
+      width: 64px;
+      animation: floatDriftUp1 36s infinite linear 18s;
+    }}
+    .fbs-5 {{
+      left: 45%;
+      bottom: -90px;
+      width: 68px;
+      animation: floatDriftUp2 32s infinite linear 24s;
+    }}
+
+    @keyframes floatDriftUp1 {{
+      0% {{
+        transform: translateY(0) translateX(0) rotate(0deg) scale(0.85);
+        opacity: 0;
+      }}
+      10% {{ opacity: 0.24; }}
+      50% {{
+        transform: translateY(-55vh) translateX(35px) rotate(8deg) scale(1);
+        opacity: 0.28;
+      }}
+      90% {{ opacity: 0.22; }}
+      100% {{
+        transform: translateY(-115vh) translateX(-20px) rotate(-6deg) scale(0.9);
+        opacity: 0;
+      }}
+    }}
+
+    @keyframes floatDriftUp2 {{
+      0% {{
+        transform: translateY(0) translateX(0) rotate(0deg) scale(0.9);
+        opacity: 0;
+      }}
+      12% {{ opacity: 0.26; }}
+      50% {{
+        transform: translateY(-60vh) translateX(-40px) rotate(-10deg) scale(1.05);
+        opacity: 0.3;
+      }}
+      88% {{ opacity: 0.22; }}
+      100% {{
+        transform: translateY(-118vh) translateX(25px) rotate(8deg) scale(0.88);
+        opacity: 0;
+      }}
+    }}
+
+    @keyframes floatDriftUp3 {{
+      0% {{
+        transform: translateY(0) translateX(0) rotate(0deg) scale(0.8);
+        opacity: 0;
+      }}
+      15% {{ opacity: 0.22; }}
+      50% {{
+        transform: translateY(-50vh) translateX(28px) rotate(6deg) scale(0.95);
+        opacity: 0.26;
+      }}
+      85% {{ opacity: 0.18; }}
+      100% {{
+        transform: translateY(-112vh) translateX(-30px) rotate(-8deg) scale(0.85);
+        opacity: 0;
+      }}
     }}
 
     /* Global screen container */
@@ -1082,6 +1182,79 @@ html_template = f'''<!DOCTYPE html>
       font-size: 22px;
       will-change: transform, opacity;
     }}
+
+    /* Polaroid peeking cute mascot */
+    .polaroid-mascot-peek {{
+      position: absolute;
+      top: -34px;
+      right: -8px;
+      width: 54px;
+      height: auto;
+      z-index: 10;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
+      animation: cuteBobbing 3.5s infinite ease-in-out;
+      pointer-events: none;
+    }}
+    @keyframes cuteBobbing {{
+      0%, 100% {{ transform: translateY(0) rotate(2deg); }}
+      50% {{ transform: translateY(-4px) rotate(-3deg); }}
+    }}
+
+    /* Button mini sticker */
+    .btn-cat-mini-sticker {{
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      vertical-align: middle;
+      margin-right: 6px;
+    }}
+
+    /* Quiz cheerleader mascot */
+    .quiz-cat-cheerleader {{
+      position: absolute;
+      top: -38px;
+      right: 12px;
+      width: 58px;
+      height: auto;
+      z-index: 15;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      pointer-events: none;
+    }}
+
+    /* Letter card cat */
+    .letter-corner-cat {{
+      position: absolute;
+      top: -24px;
+      right: 14px;
+      width: 48px;
+      height: auto;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+      animation: softSway 4s infinite ease-in-out;
+      pointer-events: none;
+    }}
+    @keyframes softSway {{
+      0%, 100% {{ transform: rotate(0deg) translateY(0); }}
+      50% {{ transform: rotate(4deg) translateY(-3px); }}
+    }}
+
+    /* Stories footer sticker */
+    .story-date-row {{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }}
+    .story-footer-cat-sticker {{
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(255, 82, 123, 0.45));
+    }}
+    @keyframes cuteStickerPop {{
+      0% {{ transform: scale(0.6); opacity: 0; }}
+      100% {{ transform: scale(1); opacity: 1; }}
+    }}
   </style>
 </head>
 <body>
@@ -1090,6 +1263,15 @@ html_template = f'''<!DOCTYPE html>
   <canvas id="ambientSkyCanvas"></canvas>
   <div class="blob-ambient blob-top"></div>
   <div class="blob-ambient blob-bottom"></div>
+
+  <!-- Ambient floating animated stickers in deep starry sky -->
+  <div class="ambient-stickers-container">
+    <img src="media/stickers/sleepy.gif" class="floating-bg-sticker fbs-1" alt="Cat">
+    <img src="media/stickers/sparkle.gif" class="floating-bg-sticker fbs-2" alt="Cat">
+    <img src="media/stickers/cat_love.gif" class="floating-bg-sticker fbs-3" alt="Cat">
+    <img src="media/stickers/hello.gif" class="floating-bg-sticker fbs-4" alt="Cat">
+    <img src="media/stickers/relaxed.gif" class="floating-bg-sticker fbs-5" alt="Cat">
+  </div>
 
   <!-- Background Music Audio -->
   <audio id="bgMusic" src="media/music.mp3" preload="auto" loop></audio>
@@ -1123,6 +1305,7 @@ html_template = f'''<!DOCTYPE html>
       <!-- Tilted Aesthetic Polaroid -->
       <div class="polaroid-frame" id="polaroidCard">
         <div class="polaroid-tape"></div>
+        <img src="media/stickers/hello.gif" class="polaroid-mascot-peek" alt="Привет">
         <img src="media/5462926877434519487.jpg" class="polaroid-photo" alt="Злата">
         <div class="polaroid-caption">моя любимая девочка 🤍</div>
       </div>
@@ -1140,6 +1323,7 @@ html_template = f'''<!DOCTYPE html>
       <div class="hook-playground" id="playgroundArea">
         <!-- YES button -->
         <button class="marshmallow-btn-yes" id="btnYes">
+          <img src="media/stickers/happy.gif" class="btn-cat-mini-sticker" id="yesBtnCat" alt="Котик">
           <span id="btnYesText">ДА, ОЧЕНЬ! ❤️</span>
         </button>
 
@@ -1161,6 +1345,7 @@ html_template = f'''<!DOCTYPE html>
   <div class="screen" id="screen2">
     <div class="quiz-container-box">
       <div class="quiz-interactive-card">
+        <img src="media/stickers/encouragement.gif" class="quiz-cat-cheerleader" id="quizCatMascot" alt="Котик">
         <div class="quiz-top-row">
           <div class="quiz-love-badge">
             <img src="media/stickers/adore.gif" alt="Котик">
@@ -1251,6 +1436,7 @@ html_template = f'''<!DOCTYPE html>
 
       <!-- Verbatim quote requested by user -->
       <div class="letter-romantic-card">
+        <img src="media/stickers/cat_love.gif" class="letter-corner-cat" alt="Любовь">
         «Вот мы уже пол года вместе, прошли много сложностей и неудач, но нас ждёт долгий и счастливый путь.»
         <div class="letter-signature-tag">Навсегда твой 🤍</div>
       </div>
@@ -1278,7 +1464,10 @@ html_template = f'''<!DOCTYPE html>
       </div>
 
       <div class="story-details-footer">
-        <div class="story-date-badge" id="storyDateBadge">Начало истории</div>
+        <div class="story-date-row">
+          <img id="storySticker" class="story-footer-cat-sticker" src="media/stickers/hello.gif" alt="Котик">
+          <div class="story-date-badge" id="storyDateBadge">Начало истории</div>
+        </div>
         <div class="story-caption-title" id="storyCaption">Загрузка...</div>
         <div class="story-slide-counter" id="storyCounter">1 / 18</div>
         <div class="story-navigation-row">
@@ -1628,6 +1817,9 @@ html_template = f'''<!DOCTYPE html>
       document.getElementById('quizQuestionText').textContent = q.q;
       document.getElementById('quizFeedbackToast').innerHTML = "";
 
+      const mascot = document.getElementById('quizCatMascot');
+      if (mascot) mascot.src = (currentQ % 2 === 0 ? 'media/stickers/encouragement.gif' : 'media/stickers/wink.gif');
+
       const box = document.getElementById('quizOptionsBox');
       box.innerHTML = '';
       q.opts.forEach((optText, idx) => {{
@@ -1641,8 +1833,10 @@ html_template = f'''<!DOCTYPE html>
 
     function handleQuizPick(idx, btn) {{
       const q = quizQuestions[currentQ];
+      const mascot = document.getElementById('quizCatMascot');
       if (idx === q.ans) {{
         btn.classList.add('correct');
+        if (mascot) mascot.src = 'media/stickers/happy.gif';
         const rect = btn.getBoundingClientRect();
         spawnBurstParticles(rect.left + rect.width/2, rect.top + rect.height/2, 12, ['✨', '💖', '🥰', '🌸']);
         document.getElementById('quizFeedbackToast').innerHTML = '<img src="media/stickers/happy.gif" alt="Кот"> <span>В точку! Ты знаешь меня идеально 🥰</span>';
@@ -1652,14 +1846,19 @@ html_template = f'''<!DOCTYPE html>
           if (currentQ < quizQuestions.length) {{
             renderQuiz();
           }} else {{
+            if (mascot) mascot.src = 'media/stickers/dancing.gif';
             document.getElementById('quizFeedbackToast').innerHTML = '<img src="media/stickers/dancing.gif" alt="Кот"> <span>100% совпадение! А теперь смотри... 💫</span>';
             setTimeout(() => goToScreen(3), 900);
           }}
         }}, 650);
       }} else {{
         btn.classList.add('wrong');
+        if (mascot) mascot.src = 'media/stickers/giggle.gif';
         document.getElementById('quizFeedbackToast').innerHTML = '<img src="media/stickers/giggle.gif" alt="Кот"> <span>Не-а, мимо! Подумай ещё разок 😉</span>';
-        setTimeout(() => btn.classList.remove('wrong'), 600);
+        setTimeout(() => {{
+          btn.classList.remove('wrong');
+          if (mascot) mascot.src = 'media/stickers/teasing.gif';
+        }}, 600);
       }}
     }}
     renderQuiz();
@@ -1954,6 +2153,14 @@ html_template = f'''<!DOCTYPE html>
       storyDateBadge.textContent = item.date || "Наше мгновение";
       storyCaption.textContent = item.caption;
       storyCounter.textContent = `${{idx + 1}} / ${{MEMORY_FILES.length}}`;
+
+      const stickerImg = document.getElementById('storySticker');
+      if (stickerImg && item.sticker) {{
+        stickerImg.src = 'media/stickers/' + item.sticker;
+        stickerImg.style.animation = 'none';
+        void stickerImg.offsetWidth;
+        stickerImg.style.animation = 'cuteStickerPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1)';
+      }}
 
       const isVideo = item.name.toLowerCase().endsWith('.mp4');
       const mediaPath = 'media/' + item.name;
