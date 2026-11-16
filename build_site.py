@@ -36,7 +36,7 @@ memory_files = [
     {"name": "5462926877434519490.jpg", "caption": "Самая прекрасная ✨", "date": "Моё вдохновение", "sticker": "sparkle.gif"},
     {"name": "5462926877434519491.jpg", "caption": "Твой любимый взгляд 💫", "date": "В твоих глазах весь мир", "sticker": "wink.gif"},
     {"name": "мы самые яркие звезды.mp4", "caption": "Мы — самые яркие звёзды ✨", "date": "Наше сияние 🎬", "sticker": "dancing.gif"},
-    {"name": "video5462926876974558922.mp4", "caption": "Полностью хуйня 😂", "date": "Живые моменты 🎬", "sticker": "laughing.gif"},
+    {"name": "video5462926876974558922.mp4", "caption": "Дурачимся только вместе 😜🤍", "date": "Живые моменты 🎬", "sticker": "laughing.gif"},
     {"name": "video5462926876974558921.mp4", "caption": "Тёплые воспоминания 🎞️", "date": "Лето нашей любви", "sticker": "playful.gif"},
     {"name": "HnVideoEditor_2026_11_16_002803168.mp4", "caption": "Хочу мокнуть под дождём с тобой всегда 🌧️🤍", "date": "Полгода вместе 💖", "sticker": "rain.gif"}
 ]
@@ -57,17 +57,20 @@ html_template = f'''<!DOCTYPE html>
 
   <style>
     :root {{
-      --bg: #060209;
-      --card-bg: rgba(28, 16, 34, 0.78);
-      --card-border: rgba(255, 180, 210, 0.2);
+      --bg: #14051c;
+      --bg-gradient: radial-gradient(circle at 50% 12%, #3a1148 0%, #20072b 45%, #100318 100%);
+      --card-bg: rgba(46, 18, 56, 0.78);
+      --card-border: rgba(255, 185, 222, 0.35);
+      --card-glow: 0 20px 50px rgba(255, 82, 123, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.35);
       --pink-primary: #ff527b;
-      --pink-glow: rgba(255, 82, 123, 0.55);
-      --pink-candy: linear-gradient(135deg, #ff7597 0%, #ff3b68 100%);
-      --pink-shadow: #b31d42;
+      --pink-glow: rgba(255, 82, 123, 0.65);
+      --pink-candy: linear-gradient(135deg, #ff7ba0 0%, #ff3b68 100%);
+      --pink-shadow: #a81c40;
       --yellow-butter: #ffeaa7;
+      --pastel-lavender: #f1e4ff;
       --text-white: #ffffff;
-      --text-cream: #f7eef7;
-      --text-muted: #b8a6be;
+      --text-cream: #fff2f8;
+      --text-muted: #d8bedf;
       --font-rounded: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --font-hand: 'Caveat', cursive;
       --font-cursive: 'Great Vibes', cursive;
@@ -85,7 +88,7 @@ html_template = f'''<!DOCTYPE html>
     html, body {{
       width: 100%;
       height: 100%;
-      background: var(--bg);
+      background: var(--bg-gradient);
       color: var(--text-white);
       font-family: var(--font-rounded);
       overflow: hidden;
@@ -106,33 +109,35 @@ html_template = f'''<!DOCTYPE html>
     /* Soft colorful light blobs */
     .blob-ambient {{
       position: fixed;
-      width: 340px;
-      height: 340px;
       border-radius: 50%;
-      filter: blur(90px);
+      filter: blur(85px);
       pointer-events: none;
       z-index: 0;
-      opacity: 0.32;
-      animation: floatBlobs 12s infinite alternate ease-in-out;
+      opacity: 0.46;
+      animation: floatBlobs 14s infinite alternate ease-in-out;
     }}
     .blob-top {{
-      top: -80px;
+      width: 380px;
+      height: 380px;
+      top: -70px;
       left: 50%;
       transform: translateX(-50%);
-      background: radial-gradient(circle, #ff4071 0%, transparent 70%);
+      background: radial-gradient(circle, #ff5e97 0%, rgba(255, 120, 180, 0.5) 45%, transparent 70%);
     }}
     .blob-bottom {{
-      bottom: -60px;
-      right: -40px;
-      background: radial-gradient(circle, #8a2be2 0%, transparent 70%);
+      width: 360px;
+      height: 360px;
+      bottom: -50px;
+      right: -30px;
+      background: radial-gradient(circle, #ff9ff3 0%, rgba(255, 159, 243, 0.4) 45%, transparent 70%);
       animation-delay: -6s;
     }}
     .blob-middle {{
-      width: 320px;
-      height: 320px;
-      top: 45%;
-      left: -80px;
-      background: radial-gradient(circle, #ff6b8b 0%, rgba(138, 43, 226, 0.25) 50%, transparent 70%);
+      width: 340px;
+      height: 340px;
+      top: 42%;
+      left: -70px;
+      background: radial-gradient(circle, #e056fd 0%, rgba(255, 117, 151, 0.35) 50%, transparent 70%);
       animation: floatBlobs 16s infinite alternate ease-in-out -4s;
     }}
     @keyframes floatBlobs {{
@@ -151,91 +156,107 @@ html_template = f'''<!DOCTYPE html>
 
     .floating-bg-sticker {{
       position: absolute;
-      width: 66px;
+      width: 68px;
       height: auto;
-      opacity: 0.22;
-      filter: drop-shadow(0 0 16px rgba(255, 130, 180, 0.45));
+      opacity: 0.78;
+      filter: drop-shadow(0 4px 16px rgba(255, 90, 150, 0.55));
       pointer-events: none;
       will-change: transform, opacity;
     }}
 
+    .floating-bg-emoji {{
+      position: absolute;
+      font-size: 24px;
+      opacity: 0.75;
+      filter: drop-shadow(0 0 12px rgba(255, 130, 180, 0.75));
+      pointer-events: none;
+      will-change: transform, opacity;
+    }}
+
+    .fbe-1 {{ left: 12%; bottom: -60px; animation: floatDriftUp1 22s infinite linear 2s; font-size: 26px; }}
+    .fbe-2 {{ right: 15%; bottom: -60px; animation: floatDriftUp2 26s infinite linear 7s; font-size: 22px; }}
+    .fbe-3 {{ left: 28%; bottom: -60px; animation: floatDriftUp3 24s infinite linear 11s; font-size: 25px; }}
+    .fbe-4 {{ right: 30%; bottom: -60px; animation: floatDriftUp1 28s infinite linear 16s; font-size: 24px; }}
+    .fbe-5 {{ left: 50%; bottom: -60px; animation: floatDriftUp2 25s infinite linear 19s; font-size: 28px; }}
+    .fbe-6 {{ right: 8%; bottom: -60px; animation: floatDriftUp3 27s infinite linear 23s; font-size: 23px; }}
+
     .fbs-1 {{
-      left: 7%;
+      left: 6%;
       bottom: -80px;
       animation: floatDriftUp1 28s infinite linear;
     }}
     .fbs-2 {{
-      right: 8%;
+      right: 7%;
       bottom: -90px;
       width: 74px;
-      animation: floatDriftUp2 34s infinite linear 5s;
+      animation: floatDriftUp2 34s infinite linear 6s;
     }}
     .fbs-3 {{
-      left: 18%;
+      left: 20%;
       bottom: -85px;
-      width: 60px;
-      animation: floatDriftUp3 30s infinite linear 12s;
+      width: 62px;
+      animation: floatDriftUp3 30s infinite linear 13s;
     }}
     .fbs-4 {{
-      right: 20%;
+      right: 22%;
       bottom: -80px;
       width: 64px;
-      animation: floatDriftUp1 36s infinite linear 18s;
+      animation: floatDriftUp1 36s infinite linear 19s;
     }}
     .fbs-5 {{
-      left: 45%;
+      left: 42%;
       bottom: -90px;
       width: 68px;
-      animation: floatDriftUp2 32s infinite linear 24s;
+      animation: floatDriftUp2 32s infinite linear 25s;
     }}
 
     @keyframes floatDriftUp1 {{
       0% {{
-        transform: translateY(0) translateX(0) rotate(0deg) scale(0.85);
+        transform: translateY(0) translateX(0) rotate(0deg) scale(0.9);
         opacity: 0;
       }}
-      10% {{ opacity: 0.24; }}
+      10% {{ opacity: 0.78; }}
       50% {{
         transform: translateY(-55vh) translateX(35px) rotate(8deg) scale(1);
-        opacity: 0.28;
+        opacity: 0.82;
       }}
-      90% {{ opacity: 0.22; }}
+      90% {{ opacity: 0.75; }}
       100% {{
-        transform: translateY(-115vh) translateX(-20px) rotate(-6deg) scale(0.9);
+        transform: translateY(-115vh) translateX(-20px) rotate(-6deg) scale(0.92);
         opacity: 0;
       }}
     }}
 
     @keyframes floatDriftUp2 {{
       0% {{
-        transform: translateY(0) translateX(0) rotate(0deg) scale(0.9);
+        transform: translateY(0) translateX(0) rotate(0deg) scale(0.92);
         opacity: 0;
       }}
-      12% {{ opacity: 0.26; }}
+      12% {{ opacity: 0.8; }}
       50% {{
         transform: translateY(-60vh) translateX(-40px) rotate(-10deg) scale(1.05);
-        opacity: 0.3;
+        opacity: 0.84;
       }}
-      88% {{ opacity: 0.22; }}
+      88% {{ opacity: 0.76; }}
       100% {{
-        transform: translateY(-118vh) translateX(25px) rotate(8deg) scale(0.88);
+        transform: translateY(-118vh) translateX(25px) rotate(8deg) scale(0.9);
         opacity: 0;
       }}
     }}
 
     @keyframes floatDriftUp3 {{
       0% {{
-        transform: translateY(0) translateX(0) rotate(0deg) scale(0.8);
+        transform: translateY(0) translateX(0) rotate(0deg) scale(0.85);
         opacity: 0;
       }}
-      15% {{ opacity: 0.22; }}
+      15% {{ opacity: 0.75; }}
       50% {{
-        transform: translateY(-50vh) translateX(28px) rotate(6deg) scale(0.95);
-        opacity: 0.26;
+        transform: translateY(-50vh) translateX(28px) rotate(6deg) scale(0.98);
+        opacity: 0.8;
       }}
-      85% {{ opacity: 0.18; }}
+      85% {{ opacity: 0.72; }}
       100% {{
-        transform: translateY(-112vh) translateX(-30px) rotate(-8deg) scale(0.85);
+        transform: translateY(-112vh) translateX(-30px) rotate(-8deg) scale(0.88);
         opacity: 0;
       }}
     }}
@@ -1030,15 +1051,15 @@ html_template = f'''<!DOCTYPE html>
     .story-viewer-modal {{
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.96);
-      backdrop-filter: blur(35px);
-      -webkit-backdrop-filter: blur(35px);
+      background: radial-gradient(circle at 50% 25%, rgba(68, 20, 75, 0.94) 0%, rgba(30, 8, 38, 0.97) 65%, rgba(14, 3, 20, 0.99) 100%);
+      backdrop-filter: blur(40px);
+      -webkit-backdrop-filter: blur(40px);
       z-index: 1000;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 18px 16px;
+      padding: 16px 14px;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.35s ease;
@@ -1055,8 +1076,8 @@ html_template = f'''<!DOCTYPE html>
       width: 44px;
       height: 44px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 185, 220, 0.35);
       color: #fff;
       font-size: 26px;
       display: flex;
@@ -1073,13 +1094,13 @@ html_template = f'''<!DOCTYPE html>
     .story-stage-card {{
       max-width: 410px;
       width: 100%;
-      background: rgba(22, 14, 26, 0.92);
-      border: 1.5px solid rgba(255, 255, 255, 0.14);
-      border-radius: 34px;
+      background: linear-gradient(180deg, rgba(62, 22, 74, 0.92) 0%, rgba(38, 12, 48, 0.96) 100%);
+      border: 2px solid rgba(255, 185, 225, 0.45);
+      border-radius: 36px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.9);
+      box-shadow: 0 25px 70px rgba(255, 82, 123, 0.3), 0 10px 40px rgba(0, 0, 0, 0.6), inset 0 1px 2px rgba(255, 255, 255, 0.4);
       position: relative;
     }}
 
@@ -1104,12 +1125,14 @@ html_template = f'''<!DOCTYPE html>
     .story-viewport-box {{
       width: 100%;
       height: 380px;
-      background: #000000;
+      background: radial-gradient(circle, #3d1448 0%, #1f0729 100%);
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }}
 
     .story-img-element {{
@@ -1273,13 +1296,21 @@ html_template = f'''<!DOCTYPE html>
   <div class="blob-ambient blob-middle"></div>
   <div class="blob-ambient blob-bottom"></div>
 
-  <!-- Ambient floating animated stickers in deep starry sky -->
+  <!-- Ambient floating animated stickers & crisp cute hearts/emojis in starry sky -->
   <div class="ambient-stickers-container">
     <img src="media/stickers/sleepy.gif" class="floating-bg-sticker fbs-1" alt="Cat">
     <img src="media/stickers/sparkle.gif" class="floating-bg-sticker fbs-2" alt="Cat">
     <img src="media/stickers/cat_love.gif" class="floating-bg-sticker fbs-3" alt="Cat">
     <img src="media/stickers/hello.gif" class="floating-bg-sticker fbs-4" alt="Cat">
     <img src="media/stickers/relaxed.gif" class="floating-bg-sticker fbs-5" alt="Cat">
+
+    <!-- Clear, crisp floating pastel emojis & hearts -->
+    <span class="floating-bg-emoji fbe-1">💖</span>
+    <span class="floating-bg-emoji fbe-2">🌸</span>
+    <span class="floating-bg-emoji fbe-3">🍓</span>
+    <span class="floating-bg-emoji fbe-4">✨</span>
+    <span class="floating-bg-emoji fbe-5">💕</span>
+    <span class="floating-bg-emoji fbe-6">🎀</span>
   </div>
 
   <!-- Background Music Audio -->
