@@ -23,22 +23,22 @@ with open('d:/подарки пол года/media/galaxy_particles.json', 'r', 
 memory_files = [
     {"name": "с чего все началось.jpg", "caption": "С чего всё началось 🤍", "date": "Начало нашей истории"},
     {"name": "первые цветы.jpg", "caption": "Твои первые цветы 💐", "date": "Самый нежный момент"},
-    {"name": "свидание на природе.jpg", "caption": "Наше свидание на природе 🌿", "date": "Только ты и я"},
-    {"name": "свидание на природе 2 фото.jpg", "caption": "Тёплые моменты на свежем воздухе 🍃", "date": "Улыбки и тепло"},
-    {"name": "IMG_20261115_230355_318.jpg", "caption": "Солнечный день на крыше ☀️", "date": "Ближе к небу"},
-    {"name": "IMG_20261115_230620_235.jpg", "caption": "Твоя красота и нежность ✨", "date": "Не могу оторвать взгляд"},
-    {"name": "IMG_20261115_232741_361.jpg", "caption": "Уютный кофе вдвоём ☕", "date": "Тёплые разговоры"},
-    {"name": "IMG_20261115_233109_723.jpg", "caption": "Счастливы вместе 🤍", "date": "Настоящие мы"},
+    {"name": "свидание на природе.jpg", "caption": "Наше свидание на природе 🌿", "date": "Только ты и я 🍃"},
+    {"name": "свидание на природе 2 фото.jpg", "caption": "Наше свидание на природе 🌿", "date": "Только ты и я 🍃"},
+    {"name": "IMG_20261115_230355_318.jpg", "caption": "Золотой закат на балконе — ты невероятно красива 🌅", "date": "Не могу оторвать взгляд ✨"},
+    {"name": "IMG_20261115_230620_235.jpg", "caption": "Счастливы вместе — настоящие мы ✨", "date": "В любые трудности вместе 🤍"},
+    {"name": "IMG_20261115_232741_361.jpg", "caption": "Открытость, искренность и самые душевные разговоры 🤍", "date": "Тёплые разговоры 💌"},
+    {"name": "IMG_20261115_233109_723.jpg", "caption": "Хочу сделать так, чтобы ты всегда сияла 💫", "date": "Моё сияние ✨"},
     {"name": "IMG_20261116_000248_096.jpg", "caption": "Навсегда в моём сердце 💌", "date": "Любимый кадр"},
     {"name": "5462926877434519487.jpg", "caption": "Твоя любимая улыбка 🥰", "date": "Самая милая"},
     {"name": "5462926877434519488.jpg", "caption": "Счастье в простых моментах 🍓", "date": "Вкусные радости"},
     {"name": "5462926877434519489.jpg", "caption": "Всегда рядом с тобой 🤍", "date": "Наше тепло"},
     {"name": "5462926877434519490.jpg", "caption": "Самая прекрасная ✨", "date": "Моё вдохновение"},
-    {"name": "5462926877434519491.jpg", "caption": "Любимый взгляд 💫", "date": "В твоих глазах весь мир"},
+    {"name": "5462926877434519491.jpg", "caption": "Твой любимый взгляд 💫", "date": "В твоих глазах весь мир"},
     {"name": "мы самые яркие звезды.mp4", "caption": "Мы — самые яркие звёзды ✨", "date": "Наше сияние 🎬"},
-    {"name": "video5462926876974558922.mp4", "caption": "Наши живые мгновения 🎬", "date": "Моменты счастья"},
+    {"name": "video5462926876974558922.mp4", "caption": "Полностью хуйня 😂", "date": "Живые моменты 🎬"},
     {"name": "video5462926876974558921.mp4", "caption": "Тёплые воспоминания 🎞️", "date": "Лето нашей любви"},
-    {"name": "HnVideoEditor_2026_11_16_002803168.mp4", "caption": "История нашей любви 💖", "date": "Полгода вместе"}
+    {"name": "HnVideoEditor_2026_11_16_002803168.mp4", "caption": "Хочу мокнуть под дождём с тобой всегда 🌧️🤍", "date": "Полгода вместе 💖"}
 ]
 
 memory_files_json = json.dumps(memory_files, ensure_ascii=False)
@@ -664,25 +664,43 @@ html_template = f'''<!DOCTYPE html>
 
     .celamur-main-title {{
       font-family: var(--font-cursive);
-      font-size: 48px;
-      line-height: 1;
+      font-size: clamp(34px, 8.5vw, 46px);
+      line-height: 1.1;
       color: #ffffff;
-      text-shadow: 0 0 25px rgba(255, 180, 210, 0.7);
+      text-shadow: 0 0 25px rgba(255, 180, 210, 0.75), 0 0 50px rgba(255, 82, 123, 0.4);
       margin-top: -2px;
+      white-space: nowrap;
+      text-align: center;
     }}
 
     .celamur-subtitle-divine {{
-      font-size: 15px;
-      font-weight: 700;
-      color: #f3e6f2;
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff0f6;
       letter-spacing: 0.3px;
+      text-shadow: 0 0 12px rgba(255, 180, 210, 0.5);
     }}
 
     .celamur-subtitle-languages {{
-      font-size: 13px;
+      font-size: 13.5px;
       font-weight: 700;
-      color: #ff8fab;
-      margin-top: -4px;
+      color: #f7d2e4;
+      margin-top: -2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      flex-wrap: wrap;
+    }}
+
+    .celamur-love-highlight {{
+      background: linear-gradient(135deg, #ffffff 0%, #ff85a2 40%, #ff3366 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 15.5px;
+      font-weight: 900;
+      filter: drop-shadow(0 0 8px rgba(255, 82, 123, 0.7));
+      letter-spacing: 0.3px;
     }}
 
     .celamur-drag-hint-pill {{
@@ -1179,9 +1197,9 @@ html_template = f'''<!DOCTYPE html>
       </button>
 
       <!-- Signature title & exact subtitles -->
-      <div class="celamur-main-title">Злата</div>
-      <div class="celamur-subtitle-divine">ты выглядишь божественно</div>
-      <div class="celamur-subtitle-languages">я тебя люблю на всех языках мира</div>
+      <div class="celamur-main-title">Злата + Вадим</div>
+      <div class="celamur-subtitle-divine">Мы самая красивая пара ✨</div>
+      <div class="celamur-subtitle-languages"><span class="celamur-love-highlight">«Я тебя люблю»</span> на всех языках мира 💫</div>
       <div class="celamur-drag-hint-pill" id="celamurHint">✦ покрути нашу галактику ✦</div>
 
       <!-- Action buttons -->
@@ -1459,13 +1477,17 @@ html_template = f'''<!DOCTYPE html>
     }});
 
     // When user touches or hovers over NO
+    let lastDodgeTime = 0;
     function handleNoDodge(e) {{
+      const now = Date.now();
+      if (now - lastDodgeTime < 180) return;
+      lastDodgeTime = now;
+
       noDodgeCount++;
 
-      // Bubble reaction with cat
+      // Bubble reaction with cat - stays visible until next tap/dodge!
       bubbleText.textContent = funnyQuotes[Math.min(noDodgeCount - 1, funnyQuotes.length - 1)];
       speechBubble.classList.add('active');
-      setTimeout(() => speechBubble.classList.remove('active'), 1600);
 
       // Spring physics leap
       const rect = playgroundArea.getBoundingClientRect();
