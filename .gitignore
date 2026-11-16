@@ -1,0 +1,8 @@
+# Temporary and scratch files
+__pycache__/
+*.pyc
+*.log
+video_frames/
+test_*.jpg
+crop_test.jpg
+*.tmp
