@@ -127,6 +127,14 @@ html_template = f'''<!DOCTYPE html>
       background: radial-gradient(circle, #8a2be2 0%, transparent 70%);
       animation-delay: -6s;
     }}
+    .blob-middle {{
+      width: 320px;
+      height: 320px;
+      top: 45%;
+      left: -80px;
+      background: radial-gradient(circle, #ff6b8b 0%, rgba(138, 43, 226, 0.25) 50%, transparent 70%);
+      animation: floatBlobs 16s infinite alternate ease-in-out -4s;
+    }}
     @keyframes floatBlobs {{
       0% {{ transform: translate(-50%, 0) scale(0.9); }}
       100% {{ transform: translate(-50%, 45px) scale(1.18); }}
@@ -1262,6 +1270,7 @@ html_template = f'''<!DOCTYPE html>
   <!-- Starry Ambient Canvas & Lights -->
   <canvas id="ambientSkyCanvas"></canvas>
   <div class="blob-ambient blob-top"></div>
+  <div class="blob-ambient blob-middle"></div>
   <div class="blob-ambient blob-bottom"></div>
 
   <!-- Ambient floating animated stickers in deep starry sky -->
@@ -1351,7 +1360,7 @@ html_template = f'''<!DOCTYPE html>
             <img src="media/stickers/adore.gif" alt="Котик">
             <span>Тест для любимой</span>
           </div>
-          <div class="quiz-index-pill" id="quizStepPill">Вопрос 1 из 5</div>
+          <div class="quiz-index-pill" id="quizStepPill">Вопрос 1 из 6</div>
         </div>
 
         <div class="quiz-question-heading" id="quizQuestionText">Загрузка вопроса...</div>
@@ -1535,12 +1544,13 @@ html_template = f'''<!DOCTYPE html>
       goToScreen(3);
     }});
 
-    // Ambient space canvas
+    // Ambient space canvas with warm twinkling stars & fairy dust
     (function initAmbientSky() {{
       const canvas = document.getElementById('ambientSkyCanvas');
       const ctx = canvas.getContext('2d');
       let w, h;
       const stars = [];
+      const fireflies = [];
 
       function resize() {{
         w = canvas.width = window.innerWidth;
@@ -1549,31 +1559,70 @@ html_template = f'''<!DOCTYPE html>
       resize();
       window.addEventListener('resize', resize);
 
-      for (let i = 0; i < 90; i++) {{
+      for (let i = 0; i < 95; i++) {{
         stars.push({{
           x: Math.random() * w,
           y: Math.random() * h,
           r: Math.random() * 1.5 + 0.4,
           a: Math.random(),
-          speed: Math.random() * 0.015 + 0.005
+          speed: Math.random() * 0.015 + 0.005,
+          color: (i % 3 === 0) ? '255, 195, 215' : (i % 3 === 1 ? '255, 240, 190' : '255, 255, 255')
+        }});
+      }}
+
+      for (let i = 0; i < 18; i++) {{
+        fireflies.push({{
+          x: Math.random() * w,
+          y: Math.random() * h,
+          r: Math.random() * 2.5 + 1.2,
+          alpha: Math.random() * 0.35 + 0.1,
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: -Math.random() * 0.45 - 0.2,
+          pulse: Math.random() * Math.PI
         }});
       }}
 
       function loop() {{
         ctx.clearRect(0, 0, w, h);
+
+        // Twinkling stars
         for (let i = 0; i < stars.length; i++) {{
           const s = stars[i];
           s.a += s.speed;
           const alpha = (Math.sin(s.a) + 1) * 0.45 + 0.1;
           ctx.beginPath();
           ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(255, 230, 245, ${{alpha}})`;
+          ctx.fillStyle = `rgba(${{s.color}}, ${{alpha}})`;
           ctx.fill();
         }}
+
+        // Gentle floating warm bokeh orbs
+        for (let i = 0; i < fireflies.length; i++) {{
+          const f = fireflies[i];
+          f.x += f.vx;
+          f.y += f.vy;
+          f.pulse += 0.03;
+          if (f.y < -20) {{ f.y = h + 20; f.x = Math.random() * w; }}
+          if (f.x < -20) f.x = w + 20;
+          if (f.x > w + 20) f.x = -20;
+
+          const a = (Math.sin(f.pulse) * 0.5 + 0.5) * f.alpha;
+          ctx.beginPath();
+          ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255, 200, 220, ${{a}})`;
+          ctx.fill();
+        }}
+
         requestAnimationFrame(loop);
       }}
       loop();
     }})();
+
+    // Gentle heart sparkle touch on empty space
+    window.addEventListener('pointerdown', (e) => {{
+      if (e.target.closest('button') || e.target.closest('.story-viewport-box') || e.target.closest('input')) return;
+      spawnBurstParticles(e.clientX, e.clientY, 4, ['✨', '💖', '🌸', '🤍', '🐾']);
+    }});
 
     // Background Audio Controls
     const bgMusic = document.getElementById('bgMusic');
@@ -1759,54 +1808,100 @@ html_template = f'''<!DOCTYPE html>
     // ========================================================
     const quizQuestions = [
       {{
-        q: "Что мне больше всего нравится?",
+        q: "Моя главная суперспособность в быту?",
         opts: [
-          "Спать до обеда 😴",
-          "Реализация импульсивных идей ⚡",
-          "Сидеть дома в тишине 🤫",
-          "Спорить обо всём подряд 🗣️"
+          "Мыть посуду сразу после еды 🧼",
+          "Генерировать гениальные шутки 😂",
+          "Быть образцом идеального порядка 🧹",
+          "Находить еду в пустом холодильнике 🍕"
         ],
-        ans: 1
+        ans: 1,
+        reactions: [
+          "Ты меня точно ни с кем не перепутала? 🤡",
+          "100%! Причём смеюсь с них громче всех я сам 👑😂",
+          "Ага, в моих сладких снах разве что 🤣",
+          "Там только мышь повесилась, ты чего 🐭"
+        ]
       }},
       {{
-        q: "Моя суперспособность в любой ситуации?",
+        q: "Как я обычно собираюсь на выход?",
         opts: [
-          "Впадать в панику 🌪️",
-          "Решать ненужные проблемы 🧠",
-          "Опаздывать на полчаса ⏰",
-          "Делать вид, что всё знаю 🕶️"
+          "Чётко по таймеру за 10 минут ⏱️",
+          "Сижу в ТикТоке до победного 📱",
+          "Полчаса наглаживаю стрелки на штанах 👔",
+          "Стою одетый у двери и жду тебя 🚪"
         ],
-        ans: 1
+        ans: 1,
+        reactions: [
+          "Ты в какой вселенной живёшь? В параллельной? 🤣",
+          "Ну ещё один видосик и точно выходим! (нет) 📱🛋️",
+          "Я даже не знаю, где дома утюг лежит 🤷‍♂️",
+          "Хотелось бы, конечно, выглядеть так солидно, но нет 🤥"
+        ]
       }},
       {{
-        q: "Какое наше идеальное свидание?",
+        q: "Кто из нас быстрее идёт мириться, если повздорили?",
         opts: [
-          "Дорогой пафосный ресторан 🥂",
-          "Гулять сколько захотим 🌃",
-          "Молча смотреть кино 🎬",
-          "Сидеть в телефонах рядом 📱"
+          "Я, ведь я мудрый и взрослый 😇",
+          "Ты, потому что не можешь без меня 💅",
+          "Никто, кот мирит 🐱",
+          "Мы две гордые обиженки 🥺"
         ],
-        ans: 1
+        ans: 3,
+        reactions: [
+          "Да я буду дуться из принципа до победного! 😤",
+          "Ой, кто бы говорил, сама актриса драмы 🎭",
+          "Коту вообще по барабану, он спит 😴",
+          "Сидим в разных углах и ждём, кто первый сдастся 🥺🤍"
+        ]
       }},
       {{
-        q: "Что я дольше всего делаю перед выходом?",
+        q: "Сколько у меня заведено будильников на утро?",
         opts: [
-          "Ищу ключи и телефон 🔑",
-          "Одеваюсь 👕",
-          "Причёсываюсь перед зеркалом 🪞",
-          "Зависаю в мыслях 💭"
+          "Один, я дисциплинированный жаворонок 🕊️",
+          "Зачем будильник, если встаёт солнышко? ☀️",
+          "Штук 15 с интервалом по 3 минуты ⏰",
+          "Ноль, просыпаюсь по зову сердца 💓"
         ],
-        ans: 1
+        ans: 2,
+        reactions: [
+          "Жаворонок умер ещё в понедельник утром 🧟‍♂️",
+          "Солнышко встало, а я перевернулся на другой бок 🛌",
+          "07:00, 07:03, 07:06... и в итоге встаю в 08:30 ⏰🔥",
+          "Сердце говорит: \\\"Спи дальше, Вадим\\\" 💤"
+        ]
       }},
       {{
-        q: "Какая моя самая любимая еда на свете?",
+        q: "Кто из нас громче всех ворчит в очередях или пробках?",
         opts: [
-          "Пицца из доставки 🍕",
-          "Бургеры и картошка 🍔",
-          "Твоя 🤍",
-          "Стейк из ресторана 🥩"
+          "Я включаю режим душного деда 👴",
+          "Ты, потому что у тебя нет терпения ⏳",
+          "Мы оба сидим на глубоком дзене 🧘",
+          "Навигатор в телефоне 🗺️"
         ],
-        ans: 2
+        ans: 0,
+        reactions: [
+          "\\\"Куда он прёт?! Кто так водит?! В наше время такого не было!\\\" 👴🚗",
+          "Не переводи стрелки, главный душнила тут я! 🧐",
+          "Ага, дзен с дёргающимся глазом 👁️💥",
+          "Навигатор хотя бы не матерится вслух 😂"
+        ]
+      }},
+      {{
+        q: "Главное правило наших отношений на все годы вперёд?",
+        opts: [
+          "Всегда делиться последним кусочком 🍕",
+          "Не бесить друг друга по пустякам 🤫",
+          "Быть вместе против любой проблемы 🤍",
+          "Кто первый встал, тот и ставит чайник ☕"
+        ],
+        ans: 2,
+        reactions: [
+          "Пицца — это святое, но есть вещи поважнее 🍕😋",
+          "Ну это невозможно, мы же любим побесить друг друга 😜",
+          "В точку! Что бы ни случилось — мы одна команда навсегда 🤍✨",
+          "Чайник подождёт, а вот мы — главное ☕"
+        ]
       }}
     ];
 
@@ -1834,12 +1929,15 @@ html_template = f'''<!DOCTYPE html>
     function handleQuizPick(idx, btn) {{
       const q = quizQuestions[currentQ];
       const mascot = document.getElementById('quizCatMascot');
+      const toast = document.getElementById('quizFeedbackToast');
+      const reactionText = q.reactions[idx];
+
       if (idx === q.ans) {{
         btn.classList.add('correct');
         if (mascot) mascot.src = 'media/stickers/happy.gif';
         const rect = btn.getBoundingClientRect();
-        spawnBurstParticles(rect.left + rect.width/2, rect.top + rect.height/2, 12, ['✨', '💖', '🥰', '🌸']);
-        document.getElementById('quizFeedbackToast').innerHTML = '<img src="media/stickers/happy.gif" alt="Кот"> <span>В точку! Ты знаешь меня идеально 🥰</span>';
+        spawnBurstParticles(rect.left + rect.width/2, rect.top + rect.height/2, 14, ['✨', '💖', '🥰', '🌸', '👑']);
+        toast.innerHTML = `<img src="media/stickers/happy.gif" alt="Кот"> <span>${{reactionText}}</span>`;
 
         setTimeout(() => {{
           currentQ++;
@@ -1847,18 +1945,18 @@ html_template = f'''<!DOCTYPE html>
             renderQuiz();
           }} else {{
             if (mascot) mascot.src = 'media/stickers/dancing.gif';
-            document.getElementById('quizFeedbackToast').innerHTML = '<img src="media/stickers/dancing.gif" alt="Кот"> <span>100% совпадение! А теперь смотри... 💫</span>';
-            setTimeout(() => goToScreen(3), 900);
+            toast.innerHTML = '<img src="media/stickers/dancing.gif" alt="Кот"> <span>100% совпадение! Ты знаешь меня лучше всех на свете 💖💫</span>';
+            setTimeout(() => goToScreen(3), 1100);
           }}
-        }}, 650);
+        }}, 950);
       }} else {{
         btn.classList.add('wrong');
         if (mascot) mascot.src = 'media/stickers/giggle.gif';
-        document.getElementById('quizFeedbackToast').innerHTML = '<img src="media/stickers/giggle.gif" alt="Кот"> <span>Не-а, мимо! Подумай ещё разок 😉</span>';
+        toast.innerHTML = `<img src="media/stickers/giggle.gif" alt="Кот"> <span>${{reactionText}}</span>`;
         setTimeout(() => {{
           btn.classList.remove('wrong');
           if (mascot) mascot.src = 'media/stickers/teasing.gif';
-        }}, 600);
+        }}, 800);
       }}
     }}
     renderQuiz();
