@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Generator script for Zlata's 6-Month Anniversary Website (index.html)
-Replicating the authentic Celamur typography portrait & 3D spiral galaxy.
+Redesigned with cute, modern motion, tactile physics, and Celamur 3D Galaxy.
 """
 
 import json
@@ -17,24 +17,24 @@ with open('d:/подарки пол года/media/galaxy_particles.json', 'r', 
 
 # Verified authentic memories (NO elevator photo! Elevator photo is exclusive to Celamur portrait)
 memory_files = [
-    {"name": "с чего все началось.jpg", "caption": "С чего всё началось 🤍"},
-    {"name": "первые цветы.jpg", "caption": "Твои первые цветы 💐"},
-    {"name": "свидание на природе.jpg", "caption": "Наше свидание на природе 🌿"},
-    {"name": "свидание на природе 2 фото.jpg", "caption": "Тёплые моменты на свежем воздухе 🍃"},
-    {"name": "IMG_20261115_230355_318.jpg", "caption": "Солнечный день на крыше ☀️"},
-    {"name": "IMG_20261115_230620_235.jpg", "caption": "Твоя красота и нежность ✨"},
-    {"name": "IMG_20261115_232741_361.jpg", "caption": "Уютный кофе вдвоём ☕"},
-    {"name": "IMG_20261115_233109_723.jpg", "caption": "Счастливы вместе 🤍"},
-    {"name": "IMG_20261116_000248_096.jpg", "caption": "Навсегда в моём сердце 💌"},
-    {"name": "5462926877434519487.jpg", "caption": "Твоя любимая улыбка 🥰"},
-    {"name": "5462926877434519488.jpg", "caption": "Счастье в простых моментах 🍓"},
-    {"name": "5462926877434519489.jpg", "caption": "Всегда рядом с тобой 🤍"},
-    {"name": "5462926877434519490.jpg", "caption": "Самая прекрасная ✨"},
-    {"name": "5462926877434519491.jpg", "caption": "Любимый взгляд 💫"},
-    {"name": "мы самые яркие звезды.mp4", "caption": "Мы — самые яркие звёзды ✨"},
-    {"name": "video5462926876974558922.mp4", "caption": "Наши живые мгновения 🎬"},
-    {"name": "video5462926876974558921.mp4", "caption": "Тёплые воспоминания 🎞️"},
-    {"name": "HnVideoEditor_2026_11_16_002803168.mp4", "caption": "История нашей любви 💖"}
+    {"name": "с чего все началось.jpg", "caption": "С чего всё началось 🤍", "date": "Начало нашей истории"},
+    {"name": "первые цветы.jpg", "caption": "Твои первые цветы 💐", "date": "Самый нежный момент"},
+    {"name": "свидание на природе.jpg", "caption": "Наше свидание на природе 🌿", "date": "Только ты и я"},
+    {"name": "свидание на природе 2 фото.jpg", "caption": "Тёплые моменты на свежем воздухе 🍃", "date": "Улыбки и тепло"},
+    {"name": "IMG_20261115_230355_318.jpg", "caption": "Солнечный день на крыше ☀️", "date": "Ближе к небу"},
+    {"name": "IMG_20261115_230620_235.jpg", "caption": "Твоя красота и нежность ✨", "date": "Не могу оторвать взгляд"},
+    {"name": "IMG_20261115_232741_361.jpg", "caption": "Уютный кофе вдвоём ☕", "date": "Тёплые разговоры"},
+    {"name": "IMG_20261115_233109_723.jpg", "caption": "Счастливы вместе 🤍", "date": "Настоящие мы"},
+    {"name": "IMG_20261116_000248_096.jpg", "caption": "Навсегда в моём сердце 💌", "date": "Любимый кадр"},
+    {"name": "5462926877434519487.jpg", "caption": "Твоя любимая улыбка 🥰", "date": "Самая милая"},
+    {"name": "5462926877434519488.jpg", "caption": "Счастье в простых моментах 🍓", "date": "Вкусные радости"},
+    {"name": "5462926877434519489.jpg", "caption": "Всегда рядом с тобой 🤍", "date": "Наше тепло"},
+    {"name": "5462926877434519490.jpg", "caption": "Самая прекрасная ✨", "date": "Моё вдохновение"},
+    {"name": "5462926877434519491.jpg", "caption": "Любимый взгляд 💫", "date": "В твоих глазах весь мир"},
+    {"name": "мы самые яркие звезды.mp4", "caption": "Мы — самые яркие звёзды ✨", "date": "Наше сияние 🎬"},
+    {"name": "video5462926876974558922.mp4", "caption": "Наши живые мгновения 🎬", "date": "Моменты счастья"},
+    {"name": "video5462926876974558921.mp4", "caption": "Тёплые воспоминания 🎞️", "date": "Лето нашей любви"},
+    {"name": "HnVideoEditor_2026_11_16_002803168.mp4", "caption": "История нашей любви 💖", "date": "Полгода вместе"}
 ]
 
 memory_files_json = json.dumps(memory_files, ensure_ascii=False)
@@ -46,23 +46,25 @@ html_template = f'''<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>Злата — Наша Вселенная 🤍</title>
   
-  <!-- Fonts: Great Vibes for signature cursive, Inter for sleek UI -->
+  <!-- Premium Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Great+Vibes&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {{
-      --bg: #000000;
-      --card-bg: rgba(22, 18, 25, 0.75);
-      --card-border: rgba(255, 255, 255, 0.08);
-      --accent-pink: #ff6b8b;
+      --bg: #030105;
+      --card-bg: rgba(26, 18, 30, 0.7);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --accent-pink: #ff6088;
       --accent-gradient: linear-gradient(135deg, #ff7597 0%, #ff4b72 100%);
-      --accent-glow: rgba(255, 107, 139, 0.4);
+      --accent-glow: rgba(255, 96, 136, 0.45);
+      --gold: #ffeaa7;
       --text-main: #ffffff;
-      --text-muted: #a69eac;
-      --font-cursive: 'Great Vibes', 'Caveat', cursive;
-      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --text-muted: #b4a8ba;
+      --font-cursive: 'Caveat', 'Great Vibes', cursive;
+      --font-title: 'Great Vibes', cursive;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }}
 
     * {{
@@ -84,8 +86,8 @@ html_template = f'''<!DOCTYPE html>
       position: fixed;
     }}
 
-    /* Global ambient background */
-    #ambientBg {{
+    /* Dynamic starry ambient canvas */
+    #spaceStarsCanvas {{
       position: fixed;
       top: 0;
       left: 0;
@@ -93,10 +95,38 @@ html_template = f'''<!DOCTYPE html>
       height: 100%;
       pointer-events: none;
       z-index: 0;
-      background: radial-gradient(circle at 50% 25%, rgba(45, 15, 30, 0.4) 0%, rgba(5, 2, 8, 0.8) 50%, #000000 100%);
     }}
 
-    /* Screens wrapper */
+    /* Glow blobs */
+    .ambient-glow {{
+      position: fixed;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.35;
+      animation: floatGlow 10s infinite alternate ease-in-out;
+    }}
+    .glow-1 {{
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, #ff5277, transparent 70%);
+    }}
+    .glow-2 {{
+      bottom: -60px;
+      right: -40px;
+      background: radial-gradient(circle, #7d2ae8, transparent 70%);
+      animation-delay: -5s;
+    }}
+    @keyframes floatGlow {{
+      0% {{ transform: translate(-50%, 0) scale(0.9); }}
+      100% {{ transform: translate(-50%, 40px) scale(1.15); }}
+    }}
+
+    /* Screen containers */
     .screen {{
       position: absolute;
       top: 0;
@@ -110,8 +140,8 @@ html_template = f'''<!DOCTYPE html>
       padding: 24px 20px;
       opacity: 0;
       pointer-events: none;
-      transform: scale(0.96) translateY(12px);
-      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: scale(0.94) translateY(20px);
+      transition: opacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
       z-index: 1;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
@@ -124,298 +154,406 @@ html_template = f'''<!DOCTYPE html>
       z-index: 2;
     }}
 
-    /* Top step dots */
-    .top-dots {{
-      position: absolute;
-      top: 18px;
-      left: 50%;
-      transform: translateX(-50%);
+    /* Minimalist status bar / navigation */
+    .top-nav-bar {{
+      position: fixed;
+      top: 16px;
+      left: 0;
+      width: 100%;
       display: flex;
-      gap: 6px;
-      z-index: 10;
-    }}
-    .top-dots span {{
-      width: 18px;
-      height: 3px;
-      border-radius: 2px;
-      background: rgba(255, 255, 255, 0.15);
-      transition: all 0.4s ease;
-    }}
-    .top-dots span.active {{
-      width: 32px;
-      background: var(--accent-pink);
-      box-shadow: 0 0 10px var(--accent-glow);
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 50;
+      pointer-events: none;
     }}
 
-    /* Audio button fixed */
-    .audio-btn {{
-      position: fixed;
-      top: 18px;
-      right: 20px;
-      width: 40px;
-      height: 40px;
+    .progress-hearts {{
+      display: flex;
+      gap: 6px;
+      pointer-events: auto;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 6px 12px;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }}
+    .progress-hearts span {{
+      font-size: 13px;
+      opacity: 0.3;
+      transform: scale(0.85);
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }}
+    .progress-hearts span.filled {{
+      opacity: 1;
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 6px var(--accent-pink));
+    }}
+
+    .music-btn {{
+      pointer-events: auto;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       display: flex;
       align-items: center;
       justify-content: center;
       color: #fff;
       cursor: pointer;
-      z-index: 100;
-      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      transition: all 0.25s ease;
     }}
-    .audio-btn:hover {{
-      transform: scale(1.08);
-      background: rgba(255, 255, 255, 0.15);
+    .music-btn:active {{
+      transform: scale(0.9);
+    }}
+    .music-btn.playing {{
+      border-color: var(--accent-pink);
+      color: var(--accent-pink);
+      box-shadow: 0 0 15px var(--accent-glow);
+      animation: pulseMusic 2s infinite ease-in-out;
+    }}
+    @keyframes pulseMusic {{
+      0%, 100% {{ transform: scale(1); }}
+      50% {{ transform: scale(1.08); }}
     }}
 
     /* ========================================================
-       SCREEN 1: THE PLAYFUL HOOK
+       SCREEN 1: THE PLAYFUL HOOK (TRY 'NO' FIRST!)
        ======================================================== */
-    .hook-container {{
-      max-width: 380px;
+    .hook-card {{
+      max-width: 360px;
       width: 100%;
-      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 20px;
+      text-align: center;
+      gap: 16px;
+      position: relative;
     }}
 
-    .avatar-wrapper {{
+    /* Floating cute sticker emojis */
+    .floating-sticker {{
+      position: absolute;
+      font-size: 24px;
+      pointer-events: none;
+      animation: floatSticker 3.5s infinite ease-in-out alternate;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
+    }}
+    .st-1 {{ top: 10px; left: -10px; animation-delay: 0s; }}
+    .st-2 {{ top: 25px; right: -8px; animation-delay: -1.2s; }}
+    .st-3 {{ bottom: 120px; left: 10px; animation-delay: -2s; font-size: 20px; }}
+    .st-4 {{ bottom: 130px; right: 15px; animation-delay: -0.7s; font-size: 22px; }}
+    @keyframes floatSticker {{
+      0% {{ transform: translateY(0) rotate(-6deg); }}
+      100% {{ transform: translateY(-10px) rotate(8deg); }}
+    }}
+
+    .avatar-box {{
       position: relative;
       width: 130px;
       height: 130px;
-      margin-bottom: 8px;
+      margin-top: 10px;
     }}
-    .avatar-glow {{
+    .avatar-halo {{
       position: absolute;
-      inset: -6px;
-      border-radius: 50%;
+      inset: -8px;
+      border-radius: 42px;
       background: var(--accent-gradient);
       opacity: 0.6;
-      filter: blur(12px);
-      animation: pulseGlow 3s infinite alternate;
+      filter: blur(14px);
+      animation: haloPulse 3s infinite alternate ease-in-out;
     }}
-    @keyframes pulseGlow {{
-      0% {{ transform: scale(0.95); opacity: 0.4; }}
+    @keyframes haloPulse {{
+      0% {{ transform: scale(0.92); opacity: 0.4; }}
       100% {{ transform: scale(1.08); opacity: 0.8; }}
     }}
-    .avatar-img {{
+    .avatar-img-squircle {{
       position: relative;
       width: 100%;
       height: 100%;
-      border-radius: 50%;
+      border-radius: 36px;
       object-fit: cover;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
     }}
 
-    .hook-badge {{
-      display: inline-block;
-      padding: 6px 14px;
+    .hook-badge-pill {{
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 16px;
       border-radius: 9999px;
-      background: rgba(255, 107, 139, 0.12);
-      border: 1px solid rgba(255, 107, 139, 0.3);
-      color: #ff9bb2;
-      font-size: 11px;
+      background: rgba(255, 96, 136, 0.12);
+      border: 1px solid rgba(255, 96, 136, 0.3);
+      color: #ff9bb5;
+      font-size: 12px;
       font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }}
 
-    .hook-title {{
+    .hook-headline {{
       font-family: var(--font-cursive);
-      font-size: 46px;
+      font-size: 48px;
+      font-weight: 700;
+      color: #ffffff;
       line-height: 1;
-      color: #fff;
-      text-shadow: 0 0 20px rgba(255, 180, 200, 0.5);
+      text-shadow: 0 0 25px rgba(255, 140, 180, 0.6);
     }}
 
-    .hook-subtitle {{
-      font-size: 18px;
-      color: #dfd7e3;
-      font-weight: 400;
-      line-height: 1.4;
+    .hook-sub {{
+      font-size: 19px;
+      color: #ede2f0;
+      font-weight: 500;
+      line-height: 1.3;
       margin-top: -6px;
     }}
 
-    .hook-buttons {{
+    /* Instruction badge to force trying 'NO' */
+    .hook-try-no-hint {{
+      background: rgba(255, 234, 167, 0.12);
+      border: 1px dashed rgba(255, 234, 167, 0.45);
+      color: #ffeaa7;
+      padding: 8px 16px;
+      border-radius: 14px;
+      font-size: 13px;
+      font-weight: 600;
       display: flex;
-      flex-direction: column;
-      gap: 12px;
-      width: 100%;
-      margin-top: 10px;
-      position: relative;
-      min-height: 120px;
+      align-items: center;
+      gap: 8px;
+      animation: hintWiggle 2s infinite ease-in-out;
+    }}
+    @keyframes hintWiggle {{
+      0%, 100% {{ transform: translateX(0); }}
+      25% {{ transform: translateX(-4px); }}
+      75% {{ transform: translateX(4px); }}
     }}
 
-    .btn-yes {{
+    /* Playground for buttons */
+    .hook-buttons-area {{
+      position: relative;
+      width: 100%;
+      min-height: 140px;
+      margin-top: 6px;
+    }}
+
+    .btn-action-yes {{
+      width: 100%;
       background: var(--accent-gradient);
       color: #ffffff;
       border: none;
       padding: 16px 28px;
       border-radius: 9999px;
       font-size: 16px;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
       box-shadow: 0 10px 30px var(--accent-glow);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
     }}
-    .btn-yes:active {{
-      transform: scale(0.97);
+    .btn-action-yes:active {{
+      transform: scale(0.95);
+    }}
+    .btn-action-yes.locked {{
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.35);
+      box-shadow: none;
+      cursor: not-allowed;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }}
+    .btn-action-yes.unlocked-pulse {{
+      animation: unlockPulse 1.2s infinite alternate ease-in-out;
+    }}
+    @keyframes unlockPulse {{
+      0% {{ transform: scale(1); box-shadow: 0 8px 25px var(--accent-glow); }}
+      100% {{ transform: scale(1.05); box-shadow: 0 12px 40px rgba(255, 96, 136, 0.7); }}
     }}
 
-    .btn-no {{
-      background: rgba(255, 255, 255, 0.06);
-      color: var(--text-muted);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 14px 28px;
+    /* Dodging NO button */
+    .btn-action-no {{
+      position: absolute;
+      top: 68px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.08);
+      color: #ff85a1;
+      border: 1.5px solid rgba(255, 96, 136, 0.4);
+      padding: 12px 34px;
       border-radius: 9999px;
       font-size: 15px;
+      font-weight: 700;
       cursor: pointer;
-      transition: all 0.2s ease;
-      position: relative;
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s, opacity 0.2s;
+      white-space: nowrap;
+      z-index: 10;
+    }}
+    .btn-action-no:hover, .btn-action-no:active {{
+      background: rgba(255, 96, 136, 0.2);
     }}
 
-    .no-comment {{
-      font-size: 13px;
-      color: #ff8fab;
-      min-height: 18px;
-      transition: opacity 0.3s;
+    /* Cute speech bubble reaction */
+    .bubble-reaction {{
+      position: absolute;
+      top: -38px;
+      left: 50%;
+      transform: translateX(-50%) scale(0.8);
+      background: #ffffff;
+      color: #1a0f1d;
+      padding: 6px 14px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }}
+    .bubble-reaction::after {{
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 6px 6px 0 6px;
+      border-style: solid;
+      border-color: #ffffff transparent transparent transparent;
+    }}
+    .bubble-reaction.show {{
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
     }}
 
     /* ========================================================
-       SCREEN 2: THE PERSONALIZED QUIZ
+       SCREEN 2: THE QUIZ (MODERN CAROUSEL CARD)
        ======================================================== */
-    .quiz-container {{
-      max-width: 420px;
+    .quiz-layout {{
+      max-width: 400px;
       width: 100%;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      gap: 16px;
     }}
 
-    .quiz-card {{
+    .quiz-card-bubble {{
       width: 100%;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-radius: 28px;
-      padding: 28px 22px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+      background: rgba(30, 20, 36, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border-radius: 32px;
+      padding: 26px 22px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 18px;
+      position: relative;
     }}
 
-    .quiz-header {{
+    .quiz-meta-row {{
       display: flex;
       justify-content: space-between;
       align-items: center;
     }}
-    .quiz-step-title {{
+    .quiz-tag {{
+      display: flex;
+      align-items: center;
+      gap: 6px;
       font-size: 12px;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1.2px;
-      color: #ff9bb2;
-      font-weight: 600;
+      letter-spacing: 1px;
+      color: #ff9bb5;
     }}
-    .quiz-step-counter {{
-      font-size: 12px;
+    .quiz-step-bubble {{
+      background: rgba(255, 255, 255, 0.08);
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 700;
       color: var(--text-muted);
     }}
 
-    .quiz-progress {{
-      width: 100%;
-      height: 4px;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 2px;
-      overflow: hidden;
-    }}
-    .quiz-progress-bar {{
-      height: 100%;
-      width: 20%;
-      background: var(--accent-gradient);
-      border-radius: 2px;
-      transition: width 0.4s ease;
-    }}
-
-    .quiz-question {{
-      font-size: 18px;
-      font-weight: 600;
+    .quiz-q-title {{
+      font-size: 19px;
+      font-weight: 700;
       color: #ffffff;
-      line-height: 1.4;
+      line-height: 1.35;
       text-align: left;
     }}
 
-    .quiz-options {{
+    .quiz-options-grid {{
       display: flex;
       flex-direction: column;
       gap: 10px;
     }}
 
-    .quiz-opt {{
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 14px 18px;
-      border-radius: 16px;
-      color: #ded6e3;
+    .quiz-option-pill {{
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 15px 18px;
+      border-radius: 20px;
+      color: #ece1f0;
       font-size: 14px;
-      font-weight: 400;
+      font-weight: 600;
       text-align: left;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      transition: all 0.25s ease;
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
     }}
-    .quiz-opt:hover {{
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.18);
+    .quiz-option-pill:active {{
+      transform: scale(0.97);
     }}
-    .quiz-opt.correct {{
-      background: rgba(46, 213, 115, 0.15);
+    .quiz-option-pill.correct {{
+      background: rgba(46, 213, 115, 0.2);
       border-color: #2ed573;
       color: #ffffff;
       transform: scale(1.02);
-      box-shadow: 0 0 15px rgba(46, 213, 115, 0.3);
+      box-shadow: 0 0 20px rgba(46, 213, 115, 0.4);
     }}
-    .quiz-opt.wrong {{
-      background: rgba(255, 71, 87, 0.15);
+    .quiz-option-pill.wrong {{
+      background: rgba(255, 71, 87, 0.2);
       border-color: #ff4757;
       color: #ff6b81;
-      animation: shake 0.4s;
+      animation: shakeCard 0.4s ease;
     }}
-    @keyframes shake {{
+    @keyframes shakeCard {{
       0%, 100% {{ transform: translateX(0); }}
-      20%, 60% {{ transform: translateX(-6px); }}
-      40%, 80% {{ transform: translateX(6px); }}
+      25% {{ transform: translateX(-8px); }}
+      75% {{ transform: translateX(8px); }}
     }}
 
-    .quiz-hint {{
+    .quiz-reaction-toast {{
       font-size: 13px;
+      font-weight: 600;
       color: #ff8fab;
       text-align: center;
-      min-height: 18px;
+      min-height: 20px;
     }}
 
     /* ========================================================
-       SCREEN 3: THE CELAMUR PORTRAIT & 3D SPIRAL GALAXY
+       SCREEN 3: CELAMUR PORTRAIT & 3D SPIRAL GALAXY
        ======================================================== */
-    .celamur-screen {{
-      padding: 10px 16px 24px 16px;
+    .celamur-layout {{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       justify-content: space-between;
+      padding: 20px 16px 28px 16px;
     }}
 
-    .celamur-viewport {{
+    .celamur-stage {{
       position: relative;
       width: 100%;
       max-width: 420px;
@@ -441,219 +579,224 @@ html_template = f'''<!DOCTYPE html>
     }}
 
     /* Controls beneath canvas */
-    .celamur-controls {{
+    .celamur-meta {{
       width: 100%;
       max-width: 380px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
-      z-index: 5;
+      gap: 10px;
+      z-index: 10;
     }}
 
-    .play-circle-btn {{
-      width: 48px;
-      height: 48px;
+    .celamur-play-circle {{
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      backdrop-filter: blur(10px);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
       display: flex;
       align-items: center;
       justify-content: center;
       color: #ffffff;
       cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
     }}
-    .play-circle-btn:active {{
-      transform: scale(0.92);
+    .celamur-play-circle:active {{
+      transform: scale(0.9);
     }}
-    .play-circle-btn svg {{
-      width: 20px;
-      height: 20px;
+    .celamur-play-circle svg {{
+      width: 22px;
+      height: 22px;
       fill: currentColor;
     }}
 
-    .celamur-title {{
-      font-family: var(--font-cursive);
-      font-size: 44px;
+    .celamur-signature {{
+      font-family: var(--font-title);
+      font-size: 46px;
       line-height: 1;
       color: #ffffff;
-      text-shadow: 0 0 20px rgba(255, 180, 210, 0.6);
+      text-shadow: 0 0 25px rgba(255, 180, 210, 0.7);
       margin-top: -2px;
     }}
 
-    .celamur-subtitle-1 {{
+    .celamur-sub-1 {{
       font-size: 15px;
-      font-weight: 400;
-      color: #e9dfe8;
+      font-weight: 500;
+      color: #f1e4f0;
       letter-spacing: 0.3px;
     }}
 
-    .celamur-subtitle-2 {{
+    .celamur-sub-2 {{
       font-size: 13px;
-      font-weight: 400;
+      font-weight: 500;
       color: #ff8fab;
-      margin-top: -6px;
+      margin-top: -4px;
     }}
 
-    .celamur-hint {{
+    .celamur-swipe-hint {{
       font-size: 11px;
       color: rgba(255, 255, 255, 0.45);
       letter-spacing: 0.5px;
-      margin-top: -4px;
       display: flex;
       align-items: center;
       gap: 4px;
     }}
 
-    .celamur-actions {{
+    .celamur-buttons-stack {{
       display: flex;
       flex-direction: column;
       gap: 10px;
       width: 100%;
-      margin-top: 4px;
+      margin-top: 6px;
     }}
 
-    .btn-celamur-primary {{
+    .btn-pill-pink {{
       background: var(--accent-gradient);
       color: #ffffff;
       border: none;
-      padding: 14px 28px;
+      padding: 15px 28px;
       border-radius: 9999px;
       font-size: 15px;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
       box-shadow: 0 8px 25px var(--accent-glow);
-      transition: all 0.3s ease;
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
     }}
-    .btn-celamur-primary:active {{
-      transform: scale(0.97);
+    .btn-pill-pink:active {{
+      transform: scale(0.96);
     }}
 
-    .btn-celamur-secondary {{
+    .btn-pill-glass {{
       background: rgba(255, 255, 255, 0.08);
-      color: #eae3ec;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      padding: 13px 28px;
+      color: #ede4f0;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 14px 28px;
       border-radius: 9999px;
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 600;
       cursor: pointer;
-      backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      transition: all 0.25s ease;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
     }}
-    .btn-celamur-secondary:hover {{
-      background: rgba(255, 255, 255, 0.14);
+    .btn-pill-glass:active {{
+      transform: scale(0.96);
     }}
 
     /* ========================================================
        SCREEN 4: ANNIVERSARY TIMER & MEMORIES
        ======================================================== */
-    .finale-container {{
-      max-width: 440px;
+    .finale-layout {{
+      max-width: 420px;
       width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 22px;
+      gap: 20px;
       text-align: center;
     }}
 
-    .finale-badge {{
-      display: inline-block;
+    .finale-header-badge {{
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       padding: 6px 16px;
       border-radius: 9999px;
-      background: rgba(255, 107, 139, 0.12);
-      border: 1px solid rgba(255, 107, 139, 0.3);
-      color: #ff9bb2;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
+      background: rgba(255, 96, 136, 0.12);
+      border: 1px solid rgba(255, 96, 136, 0.3);
+      color: #ff9bb5;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
     }}
 
-    .finale-title {{
-      font-family: var(--font-cursive);
-      font-size: 46px;
+    .finale-headline {{
+      font-family: var(--font-title);
+      font-size: 48px;
       line-height: 1;
       color: #ffffff;
-      text-shadow: 0 0 20px rgba(255, 180, 200, 0.5);
+      text-shadow: 0 0 25px rgba(255, 180, 200, 0.6);
     }}
 
-    /* Live countdown cards */
-    .timer-grid {{
+    /* Modern timer squircle cards */
+    .timer-cards-row {{
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 10px;
       width: 100%;
     }}
 
-    .timer-card {{
+    .timer-squircle {{
       background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 18px;
-      padding: 14px 6px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 14px 4px;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 4px;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
     }}
-    .timer-val {{
+    .timer-num {{
       font-size: 26px;
-      font-weight: 700;
+      font-weight: 800;
       color: #ffffff;
       font-variant-numeric: tabular-nums;
       line-height: 1;
     }}
-    .timer-lbl {{
+    .timer-sub {{
       font-size: 10px;
       color: var(--text-muted);
       text-transform: uppercase;
+      font-weight: 700;
       letter-spacing: 0.8px;
     }}
 
-    /* Verbatim quote requested by user */
-    .verbatim-quote-card {{
-      background: rgba(255, 255, 255, 0.03);
+    /* Verbatim quote in aesthetic handwritten style */
+    .polaroid-quote {{
+      background: rgba(255, 255, 255, 0.04);
       border-left: 3px solid var(--accent-pink);
-      border-radius: 4px 16px 16px 4px;
+      border-radius: 6px 20px 20px 6px;
       padding: 18px 20px;
       font-size: 14px;
       line-height: 1.6;
-      color: #eae1ec;
+      color: #ede2f0;
       font-style: italic;
       text-align: left;
       position: relative;
+      backdrop-filter: blur(15px);
     }}
-    .verbatim-quote-card::before {{
+    .polaroid-quote::before {{
       content: '“';
       position: absolute;
-      top: -12px;
-      left: 12px;
-      font-size: 44px;
-      color: rgba(255, 107, 139, 0.25);
+      top: -10px;
+      left: 10px;
+      font-size: 40px;
+      color: rgba(255, 96, 136, 0.3);
       font-family: serif;
     }}
 
-    .btn-memories {{
+    .btn-memories-open {{
       background: var(--accent-gradient);
       color: #ffffff;
       border: none;
       padding: 16px 32px;
       border-radius: 9999px;
       font-size: 15px;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
       box-shadow: 0 10px 30px var(--accent-glow);
       display: flex;
@@ -661,42 +804,42 @@ html_template = f'''<!DOCTYPE html>
       justify-content: center;
       gap: 10px;
       width: 100%;
-      transition: all 0.3s ease;
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
     }}
-    .btn-memories:active {{
-      transform: scale(0.97);
+    .btn-memories-open:active {{
+      transform: scale(0.96);
     }}
 
     /* ========================================================
-       MEMORIES MODAL / SLIDER
+       MEMORIES MODAL / STORY SLIDER (NO ELEVATOR PHOTO)
        ======================================================== */
-    .memories-modal {{
+    .story-modal {{
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.94);
-      backdrop-filter: blur(25px);
-      -webkit-backdrop-filter: blur(25px);
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
       z-index: 1000;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 20px 16px;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.4s ease;
     }}
-    .memories-modal.open {{
+    .story-modal.open {{
       opacity: 1;
       pointer-events: auto;
     }}
 
-    .modal-close-btn {{
+    .story-close-btn {{
       position: absolute;
-      top: 24px;
-      right: 24px;
-      width: 44px;
-      height: 44px;
+      top: 20px;
+      right: 20px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.15);
@@ -709,26 +852,26 @@ html_template = f'''<!DOCTYPE html>
       z-index: 1010;
       transition: all 0.2s ease;
     }}
-    .modal-close-btn:hover {{
-      background: rgba(255, 255, 255, 0.2);
+    .story-close-btn:active {{
+      transform: scale(0.9);
     }}
 
-    .slider-card {{
-      max-width: 440px;
+    .story-frame {{
+      max-width: 420px;
       width: 100%;
-      background: rgba(20, 16, 24, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 28px;
+      background: rgba(24, 16, 28, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 32px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
     }}
 
-    .slider-media-box {{
+    .story-media-container {{
       width: 100%;
       height: 380px;
-      background: #08060a;
+      background: #000000;
       position: relative;
       display: flex;
       align-items: center;
@@ -736,20 +879,20 @@ html_template = f'''<!DOCTYPE html>
       overflow: hidden;
     }}
 
-    .slider-img {{
+    .story-img {{
       width: 100%;
       height: 100%;
       object-fit: contain;
       transition: opacity 0.3s ease;
     }}
 
-    .slider-video {{
+    .story-video {{
       width: 100%;
       height: 100%;
       object-fit: contain;
     }}
 
-    .slider-info {{
+    .story-bottom-info {{
       padding: 18px 20px 22px 20px;
       display: flex;
       flex-direction: column;
@@ -757,33 +900,43 @@ html_template = f'''<!DOCTYPE html>
       text-align: center;
     }}
 
-    .slider-caption {{
-      font-size: 16px;
-      font-weight: 500;
-      color: #ffffff;
+    .story-date-tag {{
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #ff9bb5;
     }}
 
-    .slider-counter {{
+    .story-caption-text {{
+      font-size: 16px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-top: -6px;
+    }}
+
+    .story-counter-dots {{
       font-size: 12px;
       color: var(--text-muted);
+      font-weight: 600;
       letter-spacing: 1px;
     }}
 
-    .slider-nav {{
+    .story-nav-buttons {{
       display: flex;
       gap: 10px;
       width: 100%;
     }}
 
-    .slider-nav-btn {{
+    .story-btn-nav {{
       flex: 1;
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.12);
-      padding: 12px;
+      padding: 13px;
       border-radius: 9999px;
       color: #ffffff;
       font-size: 13px;
-      font-weight: 500;
+      font-weight: 600;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -791,69 +944,84 @@ html_template = f'''<!DOCTYPE html>
       gap: 6px;
       transition: all 0.2s ease;
     }}
-    .slider-nav-btn:hover {{
-      background: rgba(255, 255, 255, 0.15);
+    .story-btn-nav:active {{
+      background: rgba(255, 255, 255, 0.16);
+      transform: scale(0.98);
     }}
 
-    /* Floating hearts on click */
-    .heart-particle {{
+    /* Physical particle explosions */
+    .burst-particle {{
       position: fixed;
       pointer-events: none;
-      z-index: 9999;
+      z-index: 99999;
       font-size: 20px;
-      animation: floatHeart 1.2s forwards ease-out;
-    }}
-    @keyframes floatHeart {{
-      0% {{ transform: translate(0, 0) scale(0.8); opacity: 1; }}
-      100% {{ transform: translate(var(--tx), var(--ty)) scale(1.4); opacity: 0; }}
+      will-change: transform, opacity;
     }}
   </style>
 </head>
 <body>
 
-  <!-- Ambient background -->
-  <div id="ambientBg"></div>
+  <!-- Background Space Canvas -->
+  <canvas id="spaceStarsCanvas"></canvas>
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
 
   <!-- Audio element -->
   <audio id="bgMusic" src="media/music.mp3" preload="auto" loop></audio>
 
-  <!-- Top audio button -->
-  <button class="audio-btn" id="audioToggleBtn" title="Музыка">
-    <svg id="audioIcon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
-    </svg>
-  </button>
-
-  <!-- ========================================================
-       SCREEN 1: THE PLAYFUL HOOK
-       ======================================================== -->
-  <div class="screen active" id="screen1">
-    <div class="top-dots">
-      <span class="active"></span>
-      <span></span>
-      <span></span>
-      <span></span>
+  <!-- Top Navigation Bar -->
+  <div class="top-nav-bar">
+    <div class="progress-hearts" id="progressHearts">
+      <span class="filled" id="h1">🤍</span>
+      <span id="h2">🤍</span>
+      <span id="h3">🤍</span>
+      <span id="h4">🤍</span>
     </div>
 
-    <div class="hook-container">
-      <div class="avatar-wrapper">
-        <div class="avatar-glow"></div>
-        <img src="media/5462926877434519487.jpg" class="avatar-img" alt="Злата">
+    <button class="music-btn" id="audioToggleBtn" title="Музыка">
+      <svg id="musicIcon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- ========================================================
+       SCREEN 1: THE PLAYFUL HOOK (TRY 'NO' FIRST!)
+       ======================================================== -->
+  <div class="screen active" id="screen1">
+    <div class="hook-card">
+      <!-- Floating Cute Stickers -->
+      <div class="floating-sticker st-1">✨</div>
+      <div class="floating-sticker st-2">💖</div>
+      <div class="floating-sticker st-3">🧸</div>
+      <div class="floating-sticker st-4">🌸</div>
+
+      <div class="avatar-box">
+        <div class="avatar-halo"></div>
+        <img src="media/5462926877434519487.jpg" class="avatar-img-squircle" alt="Злата">
       </div>
 
-      <div class="hook-badge">6 месяцев вместе 🤍</div>
-      <h1 class="hook-title">Злата</h1>
-      <p class="hook-subtitle">Ты меня сильно любишь?</p>
+      <div class="hook-badge-pill">6 месяцев вместе 🤍</div>
+      <h1 class="hook-headline">Злата</h1>
+      <p class="hook-sub">Ты меня сильно любишь?</p>
 
-      <div class="hook-buttons" id="hookButtonsBox">
-        <button class="btn-yes" id="btnYes">
-          <span>ДА, ОЧЕНЬ! ❤️</span>
+      <!-- Forced Try NO Instruction -->
+      <div class="hook-try-no-hint" id="tryNoBanner">
+        <span>👉</span> <span>(попробуй нажать нет 😉)</span>
+      </div>
+
+      <div class="hook-buttons-area" id="hookArea">
+        <!-- YES is initially locked until she tries NO! -->
+        <button class="btn-action-yes locked" id="btnYes" disabled>
+          <span id="btnYesText">Сначала нажми «НЕТ» 🤭</span>
         </button>
-        <button class="btn-no" id="btnNo">
-          <span>НЕТ</span>
+
+        <!-- Dodging NO button -->
+        <button class="btn-action-no" id="btnNo">
+          <span>НЕТ 💔</span>
+          <div class="bubble-reaction" id="bubbleReaction">Ой! Куда это я? 🏃‍♂️</div>
         </button>
       </div>
-      <div class="no-comment" id="noComment"></div>
     </div>
   </div>
 
@@ -861,31 +1029,22 @@ html_template = f'''<!DOCTYPE html>
        SCREEN 2: THE QUIZ
        ======================================================== -->
   <div class="screen" id="screen2">
-    <div class="top-dots">
-      <span></span>
-      <span class="active"></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <div class="quiz-container">
-      <div class="quiz-card">
-        <div class="quiz-header">
-          <span class="quiz-step-title">Тест для Златы 💌</span>
-          <span class="quiz-step-counter" id="quizCounter">1 из 5</span>
+    <div class="quiz-layout">
+      <div class="quiz-card-bubble">
+        <div class="quiz-meta-row">
+          <div class="quiz-tag">
+            <span>💌</span> <span>Тест для любимой</span>
+          </div>
+          <div class="quiz-step-bubble" id="quizStepBadge">Вопрос 1 из 5</div>
         </div>
 
-        <div class="quiz-progress">
-          <div class="quiz-progress-bar" id="quizProgressBar"></div>
+        <div class="quiz-q-title" id="quizQuestionText">Вопрос загружается...</div>
+
+        <div class="quiz-options-grid" id="quizOptionsBox">
+          <!-- Populated dynamically -->
         </div>
 
-        <div class="quiz-question" id="quizQuestionText">Вопрос...</div>
-
-        <div class="quiz-options" id="quizOptionsBox">
-          <!-- Populated by JS -->
-        </div>
-
-        <div class="quiz-hint" id="quizHint"></div>
+        <div class="quiz-reaction-toast" id="quizReactionToast"></div>
       </div>
     </div>
   </div>
@@ -893,38 +1052,31 @@ html_template = f'''<!DOCTYPE html>
   <!-- ========================================================
        SCREEN 3: CELAMUR PORTRAIT & 3D SPIRAL GALAXY
        ======================================================== -->
-  <div class="screen celamur-screen" id="screen3">
-    <div class="top-dots">
-      <span></span>
-      <span></span>
-      <span class="active"></span>
-      <span></span>
-    </div>
-
-    <div class="celamur-viewport" id="celamurViewport">
+  <div class="screen" id="screen3" style="padding: 10px 16px 24px 16px; justify-content: space-between;">
+    <div class="celamur-stage" id="celamurViewport">
       <canvas id="galaxyCanvas"></canvas>
     </div>
 
-    <div class="celamur-controls">
+    <div class="celamur-meta">
       <!-- Circular play button -->
-      <button class="play-circle-btn" id="celamurPlayBtn" title="Слушать">
+      <button class="celamur-play-circle" id="celamurPlayBtn" title="Слушать">
         <svg id="playBtnIcon" viewBox="0 0 24 24">
-          <polygon points="5,3 19,12 5,21" />
+          <polygon points="6,4 19,12 6,20" />
         </svg>
       </button>
 
-      <!-- Signature title -->
-      <div class="celamur-title">Злата</div>
-      <div class="celamur-subtitle-1">ты выглядишь божественно</div>
-      <div class="celamur-subtitle-2">я тебя люблю на всех языках мира</div>
-      <div class="celamur-hint" id="celamurHint">✦ проведи пальцем вбок, и она снова станет звёздами ✦</div>
+      <!-- Signature title & exact subtitles -->
+      <div class="celamur-signature">Злата</div>
+      <div class="celamur-sub-1">ты выглядишь божественно</div>
+      <div class="celamur-sub-2">я тебя люблю на всех языках мира</div>
+      <div class="celamur-swipe-hint" id="celamurHint">✦ проведи пальцем вбок, и она снова станет звёздами ✦</div>
 
-      <!-- Actions -->
-      <div class="celamur-actions">
-        <button class="btn-celamur-primary" id="btnToggleGalaxy">
+      <!-- Action buttons -->
+      <div class="celamur-buttons-stack">
+        <button class="btn-pill-pink" id="btnToggleGalaxy">
           <span id="btnToggleText">Рассыпать в звёзды 🌌</span>
         </button>
-        <button class="btn-celamur-secondary" id="btnGotoFinale">
+        <button class="btn-pill-glass" id="btnGotoFinale">
           <span>Наше время →</span>
         </button>
       </div>
@@ -935,74 +1087,68 @@ html_template = f'''<!DOCTYPE html>
        SCREEN 4: ANNIVERSARY TIMER & MEMORIES
        ======================================================== -->
   <div class="screen" id="screen4">
-    <div class="top-dots">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span class="active"></span>
-    </div>
-
-    <div class="finale-container">
-      <div class="finale-badge">20.05.2026 19:40</div>
-      <h1 class="finale-title">Полгода вместе 🤍</h1>
+    <div class="finale-layout">
+      <div class="finale-header-badge">20.05.2026 19:40 🤍</div>
+      <h1 class="finale-headline">Полгода вместе</h1>
 
       <!-- Countdown -->
-      <div class="timer-grid">
-        <div class="timer-card">
-          <div class="timer-val" id="tDays">00</div>
-          <div class="timer-lbl">Дней</div>
+      <div class="timer-cards-row">
+        <div class="timer-squircle">
+          <div class="timer-num" id="tDays">00</div>
+          <div class="timer-sub">Дней</div>
         </div>
-        <div class="timer-card">
-          <div class="timer-val" id="tHours">00</div>
-          <div class="timer-lbl">Часов</div>
+        <div class="timer-squircle">
+          <div class="timer-num" id="tHours">00</div>
+          <div class="timer-sub">Часов</div>
         </div>
-        <div class="timer-card">
-          <div class="timer-val" id="tMins">00</div>
-          <div class="timer-lbl">Минут</div>
+        <div class="timer-squircle">
+          <div class="timer-num" id="tMins">00</div>
+          <div class="timer-sub">Минут</div>
         </div>
-        <div class="timer-card">
-          <div class="timer-val" id="tSecs">00</div>
-          <div class="timer-lbl">Секунд</div>
+        <div class="timer-squircle">
+          <div class="timer-num" id="tSecs">00</div>
+          <div class="timer-sub">Секунд</div>
         </div>
       </div>
 
-      <!-- Verbatim quote -->
-      <div class="verbatim-quote-card">
+      <!-- Verbatim quote requested by user -->
+      <div class="polaroid-quote">
         «Вот мы уже пол года вместе, прошли много сложностей и неудач, но нас ждёт долгий и счастливый путь.»
       </div>
 
       <!-- Button to open memories -->
-      <button class="btn-memories" id="btnOpenMemories">
+      <button class="btn-memories-open" id="btnOpenMemories">
         <span>Открыть наши воспоминания 📸</span>
       </button>
     </div>
   </div>
 
   <!-- ========================================================
-       MEMORIES MODAL / SLIDER (NO ELEVATOR PHOTO)
+       MEMORIES MODAL / STORY SLIDER (NO ELEVATOR PHOTO)
        ======================================================== -->
-  <div class="memories-modal" id="memoriesModal">
-    <button class="modal-close-btn" id="btnCloseMemories" title="Закрыть">×</button>
+  <div class="story-modal" id="storyModal">
+    <button class="story-close-btn" id="btnCloseMemories" title="Закрыть">×</button>
 
-    <div class="slider-card" id="sliderCard">
-      <div class="slider-media-box" id="sliderMediaBox">
-        <img src="" class="slider-img" id="sliderImg" alt="Воспоминание">
-        <video class="slider-video" id="sliderVideo" controls style="display:none;"></video>
+    <div class="story-frame">
+      <div class="story-media-container" id="storyMediaBox">
+        <img src="" class="story-img" id="storyImg" alt="Воспоминание">
+        <video class="story-video" id="storyVideo" controls playsinline style="display:none;"></video>
       </div>
 
-      <div class="slider-info">
-        <div class="slider-caption" id="sliderCaption">Загрузка...</div>
-        <div class="slider-counter" id="sliderCounter">1 / 18</div>
-        <div class="slider-nav">
-          <button class="slider-nav-btn" id="btnPrevSlide">← Предыдущее</button>
-          <button class="slider-nav-btn" id="btnNextSlide">Следующее →</button>
+      <div class="story-bottom-info">
+        <div class="story-date-tag" id="storyDateTag">Начало истории</div>
+        <div class="story-caption-text" id="storyCaption">Загрузка...</div>
+        <div class="story-counter-dots" id="storyCounter">1 / 18</div>
+        <div class="story-nav-buttons">
+          <button class="story-btn-nav" id="btnPrevSlide">← Назад</button>
+          <button class="story-btn-nav" id="btnNextSlide">Вперёд →</button>
         </div>
       </div>
     </div>
   </div>
 
   <!-- ========================================================
-       JAVASCRIPT ENGINE
+       JAVASCRIPT MOTION & GAMEPLAY ENGINE
        ======================================================== -->
   <script>
     // Embedded Data
@@ -1010,7 +1156,7 @@ html_template = f'''<!DOCTYPE html>
     const GALAXY_PARTICLES = {particles_data};
     const MEMORY_FILES = {memory_files_json};
 
-    // Navigation state
+    // Screen navigation
     let currentScreen = 1;
     function goToScreen(num) {{
       document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -1018,11 +1164,61 @@ html_template = f'''<!DOCTYPE html>
       if (next) {{
         next.classList.add('active');
         currentScreen = num;
+
+        // Update progress hearts
+        for (let i = 1; i <= 4; i++) {{
+          const h = document.getElementById('h' + i);
+          if (h) {{
+            if (i <= num) h.classList.add('filled');
+            else h.classList.remove('filled');
+          }}
+        }}
+
         if (num === 3) {{
           initCelamurCanvas();
         }}
       }}
     }}
+
+    // Ambient space background starfield
+    (function initSpaceStars() {{
+      const canvas = document.getElementById('spaceStarsCanvas');
+      const ctx = canvas.getContext('2d');
+      let w, h;
+      const stars = [];
+
+      function resize() {{
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+      }}
+      resize();
+      window.addEventListener('resize', resize);
+
+      for (let i = 0; i < 90; i++) {{
+        stars.push({{
+          x: Math.random() * w,
+          y: Math.random() * h,
+          r: Math.random() * 1.5 + 0.4,
+          a: Math.random(),
+          speed: Math.random() * 0.015 + 0.005
+        }});
+      }}
+
+      function loop() {{
+        ctx.clearRect(0, 0, w, h);
+        for (let i = 0; i < stars.length; i++) {{
+          const s = stars[i];
+          s.a += s.speed;
+          const alpha = (Math.sin(s.a) + 1) * 0.4 + 0.1;
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255, 230, 245, ${{alpha}})`;
+          ctx.fill();
+        }}
+        requestAnimationFrame(loop);
+      }}
+      loop();
+    }})();
 
     // Audio controls
     const bgMusic = document.getElementById('bgMusic');
@@ -1033,12 +1229,12 @@ html_template = f'''<!DOCTYPE html>
       if (isPlayingAudio) {{
         bgMusic.pause();
         isPlayingAudio = false;
-        audioToggleBtn.style.opacity = '0.5';
+        audioToggleBtn.classList.remove('playing');
         updatePlayIcon(false);
       }} else {{
         bgMusic.play().then(() => {{
           isPlayingAudio = true;
-          audioToggleBtn.style.opacity = '1';
+          audioToggleBtn.classList.add('playing');
           updatePlayIcon(true);
         }}).catch(() => {{}});
       }}
@@ -1048,9 +1244,9 @@ html_template = f'''<!DOCTYPE html>
       const icon = document.getElementById('playBtnIcon');
       if (icon) {{
         if (playing) {{
-          icon.innerHTML = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
+          icon.innerHTML = '<rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/>';
         }} else {{
-          icon.innerHTML = '<polygon points="5,3 19,12 5,21" />';
+          icon.innerHTML = '<polygon points="6,4 19,12 6,20" />';
         }}
       }}
     }}
@@ -1058,61 +1254,133 @@ html_template = f'''<!DOCTYPE html>
     audioToggleBtn.addEventListener('click', toggleMusic);
     document.getElementById('celamurPlayBtn').addEventListener('click', toggleMusic);
 
-    // Screen 1: Dodging NO button
+    // ========================================================
+    // SCREEN 1: THE PLAYFUL DODGING 'NO' MECHANIC
+    // ========================================================
     const btnNo = document.getElementById('btnNo');
     const btnYes = document.getElementById('btnYes');
-    const noComment = document.getElementById('noComment');
-    let noAttempts = 0;
-    const noComments = [
-      "Эй, ну так нечестно! 😜",
-      "Кнопка сломалась, жми ДА! ❤️",
-      "Попробуй поймать! 💫",
-      "Я знаю, что ты меня любишь! 🥰",
-      "Даже не думай нажимать НЕТ! 🤍"
+    const btnYesText = document.getElementById('btnYesText');
+    const tryNoBanner = document.getElementById('tryNoBanner');
+    const bubbleReaction = document.getElementById('bubbleReaction');
+    const hookArea = document.getElementById('hookArea');
+
+    let noEscapeCount = 0;
+    let yesUnlocked = false;
+
+    const noQuotes = [
+      "Ой! Куда это я? 🏃‍♂️💨",
+      "Ты правда думала нажать? 😂",
+      "Хи-хи, не поймаешь! 😜",
+      "Эта кнопка тут для красоты! ✨",
+      "Всё, я устала бегать! Жми ДА! ❤️"
     ];
 
-    function dodgeNo(e) {{
-      noAttempts++;
-      noComment.textContent = noComments[noAttempts % noComments.length];
-      const maxOffset = 110;
-      const rx = (Math.random() - 0.5) * maxOffset * 2;
-      const ry = (Math.random() - 0.5) * maxOffset * 1.5;
-      btnNo.style.transform = `translate(${{rx}}px, ${{ry}}px) scale(${{Math.max(0.7, 1 - noAttempts * 0.05)}})`;
-      spawnHearts(e.clientX || window.innerWidth/2, e.clientY || window.innerHeight/2, 2);
+    function handleNoDodge(e) {{
+      noEscapeCount++;
+      
+      // Show cute reaction bubble
+      bubbleReaction.textContent = noQuotes[Math.min(noEscapeCount - 1, noQuotes.length - 1)];
+      bubbleReaction.classList.add('show');
+      setTimeout(() => bubbleReaction.classList.remove('show'), 1600);
+
+      // Physics leap
+      const areaRect = hookArea.getBoundingClientRect();
+      const maxX = areaRect.width / 2 - 60;
+      const maxY = 45;
+      
+      const rx = (Math.random() - 0.5) * maxX * 2;
+      const ry = (Math.random() - 0.5) * maxY * 2;
+      btnNo.style.transform = `translate(${{rx}}px, ${{ry}}px) scale(${{Math.max(0.75, 1 - noEscapeCount * 0.05)}})`;
+
+      // Spawn burst of mischievous sparkles
+      spawnBurstParticles(e.clientX || areaRect.left + areaRect.width/2, e.clientY || areaRect.top + 70, 3, ['💨', '✨', '😜']);
+
+      // UNLOCK YES BUTTON AFTER AT LEAST 2 TRIES!
+      if (noEscapeCount >= 2 && !yesUnlocked) {{
+        unlockYesButton();
+      }}
     }}
 
-    btnNo.addEventListener('mouseenter', dodgeNo);
+    function unlockYesButton() {{
+      yesUnlocked = true;
+      btnYes.disabled = false;
+      btnYes.classList.remove('locked');
+      btnYes.classList.add('unlocked-pulse');
+      btnYesText.textContent = "ДА, ОЧЕНЬ! ❤️";
+      
+      tryNoBanner.style.background = "rgba(46, 213, 115, 0.15)";
+      tryNoBanner.style.borderColor = "#2ed573";
+      tryNoBanner.style.color = "#2ed573";
+      tryNoBanner.innerHTML = "<span>✨</span> <span>Умничка! Теперь нажимай ДА! 🥰</span>";
+
+      spawnBurstParticles(window.innerWidth / 2, btnYes.getBoundingClientRect().top + 25, 12, ['💖', '✨', '🤍']);
+    }}
+
+    btnNo.addEventListener('mouseenter', handleNoDodge);
     btnNo.addEventListener('touchstart', (e) => {{
       e.preventDefault();
-      dodgeNo(e.touches[0]);
+      handleNoDodge(e.touches[0]);
     }});
-    btnNo.addEventListener('click', dodgeNo);
+    btnNo.addEventListener('click', handleNoDodge);
 
+    // Clicking YES when unlocked
     btnYes.addEventListener('click', (e) => {{
-      spawnHearts(e.clientX, e.clientY, 15);
-      // auto-start music on first user engagement
+      if (!yesUnlocked) {{
+        // Shake hint
+        tryNoBanner.style.animation = 'none';
+        void tryNoBanner.offsetWidth;
+        tryNoBanner.style.animation = 'shakeCard 0.4s ease';
+        return;
+      }}
+
+      // Start music on first active engagement
       if (!isPlayingAudio) toggleMusic();
-      setTimeout(() => goToScreen(2), 500);
+
+      // Confetti burst
+      spawnBurstParticles(e.clientX || window.innerWidth/2, e.clientY || window.innerHeight/2, 25, ['💖', '🤍', '🌸', '✨', '🥰']);
+
+      setTimeout(() => {{
+        goToScreen(2);
+      }}, 550);
     }});
 
-    function spawnHearts(x, y, count) {{
+    // Physics Particle Burst Generator
+    function spawnBurstParticles(x, y, count, symbols) {{
       for (let i = 0; i < count; i++) {{
-        const heart = document.createElement('div');
-        heart.className = 'heart-particle';
-        heart.textContent = ['🤍', '💖', '✨', '🌸', '💫'][Math.floor(Math.random() * 5)];
-        heart.style.left = (x || window.innerWidth/2) + 'px';
-        heart.style.top = (y || window.innerHeight/2) + 'px';
-        const tx = (Math.random() - 0.5) * 200 + 'px';
-        const ty = -(Math.random() * 150 + 50) + 'px';
-        heart.style.setProperty('--tx', tx);
-        heart.style.setProperty('--ty', ty);
-        document.body.appendChild(heart);
-        setTimeout(() => heart.remove(), 1200);
+        const el = document.createElement('div');
+        el.className = 'burst-particle';
+        el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        el.style.left = x + 'px';
+        el.style.top = y + 'px';
+        document.body.appendChild(el);
+
+        const angle = Math.random() * Math.PI * 2;
+        const speed = Math.random() * 8 + 3;
+        let vx = Math.cos(angle) * speed;
+        let vy = Math.sin(angle) * speed - 3;
+        let curX = 0, curY = 0;
+        let opacity = 1.0;
+
+        function step() {{
+          curX += vx;
+          curY += vy;
+          vy += 0.25; // gravity
+          opacity -= 0.025;
+          el.style.transform = `translate(${{curX}}px, ${{curY}}px) scale(${{opacity * 1.2}})`;
+          el.style.opacity = opacity;
+
+          if (opacity > 0) {{
+            requestAnimationFrame(step);
+          }} else {{
+            el.remove();
+          }}
+        }}
+        requestAnimationFrame(step);
       }}
     }}
 
     // ========================================================
-    // Screen 2: Quiz Logic
+    // SCREEN 2: THE PERSONALIZED QUIZ
     // ========================================================
     const quizQuestions = [
       {{
@@ -1151,7 +1419,7 @@ html_template = f'''<!DOCTYPE html>
           "Ищу ключи и телефон 🔑",
           "Одеваюсь 👕",
           "Причёсываюсь перед зеркалом 🪞",
-          "Залипаю в мыслях 💭"
+          "Зависаю в мыслях 💭"
         ],
         ans: 1
       }},
@@ -1170,59 +1438,59 @@ html_template = f'''<!DOCTYPE html>
     let currentQ = 0;
     function renderQuiz() {{
       const q = quizQuestions[currentQ];
-      document.getElementById('quizCounter').textContent = `${{currentQ + 1}} из ${{quizQuestions.length}}`;
-      document.getElementById('quizProgressBar').style.width = `${{((currentQ + 1) / quizQuestions.length) * 100}}%`;
+      document.getElementById('quizStepBadge').textContent = `Вопрос ${{currentQ + 1}} из ${{quizQuestions.length}}`;
       document.getElementById('quizQuestionText').textContent = q.q;
-      document.getElementById('quizHint').textContent = "";
+      document.getElementById('quizReactionToast').textContent = "";
 
       const box = document.getElementById('quizOptionsBox');
       box.innerHTML = '';
       q.opts.forEach((optText, idx) => {{
         const btn = document.createElement('button');
-        btn.className = 'quiz-opt';
+        btn.className = 'quiz-option-pill';
         btn.innerHTML = `<span>${{optText}}</span>`;
-        btn.addEventListener('click', () => handleQuizAnswer(idx, btn));
+        btn.addEventListener('click', () => handleAnswer(idx, btn));
         box.appendChild(btn);
       }});
     }}
 
-    function handleQuizAnswer(selectedIdx, btnElement) {{
+    function handleAnswer(idx, btn) {{
       const q = quizQuestions[currentQ];
-      if (selectedIdx === q.ans) {{
-        btnElement.classList.add('correct');
-        spawnHearts(window.innerWidth/2, window.innerHeight/2, 8);
-        document.getElementById('quizHint').textContent = "В точку! 🥰";
+      if (idx === q.ans) {{
+        btn.classList.add('correct');
+        const rect = btn.getBoundingClientRect();
+        spawnBurstParticles(rect.left + rect.width/2, rect.top + rect.height/2, 10, ['✨', '💖', '🥰']);
+        document.getElementById('quizReactionToast').textContent = "В точку! Ты знаешь меня идеально 🥰";
+
         setTimeout(() => {{
           currentQ++;
           if (currentQ < quizQuestions.length) {{
             renderQuiz();
           }} else {{
-            document.getElementById('quizHint').textContent = "100% совпадение! Ты знаешь меня лучше всех... 💫";
+            document.getElementById('quizReactionToast').textContent = "100% совпадение! А теперь смотри... 💫";
             setTimeout(() => goToScreen(3), 900);
           }}
-        }}, 600);
+        }}, 650);
       }} else {{
-        btnElement.classList.add('wrong');
-        document.getElementById('quizHint').textContent = "Подумай ещё разок, зайка 😉";
-        setTimeout(() => btnElement.classList.remove('wrong'), 600);
+        btn.classList.add('wrong');
+        document.getElementById('quizReactionToast').textContent = "Не-а, мимо! Подумай ещё разок 😉";
+        setTimeout(() => btn.classList.remove('wrong'), 600);
       }}
     }}
     renderQuiz();
 
     // ========================================================
-    // Screen 3: Celamur Interactive Portrait & 3D Spiral Galaxy
+    // SCREEN 3: CELAMUR PORTRAIT & 3D SPIRAL GALAXY
     // ========================================================
     let canvas, ctx;
     let portraitImg = new Image();
     portraitImg.src = CELAMUR_PORTRAIT_B64;
 
-    let isGalaxyMode = false; // Starts in portrait mode
-    let morphProgress = 1.0;  // 1 = portrait, 0 = galaxy
+    let isGalaxyMode = false;
+    let morphProgress = 1.0; // 1 = portrait, 0 = galaxy
     let targetMorph = 1.0;
 
-    // Galaxy 3D Camera & Physics
     let rotY = 0.8;
-    let rotX = 66 * Math.PI / 180; // 66 degree inclination tilt
+    let rotX = 66 * Math.PI / 180;
     let velRotY = 0.003;
     let velRotX = 0;
     let isDragging = false;
@@ -1231,11 +1499,11 @@ html_template = f'''<!DOCTYPE html>
 
     let canvasWidth = 400;
     let canvasHeight = 460;
-    let initializedCanvas = false;
+    let canvasReady = false;
 
     function initCelamurCanvas() {{
-      if (initializedCanvas) return;
-      initializedCanvas = true;
+      if (canvasReady) return;
+      canvasReady = true;
 
       canvas = document.getElementById('galaxyCanvas');
       ctx = canvas.getContext('2d');
@@ -1252,7 +1520,7 @@ html_template = f'''<!DOCTYPE html>
       resize();
       window.addEventListener('resize', resize);
 
-      // Touch / Mouse controls for 3D Galaxy Drag
+      // Mouse drag controls
       canvas.addEventListener('mousedown', (e) => {{
         isDragging = true;
         startX = lastX = e.clientX;
@@ -1267,20 +1535,16 @@ html_template = f'''<!DOCTYPE html>
         velRotY = dx * 0.008;
         velRotX = dy * 0.008;
         rotY += velRotY;
-        rotX = Math.max(0.4, Math.min(1.4, rotX + velRotX));
+        rotX = Math.max(0.35, Math.min(1.45, rotX + velRotX));
       }});
       window.addEventListener('mouseup', (e) => {{
         if (isDragging) {{
-          const totalDx = Math.abs(e.clientX - startX);
-          if (totalDx > 40) {{
-            // Horizontal swipe gesture toggles mode!
-            toggleGalaxyMode();
-          }}
+          if (Math.abs(e.clientX - startX) > 40) toggleGalaxyMode();
         }}
         isDragging = false;
       }});
 
-      // Touch events
+      // Touch drag controls
       canvas.addEventListener('touchstart', (e) => {{
         isDragging = true;
         startX = lastX = e.touches[0].clientX;
@@ -1295,19 +1559,16 @@ html_template = f'''<!DOCTYPE html>
         velRotY = dx * 0.008;
         velRotX = dy * 0.008;
         rotY += velRotY;
-        rotX = Math.max(0.4, Math.min(1.4, rotX + velRotX));
+        rotX = Math.max(0.35, Math.min(1.45, rotX + velRotX));
       }}, {{ passive: true }});
       canvas.addEventListener('touchend', (e) => {{
         if (isDragging) {{
-          const totalDx = Math.abs(lastX - startX);
-          if (totalDx > 40) {{
-            toggleGalaxyMode();
-          }}
+          if (Math.abs(lastX - startX) > 40) toggleGalaxyMode();
         }}
         isDragging = false;
       }});
 
-      requestAnimationFrame(renderLoop);
+      requestAnimationFrame(renderCelamurLoop);
     }}
 
     function toggleGalaxyMode() {{
@@ -1319,35 +1580,34 @@ html_template = f'''<!DOCTYPE html>
       if (isGalaxyMode) {{
         btnText.textContent = "Собрать портрет ✨";
         hint.textContent = "✦ покрути нашу галактику любви ✦";
+        spawnBurstParticles(window.innerWidth/2, window.innerHeight/2, 15, ['🌌', '✨', '💫']);
       }} else {{
         btnText.textContent = "Рассыпать в звёзды 🌌";
         hint.textContent = "✦ проведи пальцем вбок, и она снова станет звёздами ✦";
+        spawnBurstParticles(window.innerWidth/2, window.innerHeight/2, 15, ['🤍', '✨', '💖']);
       }}
     }}
 
     document.getElementById('btnToggleGalaxy').addEventListener('click', toggleGalaxyMode);
     document.getElementById('btnGotoFinale').addEventListener('click', () => goToScreen(4));
 
-    // Render loop
-    function renderLoop() {{
+    function renderCelamurLoop() {{
       if (currentScreen === 3) {{
-        // Ease morph progress
         morphProgress += (targetMorph - morphProgress) * 0.08;
 
-        // Auto rotate galaxy with inertia
         if (!isDragging) {{
           velRotY *= 0.96;
           rotY += 0.004 + velRotY;
           velRotX *= 0.92;
-          rotX = Math.max(0.4, Math.min(1.4, rotX + velRotX));
+          rotX = Math.max(0.35, Math.min(1.45, rotX + velRotX));
         }}
 
-        drawCelamurScene();
+        drawCelamur();
       }}
-      requestAnimationFrame(renderLoop);
+      requestAnimationFrame(renderCelamurLoop);
     }}
 
-    function drawCelamurScene() {{
+    function drawCelamur() {{
       const W = canvasWidth;
       const H = canvasHeight;
       const cx = W / 2;
@@ -1355,36 +1615,35 @@ html_template = f'''<!DOCTYPE html>
 
       ctx.clearRect(0, 0, W, H);
 
-      // 1. Draw glowing Galaxy Core if in galaxy transition
-      const galaxyAlpha = 1.0 - morphProgress;
-      if (galaxyAlpha > 0.02) {{
+      // 1. Glowing Center Nebula
+      const galA = 1.0 - morphProgress;
+      if (galA > 0.02) {{
         ctx.save();
-        ctx.globalAlpha = galaxyAlpha;
-        const coreGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, 140);
-        coreGrad.addColorStop(0, 'rgba(255, 235, 245, 0.85)');
-        coreGrad.addColorStop(0.2, 'rgba(255, 120, 160, 0.45)');
-        coreGrad.addColorStop(0.5, 'rgba(180, 50, 110, 0.18)');
-        coreGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
-        ctx.fillStyle = coreGrad;
+        ctx.globalAlpha = galA;
+        const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, 145);
+        grad.addColorStop(0, 'rgba(255, 235, 245, 0.85)');
+        grad.addColorStop(0.2, 'rgba(255, 110, 160, 0.45)');
+        grad.addColorStop(0.5, 'rgba(160, 40, 100, 0.15)');
+        grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        ctx.fillStyle = grad;
         ctx.beginPath();
-        ctx.ellipse(cx, cy, 150, 55, 0, 0, Math.PI * 2);
+        ctx.ellipse(cx, cy, 155, 58, 0, 0, Math.PI * 2);
         ctx.fill();
         ctx.restore();
       }}
 
-      // 2. Draw Portrait Duotone base photo if in portrait mode
+      // 2. Base Duotone Photo
       if (morphProgress > 0.02 && portraitImg.complete && portraitImg.naturalWidth > 0) {{
         ctx.save();
         ctx.globalAlpha = Math.pow(morphProgress, 1.8) * 0.95;
-        // Draw centered with aspect ratio
         const pw = 300;
         const ph = 390;
         ctx.drawImage(portraitImg, cx - pw/2, cy - ph/2, pw, ph);
         ctx.restore();
       }}
 
-      // 3. Render 3D Galaxy and Portrait Scanline Particles
-      const D = 420; // 3D Camera distance
+      // 3. Scanline & 3D Spiral Typography Particles
+      const D = 420;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
 
@@ -1393,47 +1652,38 @@ html_template = f'''<!DOCTYPE html>
       const cosX = Math.cos(rotX);
       const sinX = Math.sin(rotX);
 
-      // Pre-sort particles by 3D Z depth in galaxy mode
       const len = GALAXY_PARTICLES.length;
       for (let i = 0; i < len; i++) {{
         const p = GALAXY_PARTICLES[i];
 
-        // 3D coordinates in Galaxy
         const gx = p.gx;
         const gy = p.gy;
         const gz = p.gz;
 
-        // Rotate Y
         const x1 = gx * cosY + gz * sinY;
         const z1 = -gx * sinY + gz * cosY;
         const y1 = gy;
 
-        // Rotate X (pitch tilt)
         const y2 = y1 * cosX - z1 * sinX;
         const z2 = y1 * sinX + z1 * cosX;
         const x2 = x1;
 
         const fov = D / (D + z2);
-        const galScreenX = cx + x2 * fov;
-        const galScreenY = cy + y2 * fov;
+        const galX = cx + x2 * fov;
+        const galY = cy + y2 * fov;
 
-        // 2D Portrait coordinates
-        const portScreenX = cx + p.px * 0.95;
-        const portScreenY = cy + p.py * 0.95;
+        const portX = cx + p.px * 0.95;
+        const portY = cy + p.py * 0.95;
 
-        // Interpolated screen position
-        const screenX = galScreenX + (portScreenX - galScreenX) * morphProgress;
-        const screenY = galScreenY + (portScreenY - galScreenY) * morphProgress;
+        const curX = galX + (portX - galX) * morphProgress;
+        const curY = galY + (portY - galY) * morphProgress;
 
-        // Particle typography styling
         let fontSize, alpha, col;
         if (morphProgress > 0.5) {{
-          // Portrait scanline micro-text mode
           fontSize = 7;
           alpha = 0.55 + 0.35 * morphProgress;
           col = `rgba(255, 225, 235, ${{alpha}})`;
         }} else {{
-          // Galaxy 3D starfield mode
           const depthScale = Math.max(0.4, Math.min(1.3, fov));
           fontSize = Math.round(7 * depthScale * p.s);
           const distCore = Math.sqrt(gx*gx + gz*gz);
@@ -1445,15 +1695,15 @@ html_template = f'''<!DOCTYPE html>
         if (alpha > 0.1) {{
           ctx.font = `${{fontSize}}px var(--font-sans)`;
           ctx.fillStyle = col;
-          ctx.fillText(p.t, screenX, screenY);
+          ctx.fillText(p.t, curX, curY);
         }}
       }}
     }}
 
     // ========================================================
-    // Screen 4: Countdown Timer (from 20.05.2026, 19:40)
+    // SCREEN 4: COUNTDOWN TIMER (FROM 20.05.2026, 19:40)
     // ========================================================
-    const anniversaryDate = new Date(2026, 4, 20, 19, 40, 0); // Month 4 is May
+    const anniversaryDate = new Date(2026, 4, 20, 19, 40, 0);
 
     function updateTimer() {{
       const now = new Date();
@@ -1474,23 +1724,24 @@ html_template = f'''<!DOCTYPE html>
     updateTimer();
 
     // ========================================================
-    // Memories Modal / Slider (NO ELEVATOR PHOTO)
+    // MEMORIES STORY MODAL (NO ELEVATOR PHOTO)
     // ========================================================
     let currentSlide = 0;
-    const memoriesModal = document.getElementById('memoriesModal');
-    const sliderImg = document.getElementById('sliderImg');
-    const sliderVideo = document.getElementById('sliderVideo');
-    const sliderCaption = document.getElementById('sliderCaption');
-    const sliderCounter = document.getElementById('sliderCounter');
+    const storyModal = document.getElementById('storyModal');
+    const storyImg = document.getElementById('storyImg');
+    const storyVideo = document.getElementById('storyVideo');
+    const storyCaption = document.getElementById('storyCaption');
+    const storyDateTag = document.getElementById('storyDateTag');
+    const storyCounter = document.getElementById('storyCounter');
 
     function openMemories() {{
-      memoriesModal.classList.add('open');
+      storyModal.classList.add('open');
       showSlide(0);
     }}
 
     function closeMemories() {{
-      memoriesModal.classList.remove('open');
-      sliderVideo.pause();
+      storyModal.classList.remove('open');
+      storyVideo.pause();
     }}
 
     function showSlide(idx) {{
@@ -1499,22 +1750,23 @@ html_template = f'''<!DOCTYPE html>
       currentSlide = idx;
 
       const item = MEMORY_FILES[idx];
-      sliderCaption.textContent = item.caption;
-      sliderCounter.textContent = `${{idx + 1}} / ${{MEMORY_FILES.length}}`;
+      storyDateTag.textContent = item.date || "Наше мгновение";
+      storyCaption.textContent = item.caption;
+      storyCounter.textContent = `${{idx + 1}} / ${{MEMORY_FILES.length}}`;
 
       const isVideo = item.name.toLowerCase().endsWith('.mp4');
       const mediaPath = 'media/' + item.name;
 
       if (isVideo) {{
-        sliderImg.style.display = 'none';
-        sliderVideo.style.display = 'block';
-        sliderVideo.src = mediaPath;
-        sliderVideo.play().catch(() => {{}});
+        storyImg.style.display = 'none';
+        storyVideo.style.display = 'block';
+        storyVideo.src = mediaPath;
+        storyVideo.play().catch(() => {{}});
       }} else {{
-        sliderVideo.pause();
-        sliderVideo.style.display = 'none';
-        sliderImg.style.display = 'block';
-        sliderImg.src = mediaPath;
+        storyVideo.pause();
+        storyVideo.style.display = 'none';
+        storyImg.style.display = 'block';
+        storyImg.src = mediaPath;
       }}
     }}
 
@@ -1523,19 +1775,18 @@ html_template = f'''<!DOCTYPE html>
     document.getElementById('btnPrevSlide').addEventListener('click', () => showSlide(currentSlide - 1));
     document.getElementById('btnNextSlide').addEventListener('click', () => showSlide(currentSlide + 1));
 
-    // Keyboard and touch swipe for slider
     window.addEventListener('keydown', (e) => {{
-      if (!memoriesModal.classList.contains('open')) return;
+      if (!storyModal.classList.contains('open')) return;
       if (e.key === 'ArrowLeft') showSlide(currentSlide - 1);
       if (e.key === 'ArrowRight') showSlide(currentSlide + 1);
       if (e.key === 'Escape') closeMemories();
     }});
 
     let touchStartX = 0;
-    memoriesModal.addEventListener('touchstart', (e) => {{
+    storyModal.addEventListener('touchstart', (e) => {{
       touchStartX = e.touches[0].clientX;
     }}, {{ passive: true }});
-    memoriesModal.addEventListener('touchend', (e) => {{
+    storyModal.addEventListener('touchend', (e) => {{
       const touchEndX = e.changedTouches[0].clientX;
       if (touchEndX - touchStartX > 50) showSlide(currentSlide - 1);
       if (touchStartX - touchEndX > 50) showSlide(currentSlide + 1);
@@ -1548,5 +1799,5 @@ html_template = f'''<!DOCTYPE html>
 with open('d:/подарки пол года/index.html', 'w', encoding='utf-8') as f:
     f.write(html_template)
 
-print('SUCCESS! d:/подарки пол года/index.html generated successfully!')
+print('SUCCESS! d:/подарки пол года/index.html generated successfully with cute motion overhaul!')
 print(f'File size: {os.path.getsize("d:/подарки пол года/index.html")} bytes')
