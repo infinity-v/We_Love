@@ -1458,7 +1458,7 @@ html_template = f'''<!DOCTYPE html>
   </div>
 
   <!-- Background Music Audio -->
-  <audio id="bgMusic" src="media/music.mp3" preload="auto" loop></audio>
+  <audio id="bgMusic" src="media/music.mp3" preload="auto"></audio>
 
   <!-- Top Navigation Bar -->
   <div class="cute-nav-bar">
@@ -1841,6 +1841,31 @@ html_template = f'''<!DOCTYPE html>
     let isPlayingAudio = false;
     let audioFadeInterval = null;
     let musicWasPausedByVideo = false;
+
+    // Romantic Playlist:
+    // 1) Скриптонит — «Это любовь» (с 15-й сек)
+    // 2) АлоэВера — «Морем»
+    const BG_PLAYLIST = [
+      'media/music.mp3',
+      'media/music2.mp3'
+    ];
+    let currentPlaylistIdx = 0;
+
+    // Preload next track for instant transition
+    const preloadNextAudio = new Audio();
+    preloadNextAudio.src = 'media/music2.mp3';
+
+    bgMusic.addEventListener('ended', () => {{
+      currentPlaylistIdx = (currentPlaylistIdx + 1) % BG_PLAYLIST.length;
+      bgMusic.src = BG_PLAYLIST[currentPlaylistIdx];
+      bgMusic.currentTime = 0;
+      if (isPlayingAudio) {{
+        bgMusic.play().then(() => {{
+          musicToggleBtn.classList.add('playing');
+          updatePlayIcons(true);
+        }}).catch(() => {{}});
+      }}
+    }});
 
     function fadeMusicDown(onComplete) {{
       if (!bgMusic) return;
