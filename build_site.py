@@ -145,70 +145,66 @@ html_template = f'''<!DOCTYPE html>
       100% {{ transform: translate(-50%, 45px) scale(1.18); }}
     }}
 
-    /* Ambient floating animated stickers in deep starry background */
+    /* Ambient interactive floating stickers & emojis in deep starry sky */
     .ambient-stickers-container {{
       position: fixed;
       inset: 0;
       pointer-events: none;
-      z-index: 1;
+      z-index: 20;
       overflow: hidden;
     }}
 
-    .floating-bg-sticker {{
+    .floating-bg-item {{
       position: absolute;
+      pointer-events: auto !important;
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+      will-change: transform, opacity;
+      transition: filter 0.2s ease, transform 0.2s ease;
+    }}
+
+    .floating-bg-sticker {{
       width: 68px;
       height: auto;
-      opacity: 0.78;
+      opacity: 0.82;
       filter: drop-shadow(0 4px 16px rgba(255, 90, 150, 0.55));
-      pointer-events: none;
-      will-change: transform, opacity;
     }}
 
     .floating-bg-emoji {{
-      position: absolute;
-      font-size: 24px;
-      opacity: 0.75;
-      filter: drop-shadow(0 0 12px rgba(255, 130, 180, 0.75));
-      pointer-events: none;
-      will-change: transform, opacity;
+      font-size: 26px;
+      opacity: 0.85;
+      filter: drop-shadow(0 0 14px rgba(255, 130, 180, 0.85));
+      line-height: 1;
+      padding: 6px;
     }}
 
-    .fbe-1 {{ left: 12%; bottom: -60px; animation: floatDriftUp1 22s infinite linear 2s; font-size: 26px; }}
-    .fbe-2 {{ right: 15%; bottom: -60px; animation: floatDriftUp2 26s infinite linear 7s; font-size: 22px; }}
-    .fbe-3 {{ left: 28%; bottom: -60px; animation: floatDriftUp3 24s infinite linear 11s; font-size: 25px; }}
-    .fbe-4 {{ right: 30%; bottom: -60px; animation: floatDriftUp1 28s infinite linear 16s; font-size: 24px; }}
-    .fbe-5 {{ left: 50%; bottom: -60px; animation: floatDriftUp2 25s infinite linear 19s; font-size: 28px; }}
-    .fbe-6 {{ right: 8%; bottom: -60px; animation: floatDriftUp3 27s infinite linear 23s; font-size: 23px; }}
+    .floating-bg-item:hover {{
+      transform: scale(1.25);
+      filter: drop-shadow(0 0 22px #ff69b4) brightness(1.25);
+    }}
 
-    .fbs-1 {{
-      left: 6%;
-      bottom: -80px;
-      animation: floatDriftUp1 28s infinite linear;
-    }}
-    .fbs-2 {{
-      right: 7%;
-      bottom: -90px;
-      width: 74px;
-      animation: floatDriftUp2 34s infinite linear 6s;
-    }}
-    .fbs-3 {{
-      left: 20%;
-      bottom: -85px;
-      width: 62px;
-      animation: floatDriftUp3 30s infinite linear 13s;
-    }}
-    .fbs-4 {{
-      right: 22%;
-      bottom: -80px;
-      width: 64px;
-      animation: floatDriftUp1 36s infinite linear 19s;
-    }}
-    .fbs-5 {{
-      left: 42%;
-      bottom: -90px;
-      width: 68px;
-      animation: floatDriftUp2 32s infinite linear 25s;
-    }}
+    .fbe-1  {{ left: 8%;  bottom: -60px; animation: floatDriftUp1 20s infinite linear -3s; font-size: 26px; }}
+    .fbe-2  {{ right: 12%; bottom: -60px; animation: floatDriftUp2 24s infinite linear -9s; font-size: 24px; }}
+    .fbe-3  {{ left: 24%; bottom: -60px; animation: floatDriftUp3 22s infinite linear -5s; font-size: 28px; }}
+    .fbe-4  {{ right: 28%; bottom: -60px; animation: floatDriftUp4 26s infinite linear -14s; font-size: 24px; }}
+    .fbe-5  {{ left: 45%; bottom: -60px; animation: floatDriftUp1 23s infinite linear -8s; font-size: 30px; }}
+    .fbe-6  {{ right: 6%;  bottom: -60px; animation: floatDriftUp2 25s infinite linear -17s; font-size: 24px; }}
+    .fbe-7  {{ left: 60%; bottom: -60px; animation: floatDriftUp3 21s infinite linear -11s; font-size: 25px; }}
+    .fbe-8  {{ left: 16%; bottom: -60px; animation: floatDriftUp4 27s infinite linear -20s; font-size: 27px; }}
+    .fbe-9  {{ right: 40%; bottom: -60px; animation: floatDriftUp1 24s infinite linear -13s; font-size: 26px; }}
+    .fbe-10 {{ left: 75%; bottom: -60px; animation: floatDriftUp2 28s infinite linear -2s; font-size: 28px; }}
+    .fbe-11 {{ left: 35%; bottom: -60px; animation: floatDriftUp3 25s infinite linear -16s; font-size: 24px; }}
+    .fbe-12 {{ right: 20%; bottom: -60px; animation: floatDriftUp4 22s infinite linear -7s; font-size: 26px; }}
+
+    .fbs-1 {{ left: 5%;  bottom: -80px; animation: floatDriftUp1 27s infinite linear -4s; }}
+    .fbs-2 {{ right: 6%; bottom: -90px; width: 72px; animation: floatDriftUp2 32s infinite linear -12s; }}
+    .fbs-3 {{ left: 18%; bottom: -85px; width: 62px; animation: floatDriftUp3 29s infinite linear -18s; }}
+    .fbs-4 {{ right: 22%; bottom: -80px; width: 64px; animation: floatDriftUp4 34s infinite linear -8s; }}
+    .fbs-5 {{ left: 40%; bottom: -90px; width: 68px; animation: floatDriftUp1 30s infinite linear -22s; }}
+    .fbs-6 {{ right: 48%; bottom: -85px; width: 62px; animation: floatDriftUp2 31s infinite linear -15s; }}
 
     @keyframes floatDriftUp1 {{
       0% {{
@@ -257,6 +253,79 @@ html_template = f'''<!DOCTYPE html>
       85% {{ opacity: 0.72; }}
       100% {{
         transform: translateY(-112vh) translateX(-30px) rotate(-8deg) scale(0.88);
+        opacity: 0;
+      }}
+    }}
+
+    @keyframes floatDriftUp4 {{
+      0% {{
+        transform: translateY(0) translateX(0) rotate(0deg) scale(0.92);
+        opacity: 0;
+      }}
+      12% {{ opacity: 0.8; }}
+      50% {{
+        transform: translateY(-55vh) translateX(-28px) rotate(-8deg) scale(1.05);
+        opacity: 0.85;
+      }}
+      88% {{ opacity: 0.76; }}
+      100% {{
+        transform: translateY(-115vh) translateX(20px) rotate(6deg) scale(0.9);
+        opacity: 0;
+      }}
+    }}
+
+    /* Gentle romantic popping burst */
+    .cute-burst-layer {{
+      position: fixed;
+      pointer-events: none;
+      z-index: 2500;
+      width: 0;
+      height: 0;
+    }}
+
+    .burst-glow-ring {{
+      position: absolute;
+      top: -24px;
+      left: -24px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 182, 217, 0.95);
+      box-shadow: 0 0 24px rgba(255, 117, 140, 0.8), inset 0 0 12px rgba(255, 255, 255, 0.7);
+      animation: cuteRingExpand 0.5s ease-out forwards;
+      pointer-events: none;
+    }}
+    @keyframes cuteRingExpand {{
+      0% {{ transform: scale(0.2); opacity: 1; }}
+      100% {{ transform: scale(3.2); opacity: 0; }}
+    }}
+
+    .burst-particle-char {{
+      position: absolute;
+      font-size: 18px;
+      pointer-events: none;
+      user-select: none;
+      will-change: transform, opacity;
+      animation: cuteParticleFly 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }}
+
+    .burst-particle-dot {{
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      pointer-events: none;
+      will-change: transform, opacity;
+      animation: cuteParticleFly 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }}
+
+    @keyframes cuteParticleFly {{
+      0% {{
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+        opacity: 1;
+      }}
+      100% {{
+        transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0) rotate(var(--rot));
         opacity: 0;
       }}
     }}
@@ -872,17 +941,18 @@ html_template = f'''<!DOCTYPE html>
     }}
 
     .btn-marshmallow-glass {{
-      background: rgba(255, 255, 255, 0.08);
-      color: #ede4f0;
-      border: 1.5px solid rgba(255, 255, 255, 0.15);
+      background: linear-gradient(135deg, rgba(255, 107, 129, 0.4) 0%, rgba(224, 86, 253, 0.35) 100%);
+      color: #ffffff;
+      border: 1.8px solid rgba(255, 205, 235, 0.8);
       padding: 14px 28px;
       border-radius: 9999px;
-      font-size: 14px;
-      font-weight: 700;
+      font-size: 15px;
+      font-weight: 800;
       cursor: pointer;
       backdrop-filter: blur(15px);
       -webkit-backdrop-filter: blur(15px);
-      transition: all 0.2s ease;
+      box-shadow: 0 4px 22px rgba(255, 107, 129, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.5);
+      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -890,6 +960,7 @@ html_template = f'''<!DOCTYPE html>
     }}
     .btn-marshmallow-glass:active {{
       transform: scale(0.97);
+      box-shadow: 0 2px 10px rgba(255, 107, 129, 0.3);
     }}
 
     /* ========================================================
@@ -913,22 +984,57 @@ html_template = f'''<!DOCTYPE html>
     }}
 
     .btn-back-galaxy {{
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      padding: 6px 14px;
+      background: linear-gradient(135deg, rgba(224, 86, 253, 0.5) 0%, rgba(255, 107, 129, 0.55) 50%, rgba(108, 92, 231, 0.5) 100%);
+      border: 2px solid rgba(255, 220, 245, 0.95);
+      padding: 11px 22px;
       border-radius: 9999px;
-      color: #f7eef7;
-      font-size: 12px;
-      font-weight: 700;
+      color: #ffffff;
+      font-size: 14.5px;
+      font-weight: 800;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      transition: all 0.2s ease;
+      gap: 7px;
+      box-shadow: 0 4px 22px rgba(224, 86, 253, 0.55), 0 0 16px rgba(255, 107, 129, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+      animation: galaxyBtnGlow 2.8s infinite ease-in-out;
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
     }}
-    .btn-back-galaxy:active {{
-      transform: scale(0.95);
-      background: rgba(255, 255, 255, 0.15);
+    .btn-back-galaxy:hover, .btn-back-galaxy:active {{
+      transform: scale(1.06);
+      box-shadow: 0 6px 30px rgba(224, 86, 253, 0.75), 0 0 24px rgba(255, 107, 129, 0.6);
+    }}
+    @keyframes galaxyBtnGlow {{
+      0%, 100% {{
+        box-shadow: 0 4px 20px rgba(224, 86, 253, 0.5), 0 0 15px rgba(255, 107, 129, 0.35);
+        transform: scale(1);
+      }}
+      50% {{
+        box-shadow: 0 6px 28px rgba(224, 86, 253, 0.8), 0 0 24px rgba(108, 92, 231, 0.65);
+        transform: scale(1.03);
+      }}
+    }}
+
+    .btn-prominent-galaxy {{
+      width: 100%;
+      background: linear-gradient(135deg, #6c5ce7 0%, #e056fd 50%, #ff758c 100%);
+      border: 2px solid rgba(255, 255, 255, 0.65);
+      padding: 15px 22px;
+      border-radius: 9999px;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 8px 30px rgba(108, 92, 231, 0.45), 0 4px 15px rgba(224, 86, 253, 0.4);
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+      margin-top: 6px;
+    }}
+    .btn-prominent-galaxy:active {{
+      transform: scale(0.97);
+      box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
     }}
 
     .finale-cute-badge {{
@@ -1135,10 +1241,38 @@ html_template = f'''<!DOCTYPE html>
       border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }}
 
+    .story-expand-pill {{
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(25, 6, 32, 0.78);
+      border: 1px solid rgba(255, 195, 230, 0.55);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color: #ffffff;
+      padding: 7px 14px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      z-index: 25;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }}
+    .story-expand-pill:hover, .story-expand-pill:active {{
+      transform: scale(1.05);
+      background: rgba(255, 82, 123, 0.65);
+      box-shadow: 0 4px 20px rgba(255, 82, 123, 0.5);
+    }}
+
     .story-img-element {{
       width: 100%;
       height: 100%;
       object-fit: contain;
+      cursor: zoom-in;
       transition: opacity 0.25s ease;
     }}
 
@@ -1146,6 +1280,143 @@ html_template = f'''<!DOCTYPE html>
       width: 100%;
       height: 100%;
       object-fit: contain;
+    }}
+
+    /* ========================================================
+       FULLSCREEN MEDIA LIGHTBOX (For Edge-to-Edge viewing of Photos & Videos)
+       ======================================================== */
+    .fullscreen-lightbox-modal {{
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 2, 14, 0.97);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      z-index: 3000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 14px 24px 14px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }}
+    .fullscreen-lightbox-modal.active {{
+      opacity: 1;
+      pointer-events: auto;
+    }}
+
+    .lightbox-top-bar {{
+      width: 100%;
+      max-width: 800px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 12px;
+      z-index: 3010;
+    }}
+
+    .lightbox-info-badge {{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 185, 225, 0.3);
+      font-size: 13px;
+      font-weight: 700;
+      color: #ff9bb5;
+    }}
+
+    .lightbox-close-icon-btn {{
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 185, 225, 0.4);
+      color: #ffffff;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }}
+    .lightbox-close-icon-btn:active {{
+      transform: scale(0.9);
+      background: rgba(255, 82, 123, 0.5);
+    }}
+
+    .lightbox-media-viewport {{
+      flex: 1;
+      width: 100%;
+      max-width: 900px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      margin: 8px 0;
+    }}
+
+    .lightbox-full-img {{
+      max-width: 98vw;
+      max-height: 75vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 18px;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 90, 150, 0.2);
+      transition: transform 0.2s ease;
+    }}
+
+    .lightbox-full-video {{
+      max-width: 98vw;
+      max-height: 75vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 18px;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8);
+    }}
+
+    .lightbox-bottom-bar {{
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      z-index: 3010;
+    }}
+
+    .lightbox-caption-text {{
+      flex: 1;
+      text-align: center;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 800;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+    }}
+
+    .lightbox-arrow-btn {{
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 185, 225, 0.35);
+      padding: 10px 18px;
+      border-radius: 9999px;
+      color: #ffffff;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }}
+    .lightbox-arrow-btn:active {{
+      transform: scale(0.94);
+      background: rgba(255, 82, 123, 0.4);
     }}
 
     .story-details-footer {{
@@ -1296,21 +1567,29 @@ html_template = f'''<!DOCTYPE html>
   <div class="blob-ambient blob-middle"></div>
   <div class="blob-ambient blob-bottom"></div>
 
-  <!-- Ambient floating animated stickers & crisp cute hearts/emojis in starry sky -->
-  <div class="ambient-stickers-container">
-    <img src="media/stickers/sleepy.gif" class="floating-bg-sticker fbs-1" alt="Cat">
-    <img src="media/stickers/sparkle.gif" class="floating-bg-sticker fbs-2" alt="Cat">
-    <img src="media/stickers/cat_love.gif" class="floating-bg-sticker fbs-3" alt="Cat">
-    <img src="media/stickers/hello.gif" class="floating-bg-sticker fbs-4" alt="Cat">
-    <img src="media/stickers/relaxed.gif" class="floating-bg-sticker fbs-5" alt="Cat">
+  <!-- Ambient interactive floating stickers & crisp cute hearts/emojis in starry sky -->
+  <div class="ambient-stickers-container" id="ambientContainer">
+    <!-- Floating stickers (Mochi cats) -->
+    <img src="media/stickers/sleepy.gif" class="floating-bg-item floating-bg-sticker fbs-1" alt="Cat" data-type="sticker">
+    <img src="media/stickers/sparkle.gif" class="floating-bg-item floating-bg-sticker fbs-2" alt="Cat" data-type="sticker">
+    <img src="media/stickers/cat_love.gif" class="floating-bg-item floating-bg-sticker fbs-3" alt="Cat" data-type="sticker">
+    <img src="media/stickers/hello.gif" class="floating-bg-item floating-bg-sticker fbs-4" alt="Cat" data-type="sticker">
+    <img src="media/stickers/relaxed.gif" class="floating-bg-item floating-bg-sticker fbs-5" alt="Cat" data-type="sticker">
+    <img src="media/stickers/flower.gif" class="floating-bg-item floating-bg-sticker fbs-6" alt="Cat" data-type="sticker">
 
-    <!-- Clear, crisp floating pastel emojis & hearts -->
-    <span class="floating-bg-emoji fbe-1">💖</span>
-    <span class="floating-bg-emoji fbe-2">🌸</span>
-    <span class="floating-bg-emoji fbe-3">🍓</span>
-    <span class="floating-bg-emoji fbe-4">✨</span>
-    <span class="floating-bg-emoji fbe-5">💕</span>
-    <span class="floating-bg-emoji fbe-6">🎀</span>
+    <!-- Clear, crisp floating pastel emojis & hearts (interactive touch pops) -->
+    <span class="floating-bg-item floating-bg-emoji fbe-1" data-type="emoji">💖</span>
+    <span class="floating-bg-item floating-bg-emoji fbe-2" data-type="emoji">🌸</span>
+    <span class="floating-bg-item floating-bg-emoji fbe-3" data-type="emoji">🍓</span>
+    <span class="floating-bg-item floating-bg-emoji fbe-4" data-type="emoji">✨</span>
+    <span class="floating-bg-item floating-bg-emoji fbe-5" data-type="emoji">💕</span>
+    <span class="floating-bg-item floating-bg-emoji fbe-6" data-type="emoji">🎀</span>
+    <span class="floating-bg-item floating-bg-emoji fbe-7" data-type="emoji">🧸</span>
+    <span class="floating-bg-item floating-bg-emoji fbe-8" data-type="emoji">🍭</span>
+    <span class="floating-bg-item floating-bg-emoji fbe-9" data-type="emoji">💫</span>
+    <span class="floating-bg-item floating-bg-emoji fbe-10" data-type="emoji">🤍</span>
+    <span class="floating-bg-item floating-bg-emoji fbe-11" data-type="emoji">🧁</span>
+    <span class="floating-bg-item floating-bg-emoji fbe-12" data-type="emoji">🐱</span>
   </div>
 
   <!-- Background Music Audio -->
@@ -1433,7 +1712,7 @@ html_template = f'''<!DOCTYPE html>
           <span id="btnToggleText">Собрать портрет ✨</span>
         </button>
         <button class="btn-marshmallow-glass" id="btnGotoFinale">
-          <span>Наше время →</span>
+          <span>Полгода вместе 💖 →</span>
         </button>
       </div>
     </div>
@@ -1447,7 +1726,7 @@ html_template = f'''<!DOCTYPE html>
       <!-- Top navigation with return to galaxy -->
       <div class="finale-top-nav-row">
         <button class="btn-back-galaxy" id="btnBackToGalaxy">
-          <span>← Галактика 🌌</span>
+          <span>← Наша Галактика 🌌</span>
         </button>
         <div class="finale-cute-badge">20.05.2026 19:40 🤍</div>
       </div>
@@ -1485,6 +1764,11 @@ html_template = f'''<!DOCTYPE html>
       <button class="btn-memories-trigger" id="btnOpenMemories">
         <span>Открыть наш альбом воспоминаний 📸</span>
       </button>
+
+      <!-- Prominent secondary return to galaxy button -->
+      <button class="btn-prominent-galaxy" id="btnBackToGalaxyBottom">
+        <span>🌌 Вернуться в нашу 3D Галактику ✨</span>
+      </button>
     </div>
   </div>
 
@@ -1499,7 +1783,15 @@ html_template = f'''<!DOCTYPE html>
       <div class="story-segments-header" id="storySegmentsBox"></div>
 
       <div class="story-viewport-box" id="storyViewport">
-        <img src="" class="story-img-element" id="storyImg" alt="Воспоминание">
+        <!-- Floating Expand to Fullscreen Pill Button -->
+        <button class="story-expand-pill" id="btnExpandStoryMedia" title="Развернуть во весь экран">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+          </svg>
+          <span id="expandBtnLabel">На весь экран</span>
+        </button>
+
+        <img src="" class="story-img-element" id="storyImg" alt="Воспоминание" title="Нажми на фото, чтобы развернуть во весь экран">
         <video class="story-video-element" id="storyVideo" controls playsinline style="display:none;"></video>
       </div>
 
@@ -1515,6 +1807,32 @@ html_template = f'''<!DOCTYPE html>
           <button class="story-nav-btn" id="btnNextSlide">Вперёд →</button>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       FULLSCREEN MEDIA LIGHTBOX (For edge-to-edge photos & videos)
+       ======================================================== -->
+  <div class="fullscreen-lightbox-modal" id="fullscreenLightboxModal">
+    <!-- Top toolbar -->
+    <div class="lightbox-top-bar">
+      <div class="lightbox-info-badge">
+        <span id="lbCounter">1 / 18</span> • <span id="lbDate">Начало истории</span>
+      </div>
+      <button class="lightbox-close-icon-btn" id="btnCloseLightbox" title="Закрыть (Esc)">✕</button>
+    </div>
+
+    <!-- Center media container -->
+    <div class="lightbox-media-viewport" id="lightboxViewport">
+      <img src="" class="lightbox-full-img" id="lightboxImg" alt="Фото воспоминание">
+      <video class="lightbox-full-video" id="lightboxVideo" controls playsinline style="display:none;"></video>
+    </div>
+
+    <!-- Bottom caption and controls -->
+    <div class="lightbox-bottom-bar">
+      <button class="lightbox-arrow-btn" id="btnLbPrev" title="Предыдущее">← Назад</button>
+      <div class="lightbox-caption-text" id="lbCaption">Подпись к фото</div>
+      <button class="lightbox-arrow-btn" id="btnLbNext" title="Следующее">Вперёд →</button>
     </div>
   </div>
 
@@ -1649,26 +1967,223 @@ html_template = f'''<!DOCTYPE html>
       loop();
     }})();
 
-    // Gentle heart sparkle touch on empty space
+    // Gentle heart sparkle touch on empty space (skips floating items so they trigger cute pop)
     window.addEventListener('pointerdown', (e) => {{
-      if (e.target.closest('button') || e.target.closest('.story-viewport-box') || e.target.closest('input')) return;
+      if (e.target.closest('button') || e.target.closest('.story-viewport-box') || e.target.closest('input') || e.target.closest('.floating-bg-item')) return;
       spawnBurstParticles(e.clientX, e.clientY, 4, ['✨', '💖', '🌸', '🤍', '🐾']);
     }});
 
-    // Background Audio Controls
+    // ========================================================
+    // CUTE INTERACTIVE EMOJI POP & SOUND ENGINE
+    // ========================================================
+    function playCutePopChime() {{
+      try {{
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) return;
+        if (!window.__cuteAudioCtx) {{
+          window.__cuteAudioCtx = new AudioCtx();
+        }}
+        const ctx = window.__cuteAudioCtx;
+        if (ctx.state === 'suspended') ctx.resume();
+        
+        const now = ctx.currentTime;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(520, now);
+        osc.frequency.exponentialRampToValueAtTime(880, now + 0.09);
+        
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.14);
+        
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        
+        osc.start(now);
+        osc.stop(now + 0.15);
+      }} catch(e) {{}}
+    }}
+
+    function popFloatingItem(el, e) {{
+      if (el.dataset.popping === 'true') return;
+      el.dataset.popping = 'true';
+      
+      if (e) {{
+        e.preventDefault();
+        e.stopPropagation();
+      }}
+
+      playCutePopChime();
+      if (navigator.vibrate) {{
+        try {{ navigator.vibrate(15); }} catch(err) {{}}
+      }}
+
+      const rect = el.getBoundingClientRect();
+      const cx = (e && e.clientX) ? e.clientX : (rect.left + rect.width / 2);
+      const cy = (e && e.clientY) ? e.clientY : (rect.top + rect.height / 2);
+
+      // Animate item popping
+      el.style.animationPlayState = 'paused';
+      el.style.transition = 'transform 0.12s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.15s ease, filter 0.12s ease';
+      el.style.transform = 'scale(1.55) rotate(12deg)';
+      el.style.filter = 'brightness(1.8) drop-shadow(0 0 25px #ff75a0)';
+
+      setTimeout(() => {{
+        el.style.opacity = '0';
+        el.style.transform = 'scale(0.2) rotate(40deg)';
+      }}, 100);
+
+      // Create beautiful gentle romantic burst particles
+      createCuteBurst(cx, cy, el.textContent || '💖');
+
+      // Respawn after 2.5 - 4 seconds at the bottom with a fresh random position
+      setTimeout(() => {{
+        respawnFloatingItem(el);
+      }}, 2500 + Math.random() * 1500);
+    }}
+
+    function createCuteBurst(cx, cy, baseChar) {{
+      const burstBox = document.createElement('div');
+      burstBox.className = 'cute-burst-layer';
+      burstBox.style.left = cx + 'px';
+      burstBox.style.top = cy + 'px';
+      document.body.appendChild(burstBox);
+
+      // Expanding gentle glow ring
+      const ring = document.createElement('div');
+      ring.className = 'burst-glow-ring';
+      burstBox.appendChild(ring);
+
+      const particleTypes = [
+        '💖', '💕', '✨', '🌸', '⭐', '🤍', '💫',
+        'sparkle-dot', 'sparkle-dot', 'sparkle-dot'
+      ];
+      const colors = ['#ff758c', '#ff85a2', '#ffd1dc', '#e056fd', '#ffeaa7', '#70a1ff'];
+
+      const count = 10;
+      for (let i = 0; i < count; i++) {{
+        const p = document.createElement('div');
+        const pType = particleTypes[i % particleTypes.length];
+        
+        if (pType === 'sparkle-dot') {{
+          p.className = 'burst-particle-dot';
+          p.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+          p.style.boxShadow = `0 0 10px ${{p.style.backgroundColor}}`;
+        }} else {{
+          p.className = 'burst-particle-char';
+          p.textContent = pType;
+        }}
+
+        const angle = (i / count) * 2 * Math.PI + (Math.random() - 0.5) * 0.4;
+        const dist = 35 + Math.random() * 55;
+        const destX = Math.cos(angle) * dist;
+        const destY = Math.sin(angle) * dist - 10;
+        const rot = (Math.random() - 0.5) * 200;
+
+        p.style.setProperty('--dx', `${{destX}}px`);
+        p.style.setProperty('--dy', `${{destY}}px`);
+        p.style.setProperty('--rot', `${{rot}}deg`);
+        burstBox.appendChild(p);
+      }}
+
+      setTimeout(() => {{
+        burstBox.remove();
+      }}, 750);
+    }}
+
+    const EMOJI_POOL = ['💖', '🌸', '🍓', '✨', '💕', '🎀', '🧸', '🍭', '💫', '🤍', '🧁', '🐱', '⭐', '🌺', '🐾', '💌'];
+
+    function respawnFloatingItem(el) {{
+      el.dataset.popping = 'false';
+      el.style.transition = 'none';
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(0) scale(0.9)';
+      el.style.filter = '';
+      el.style.bottom = '-70px';
+      el.style.left = (Math.random() * 82 + 8) + '%';
+
+      if (el.dataset.type === 'emoji') {{
+        el.textContent = EMOJI_POOL[Math.floor(Math.random() * EMOJI_POOL.length)];
+      }}
+
+      void el.offsetWidth;
+      el.style.animationPlayState = 'running';
+      el.style.transition = 'opacity 0.8s ease';
+      el.style.opacity = el.dataset.type === 'sticker' ? '0.82' : '0.85';
+    }}
+
+    // Attach listeners to all floating items
+    document.querySelectorAll('.floating-bg-item').forEach(el => {{
+      el.addEventListener('pointerdown', (e) => popFloatingItem(el, e));
+    }});
+
+    // ========================================================
+    // BACKGROUND AUDIO CONTROLS & SMOOTH FADE FOR VIDEO
+    // ========================================================
     const bgMusic = document.getElementById('bgMusic');
     const musicToggleBtn = document.getElementById('musicToggleBtn');
     let isPlayingAudio = false;
+    let audioFadeInterval = null;
+    let musicWasPausedByVideo = false;
+
+    function fadeMusicDown(onComplete) {{
+      if (!bgMusic) return;
+      clearInterval(audioFadeInterval);
+      if (!isPlayingAudio || bgMusic.paused) {{
+        musicWasPausedByVideo = false;
+        return;
+      }}
+      musicWasPausedByVideo = true;
+      const startVol = bgMusic.volume;
+      const steps = 15;
+      const stepTime = 30; // 450ms total
+      let step = 0;
+      audioFadeInterval = setInterval(() => {{
+        step++;
+        const progress = step / steps;
+        bgMusic.volume = Math.max(0, startVol * (1 - progress));
+        if (progress >= 1) {{
+          clearInterval(audioFadeInterval);
+          bgMusic.pause();
+          if (onComplete) onComplete();
+        }}
+      }}, stepTime);
+    }}
+
+    function fadeMusicUp() {{
+      if (!bgMusic || !musicWasPausedByVideo || !isPlayingAudio) return;
+      clearInterval(audioFadeInterval);
+      musicWasPausedByVideo = false;
+      bgMusic.volume = 0;
+      bgMusic.play().then(() => {{
+        const steps = 20;
+        const stepTime = 35; // 700ms total
+        let step = 0;
+        audioFadeInterval = setInterval(() => {{
+          step++;
+          const progress = step / steps;
+          bgMusic.volume = Math.min(1, progress);
+          if (progress >= 1) {{
+            clearInterval(audioFadeInterval);
+            bgMusic.volume = 1;
+          }}
+        }}, stepTime);
+      }}).catch(() => {{}});
+    }}
 
     function toggleMusic() {{
       if (isPlayingAudio) {{
         bgMusic.pause();
         isPlayingAudio = false;
+        musicWasPausedByVideo = false;
         musicToggleBtn.classList.remove('playing');
         updatePlayIcons(false);
       }} else {{
+        bgMusic.volume = 1;
         bgMusic.play().then(() => {{
           isPlayingAudio = true;
+          musicWasPausedByVideo = false;
           musicToggleBtn.classList.add('playing');
           updatePlayIcons(true);
         }}).catch(() => {{}});
@@ -2259,9 +2774,18 @@ html_template = f'''<!DOCTYPE html>
       preloadMedia(0);
     }}
 
+    // Video & Audio hooks for smooth music fading
+    storyVideo.addEventListener('play', () => fadeMusicDown());
+    storyVideo.addEventListener('pause', () => {{
+      if (storyVideo.style.display !== 'none' && !storyVideo.ended) return;
+      fadeMusicUp();
+    }});
+    storyVideo.addEventListener('ended', () => fadeMusicUp());
+
     function closeMemories() {{
       storyModal.classList.remove('active');
       storyVideo.pause();
+      fadeMusicUp();
     }}
 
     function showSlide(idx) {{
@@ -2298,17 +2822,118 @@ html_template = f'''<!DOCTYPE html>
         storyImg.style.display = 'none';
         storyVideo.style.display = 'block';
         storyVideo.src = mediaPath;
+        fadeMusicDown();
         storyVideo.play().catch(() => {{}});
       }} else {{
         storyVideo.pause();
         storyVideo.style.display = 'none';
         storyImg.style.display = 'block';
         storyImg.src = mediaPath;
+        fadeMusicUp();
       }}
 
       // Preload next items
       preloadMedia(idx);
     }}
+
+    // ========================================================
+    // FULLSCREEN MEDIA LIGHTBOX (Photos & Videos)
+    // ========================================================
+    const fullscreenLightboxModal = document.getElementById('fullscreenLightboxModal');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxVideo = document.getElementById('lightboxVideo');
+    const lbCounter = document.getElementById('lbCounter');
+    const lbDate = document.getElementById('lbDate');
+    const lbCaption = document.getElementById('lbCaption');
+
+    lightboxVideo.addEventListener('play', () => fadeMusicDown());
+    lightboxVideo.addEventListener('pause', () => {{
+      if (lightboxVideo.style.display !== 'none' && !lightboxVideo.ended) return;
+      if (!fullscreenLightboxModal.classList.contains('active')) fadeMusicUp();
+    }});
+    lightboxVideo.addEventListener('ended', () => fadeMusicUp());
+
+    function openLightbox(idx) {{
+      if (idx === undefined) idx = currentSlide;
+      fullscreenLightboxModal.classList.add('active');
+      showLightboxSlide(idx);
+    }}
+
+    function closeLightbox() {{
+      fullscreenLightboxModal.classList.remove('active');
+      lightboxVideo.pause();
+      // If returning to photo slide in stories, resume music
+      const curItem = MEMORY_FILES[currentSlide];
+      if (curItem && !curItem.name.toLowerCase().endsWith('.mp4')) {{
+        fadeMusicUp();
+      }}
+    }}
+
+    function showLightboxSlide(idx) {{
+      if (idx < 0) idx = MEMORY_FILES.length - 1;
+      if (idx >= MEMORY_FILES.length) idx = 0;
+      currentSlide = idx;
+
+      // Sync story modal slide too
+      showSlide(idx);
+
+      const item = MEMORY_FILES[idx];
+      lbCounter.textContent = `${{idx + 1}} / ${{MEMORY_FILES.length}}`;
+      lbDate.textContent = item.date || "Наше мгновение";
+      lbCaption.textContent = item.caption;
+
+      const isVideo = item.name.toLowerCase().endsWith('.mp4');
+      const mediaPath = 'media/' + item.name;
+
+      if (isVideo) {{
+        lightboxImg.style.display = 'none';
+        lightboxVideo.style.display = 'block';
+        lightboxVideo.src = mediaPath;
+        storyVideo.pause();
+        fadeMusicDown();
+        lightboxVideo.play().catch(() => {{}});
+      }} else {{
+        lightboxVideo.pause();
+        lightboxVideo.style.display = 'none';
+        lightboxImg.style.display = 'block';
+        lightboxImg.src = mediaPath;
+        fadeMusicUp();
+      }}
+    }}
+
+    function expandCurrentMedia() {{
+      const item = MEMORY_FILES[currentSlide];
+      if (!item) return;
+      const isVideo = item.name.toLowerCase().endsWith('.mp4');
+      
+      if (isVideo) {{
+        // Native video fullscreen request
+        if (storyVideo.requestFullscreen) {{
+          storyVideo.requestFullscreen().catch(() => openLightbox(currentSlide));
+        }} else if (storyVideo.webkitEnterFullscreen) {{
+          storyVideo.webkitEnterFullscreen();
+        }} else if (storyVideo.webkitRequestFullscreen) {{
+          storyVideo.webkitRequestFullscreen();
+        }} else {{
+          openLightbox(currentSlide);
+        }}
+      }} else {{
+        openLightbox(currentSlide);
+      }}
+    }}
+
+    // Click photo to open fullscreen
+    storyImg.addEventListener('click', () => openLightbox(currentSlide));
+    document.getElementById('btnExpandStoryMedia').addEventListener('click', expandCurrentMedia);
+
+    // Lightbox Controls
+    document.getElementById('btnCloseLightbox').addEventListener('click', closeLightbox);
+    document.getElementById('btnLbPrev').addEventListener('click', () => showLightboxSlide(currentSlide - 1));
+    document.getElementById('btnLbNext').addEventListener('click', () => showLightboxSlide(currentSlide + 1));
+    lightboxImg.addEventListener('click', closeLightbox);
+
+    // Screen 4 Navigation (Both top & bottom galaxy buttons)
+    document.getElementById('btnBackToGalaxyBottom').addEventListener('click', () => goToScreen(3));
 
     document.getElementById('btnOpenMemories').addEventListener('click', openMemories);
     document.getElementById('btnCloseMemories').addEventListener('click', closeMemories);
@@ -2316,6 +2941,12 @@ html_template = f'''<!DOCTYPE html>
     document.getElementById('btnNextSlide').addEventListener('click', () => showSlide(currentSlide + 1));
 
     window.addEventListener('keydown', (e) => {{
+      if (fullscreenLightboxModal.classList.contains('active')) {{
+        if (e.key === 'ArrowLeft') showLightboxSlide(currentSlide - 1);
+        if (e.key === 'ArrowRight') showLightboxSlide(currentSlide + 1);
+        if (e.key === 'Escape') closeLightbox();
+        return;
+      }}
       if (!storyModal.classList.contains('active')) return;
       if (e.key === 'ArrowLeft') showSlide(currentSlide - 1);
       if (e.key === 'ArrowRight') showSlide(currentSlide + 1);
@@ -2330,6 +2961,16 @@ html_template = f'''<!DOCTYPE html>
       const touchEndX = e.changedTouches[0].clientX;
       if (touchEndX - touchStartX > 50) showSlide(currentSlide - 1);
       if (touchStartX - touchEndX > 50) showSlide(currentSlide + 1);
+    }});
+
+    let lbTouchStartX = 0;
+    fullscreenLightboxModal.addEventListener('touchstart', (e) => {{
+      lbTouchStartX = e.touches[0].clientX;
+    }}, {{ passive: true }});
+    fullscreenLightboxModal.addEventListener('touchend', (e) => {{
+      const lbTouchEndX = e.changedTouches[0].clientX;
+      if (lbTouchEndX - lbTouchStartX > 50) showLightboxSlide(currentSlide - 1);
+      if (lbTouchStartX - lbTouchEndX > 50) showLightboxSlide(currentSlide + 1);
     }});
   </script>
 </body>
