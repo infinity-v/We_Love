@@ -712,12 +712,12 @@ html_template = f'''<!DOCTYPE html>
     .celamur-stage-viewport {{
       position: relative;
       width: 100%;
-      max-width: 420px;
-      height: 480px;
+      max-width: 460px;
+      height: 520px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-top: 10px;
+      margin-top: 38px;
     }}
 
     #galaxyCanvas {{
@@ -742,31 +742,6 @@ html_template = f'''<!DOCTYPE html>
       align-items: center;
       gap: 10px;
       z-index: 10;
-    }}
-
-    .celamur-play-disc {{
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1.5px solid rgba(255, 255, 255, 0.22);
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ffffff;
-      cursor: pointer;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
-      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }}
-    .celamur-play-disc:active {{
-      transform: scale(0.9);
-    }}
-    .celamur-play-disc svg {{
-      width: 22px;
-      height: 22px;
-      fill: currentColor;
     }}
 
     .celamur-main-title {{
@@ -1558,13 +1533,6 @@ html_template = f'''<!DOCTYPE html>
     </div>
 
     <div class="celamur-controls-box">
-      <!-- Circular play button -->
-      <button class="celamur-play-disc" id="celamurPlayBtn" title="Слушать">
-        <svg id="playIconSvg" viewBox="0 0 24 24">
-          <polygon points="6,4 19,12 6,20" />
-        </svg>
-      </button>
-
       <!-- Signature title & exact subtitles -->
       <div class="celamur-main-title">Злата + Вадим</div>
       <div class="celamur-subtitle-divine">Мы самая красивая пара ✨</div>
@@ -1827,9 +1795,27 @@ html_template = f'''<!DOCTYPE html>
       loop();
     }})();
 
-    // Gentle heart sparkle touch on empty space
+    // Gentle heart sparkle touch on empty space ONLY on genuine tap (never on drag/swipe/galaxy rotate)
+    let pointerStartX = 0;
+    let pointerStartY = 0;
+    let pointerStartTime = 0;
+
     window.addEventListener('pointerdown', (e) => {{
+      pointerStartX = e.clientX;
+      pointerStartY = e.clientY;
+      pointerStartTime = Date.now();
+    }});
+
+    window.addEventListener('pointerup', (e) => {{
       if (e.target.closest('button') || e.target.closest('.story-viewport-box') || e.target.closest('input')) return;
+      // Do NOT trigger on the galaxy canvas or viewport - keeps spinning clean and serene!
+      if (e.target.closest('#galaxyCanvas') || e.target.closest('.celamur-stage-viewport')) return;
+
+      const dist = Math.hypot(e.clientX - pointerStartX, e.clientY - pointerStartY);
+      const duration = Date.now() - pointerStartTime;
+      // Ignore drags/swipes and long presses
+      if (dist > 8 || duration > 350) return;
+
       spawnBurstParticles(e.clientX, e.clientY, 4, ['✨', '💖', '🌸', '🤍', '🐾']);
     }});
 
@@ -1942,7 +1928,6 @@ html_template = f'''<!DOCTYPE html>
     }}
 
     musicToggleBtn.addEventListener('click', toggleMusic);
-    document.getElementById('celamurPlayBtn').addEventListener('click', toggleMusic);
 
     // ========================================================
     // SCREEN 1: THE PLAYFUL FLOW (CLICK YES -> TEASE TO TRY NO -> DODGE -> UNLOCK YES)
@@ -2372,11 +2357,23 @@ html_template = f'''<!DOCTYPE html>
       requestAnimationFrame(renderCelamur);
     }}
 
+    const FONT_STRS = [
+      '4px var(--font-rounded)',
+      '5px var(--font-rounded)',
+      '6px var(--font-rounded)',
+      '7px var(--font-rounded)',
+      '8px var(--font-rounded)',
+      '9px var(--font-rounded)',
+      '10px var(--font-rounded)',
+      '11px var(--font-rounded)',
+      '12px var(--font-rounded)'
+    ];
+
     function drawCelamurScene() {{
       const W = canvasWidth;
       const H = canvasHeight;
       const cx = W / 2;
-      const cy = H / 2 - 15;
+      const cy = H / 2 + 14;
 
       ctx.clearRect(0, 0, W, H);
 
@@ -2385,14 +2382,14 @@ html_template = f'''<!DOCTYPE html>
       if (galA > 0.02) {{
         ctx.save();
         ctx.globalAlpha = galA;
-        const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, 145);
-        grad.addColorStop(0, 'rgba(255, 235, 245, 0.85)');
-        grad.addColorStop(0.2, 'rgba(255, 110, 160, 0.45)');
-        grad.addColorStop(0.5, 'rgba(160, 40, 100, 0.15)');
+        const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, 175);
+        grad.addColorStop(0, 'rgba(255, 235, 245, 0.88)');
+        grad.addColorStop(0.2, 'rgba(255, 110, 160, 0.48)');
+        grad.addColorStop(0.5, 'rgba(160, 40, 100, 0.16)');
         grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
         ctx.fillStyle = grad;
         ctx.beginPath();
-        ctx.ellipse(cx, cy, 155, 58, 0, 0, Math.PI * 2);
+        ctx.ellipse(cx, cy, 185, 68, 0, 0, Math.PI * 2);
         ctx.fill();
         ctx.restore();
       }}
@@ -2401,8 +2398,8 @@ html_template = f'''<!DOCTYPE html>
       if (morphProgress > 0.02 && portraitImg.complete && portraitImg.naturalWidth > 0) {{
         ctx.save();
         ctx.globalAlpha = Math.pow(morphProgress, 1.8) * 0.95;
-        const pw = 300;
-        const ph = 390;
+        const pw = 330;
+        const ph = 425;
         ctx.drawImage(portraitImg, cx - pw/2, cy - ph/2, pw, ph);
         ctx.restore();
       }}
@@ -2416,6 +2413,12 @@ html_template = f'''<!DOCTYPE html>
       const sinY = Math.sin(rotY);
       const cosX = Math.cos(rotX);
       const sinX = Math.sin(rotX);
+
+      const GALAXY_SCALE = 1.20;
+
+      let lastFontIdx = -1;
+      let lastAlphaBucket = -1;
+      let lastIsMorph = false;
 
       const len = GALAXY_PARTICLES.length;
       for (let i = 0; i < len; i++) {{
@@ -2434,32 +2437,46 @@ html_template = f'''<!DOCTYPE html>
         const x2 = x1;
 
         const fov = D / (D + z2);
-        const galX = cx + x2 * fov;
-        const galY = cy + y2 * fov;
+        const galX = cx + x2 * fov * GALAXY_SCALE;
+        const galY = cy + y2 * fov * GALAXY_SCALE;
 
-        const portX = cx + p.px * 0.95;
-        const portY = cy + p.py * 0.95;
+        const portX = cx + p.px * 1.05;
+        const portY = cy + p.py * 1.05;
 
         const curX = galX + (portX - galX) * morphProgress;
         const curY = galY + (portY - galY) * morphProgress;
 
-        let fontSize, alpha, col;
+        if (curX < -50 || curX > W + 50 || curY < -50 || curY > H + 50) continue;
+
+        let fontIdx, alpha;
         if (morphProgress > 0.5) {{
-          fontSize = 7;
+          fontIdx = 3;
           alpha = 0.55 + 0.35 * morphProgress;
-          col = `rgba(255, 225, 235, ${{alpha}})`;
         }} else {{
           const depthScale = Math.max(0.4, Math.min(1.3, fov));
-          fontSize = Math.round(7 * depthScale * p.s);
+          const rawSize = 7.5 * depthScale * p.s;
+          fontIdx = Math.max(0, Math.min(8, Math.round(rawSize) - 4));
           const distCore = Math.sqrt(gx*gx + gz*gz);
           const coreFactor = Math.max(0.3, 1.0 - (distCore / 320.0) * 0.5);
           alpha = Math.min(1.0, coreFactor * depthScale * (1.0 - morphProgress));
-          col = `rgba(255, 230, 240, ${{alpha}})`;
         }}
 
-        if (alpha > 0.1) {{
-          ctx.font = `${{fontSize}}px var(--font-rounded)`;
-          ctx.fillStyle = col;
+        if (alpha > 0.08) {{
+          if (fontIdx !== lastFontIdx) {{
+            ctx.font = FONT_STRS[fontIdx];
+            lastFontIdx = fontIdx;
+          }}
+
+          const alphaBucket = Math.round(alpha * 10);
+          const isMorph = morphProgress > 0.5;
+          if (alphaBucket !== lastAlphaBucket || isMorph !== lastIsMorph) {{
+            ctx.fillStyle = isMorph 
+              ? `rgba(255, 225, 235, ${{alphaBucket * 0.1}})` 
+              : `rgba(255, 230, 240, ${{alphaBucket * 0.1}})`;
+            lastAlphaBucket = alphaBucket;
+            lastIsMorph = isMorph;
+          }}
+
           ctx.fillText(p.t, curX, curY);
         }}
       }}
