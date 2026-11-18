@@ -598,33 +598,49 @@
     }
 
     .quiz-pill-choice {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1.5px solid rgba(255, 255, 255, 0.1);
-      padding: 15px 18px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
+      padding: 12px 16px;
       border-radius: 20px;
       color: var(--text-cream);
-      font-size: 15px;
-      font-weight: 700;
+      font-size: 14.5px;
+      font-weight: 600;
       text-align: left;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      gap: 12px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
       transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     .quiz-pill-choice:active {
       transform: scale(0.97);
     }
+    .quiz-pill-text {
+      flex: 1;
+      line-height: 1.3;
+    }
+    .quiz-choice-cat {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      flex-shrink: 0;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.35));
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .quiz-pill-choice:hover .quiz-choice-cat {
+      transform: scale(1.18) rotate(-4deg);
+    }
     .quiz-pill-choice.correct {
-      background: rgba(46, 213, 115, 0.2);
+      background: rgba(46, 213, 115, 0.22);
       border-color: #2ed573;
       color: #ffffff;
       box-shadow: 0 0 25px rgba(46, 213, 115, 0.4);
       transform: scale(1.02);
     }
     .quiz-pill-choice.wrong {
-      background: rgba(255, 71, 87, 0.2);
+      background: rgba(255, 71, 87, 0.22);
       border-color: #ff4757;
       color: #ff6b81;
       animation: cardShake 0.4s ease;
@@ -637,18 +653,25 @@
 
     .quiz-feedback-toast {
       font-size: 14px;
-      font-weight: 800;
-      color: #ff8fab;
+      font-weight: 700;
+      color: #ff9bb5;
       text-align: center;
-      min-height: 22px;
+      min-height: 36px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
+      gap: 10px;
+      padding: 6px 14px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 4px;
     }
     .quiz-feedback-toast img {
-      width: 22px;
-      height: 22px;
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      flex-shrink: 0;
     }
 
     /* ========================================================
@@ -2030,103 +2053,103 @@
     }
 
     // ========================================================
-    // SCREEN 2: CUTE QUIZ DECK
+    // SCREEN 2: CUTE QUIZ DECK (WITH PASTEL TELEGRAM CAT STICKERS)
     // ========================================================
     const quizQuestions = [
       {
         q: "Моя главная суперспособность в быту?",
         opts: [
-          "Мыть посуду сразу после еды 🧼",
-          "Генерировать гениальные шутки 😂",
-          "Быть образцом идеального порядка 🧹",
-          "Находить еду в пустом холодильнике 🍕"
+          { text: "Мыть посуду сразу после еды", sticker: "media/stickers/relaxed.gif" },
+          { text: "Генерировать гениальные шутки", sticker: "media/stickers/laughing.gif" },
+          { text: "Быть образцом идеального порядка", sticker: "media/stickers/serene.gif" },
+          { text: "Находить еду в пустом холодильнике", sticker: "media/stickers/sushi.gif" }
         ],
         ans: 1,
         reactions: [
-          "Ты меня точно ни с кем не перепутала? 🤡",
-          "100%! Причём смеюсь с них громче всех я сам 👑😂",
-          "Ага, в моих сладких снах разве что 🤣",
-          "Там только мышь повесилась, ты чего 🐭"
+          { text: "Ты меня точно ни с кем не перепутала?", sticker: "media/stickers/teasing.gif" },
+          { text: "100%! Причём смеюсь с них громче всех я сам", sticker: "media/stickers/happy.gif" },
+          { text: "Ага, в моих сладких снах разве что", sticker: "media/stickers/sleepy.gif" },
+          { text: "Там только мышь повесилась, ты чего", sticker: "media/stickers/giggle.gif" }
         ]
       },
       {
         q: "Как я обычно собираюсь на выход?",
         opts: [
-          "Чётко по таймеру за 10 минут ⏱️",
-          "Сижу в ТикТоке до победного 📱",
-          "Полчаса наглаживаю стрелки на штанах 👔",
-          "Стою одетый у двери и жду тебя 🚪"
+          { text: "Чётко по таймеру за 10 минут", sticker: "media/stickers/fast.gif" },
+          { text: "Сижу в ТикТоке до победного", sticker: "media/stickers/playful.gif" },
+          { text: "Полчаса наглаживаю стрелки на штанах", sticker: "media/stickers/sparkle.gif" },
+          { text: "Стою одетый у двери и жду тебя", sticker: "media/stickers/hello.gif" }
         ],
         ans: 1,
         reactions: [
-          "Ты в какой вселенной живёшь? В параллельной? 🤣",
-          "Ну ещё один видосик и точно выходим! (нет) 📱🛋️",
-          "Я даже не знаю, где дома утюг лежит 🤷‍♂️",
-          "Хотелось бы, конечно, выглядеть так солидно, но нет 🤥"
+          { text: "Ты в какой вселенной живёшь? В параллельной?", sticker: "media/stickers/teasing.gif" },
+          { text: "Ну ещё один видосик и точно выходим! (нет)", sticker: "media/stickers/laughing.gif" },
+          { text: "Я даже не знаю, где дома утюг лежит", sticker: "media/stickers/giggle.gif" },
+          { text: "Хотелось бы, конечно, выглядеть так солидно, но нет", sticker: "media/stickers/shy.gif" }
         ]
       },
       {
         q: "Кто из нас быстрее идёт мириться, если повздорили?",
         opts: [
-          "Я, ведь я мудрый и взрослый 😇",
-          "Ты, потому что не можешь без меня 💅",
-          "Никто, кот мирит 🐱",
-          "Мы две гордые обиженки 🥺"
+          { text: "Я, ведь я мудрый и взрослый", sticker: "media/stickers/serene.gif" },
+          { text: "Ты, потому что не можешь без меня", sticker: "media/stickers/wink.gif" },
+          { text: "Никто, кот мирит", sticker: "media/stickers/cat_love.gif" },
+          { text: "Мы две гордые обиженки", sticker: "media/stickers/shy.gif" }
         ],
         ans: 3,
         reactions: [
-          "Да я буду дуться из принципа до победного! 😤",
-          "Ой, кто бы говорил, сама актриса драмы 🎭",
-          "Коту вообще по барабану, он спит 😴",
-          "Сидим в разных углах и ждём, кто первый сдастся 🥺🤍"
+          { text: "Да я буду дуться из принципа до победного!", sticker: "media/stickers/teasing.gif" },
+          { text: "Ой, кто бы говорил, сама актриса драмы", sticker: "media/stickers/playful.gif" },
+          { text: "Коту вообще по барабану, он спит", sticker: "media/stickers/sleepy.gif" },
+          { text: "Сидим в разных углах и ждём, кто первый сдастся", sticker: "media/stickers/love.gif" }
         ]
       },
       {
         q: "Сколько у меня заведено будильников на утро?",
         opts: [
-          "Один, я дисциплинированный жаворонок 🕊️",
-          "Зачем будильник, если встаёт солнышко? ☀️",
-          "Штук 15 с интервалом по 3 минуты ⏰",
-          "Ноль, просыпаюсь по зову сердца 💓"
+          { text: "Один, я дисциплинированный жаворонок", sticker: "media/stickers/energetic.gif" },
+          { text: "Зачем будильник, если встаёт солнышко?", sticker: "media/stickers/glowing.gif" },
+          { text: "Штук 15 с интервалом по 3 минуты", sticker: "media/stickers/fast.gif" },
+          { text: "Ноль, просыпаюсь по зову сердца", sticker: "media/stickers/adore.gif" }
         ],
         ans: 2,
         reactions: [
-          "Жаворонок умер ещё в понедельник утром 🧟‍♂️",
-          "Солнышко встало, а я перевернулся на другой бок 🛌",
-          "07:00, 07:03, 07:06... и в итоге встаю в 08:30 ⏰🔥",
-          "Сердце говорит: \"Спи дальше, Вадим\" 💤"
+          { text: "Жаворонок умер ещё в понедельник утром", sticker: "media/stickers/sleepy.gif" },
+          { text: "Солнышко встало, а я перевернулся на другой бок", sticker: "media/stickers/relaxed.gif" },
+          { text: "07:00, 07:03, 07:06... и в итоге встаю в 08:30", sticker: "media/stickers/laughing.gif" },
+          { text: "Сердце говорит: \"Спи дальше, Вадим\"", sticker: "media/stickers/sleepy.gif" }
         ]
       },
       {
         q: "Кто из нас громче всех ворчит в очередях или пробках?",
         opts: [
-          "Я включаю режим душного деда 👴",
-          "Ты, потому что у тебя нет терпения ⏳",
-          "Мы оба сидим на глубоком дзене 🧘",
-          "Навигатор в телефоне 🗺️"
+          { text: "Я включаю режим душного деда", sticker: "media/stickers/teasing.gif" },
+          { text: "Ты, потому что у тебя нет терпения", sticker: "media/stickers/energetic.gif" },
+          { text: "Мы оба сидим на глубоком дзене", sticker: "media/stickers/serene.gif" },
+          { text: "Навигатор в телефоне", sticker: "media/stickers/playful.gif" }
         ],
         ans: 0,
         reactions: [
-          "\"Куда он прёт?! Кто так водит?! В наше время такого не было!\" 👴🚗",
-          "Не переводи стрелки, главный душнила тут я! 🧐",
-          "Ага, дзен с дёргающимся глазом 👁️💥",
-          "Навигатор хотя бы не матерится вслух 😂"
+          { text: "\"Куда он прёт?! Кто так водит?! В наше время такого не было!\"", sticker: "media/stickers/laughing.gif" },
+          { text: "Не переводи стрелки, главный душнила тут я!", sticker: "media/stickers/giggle.gif" },
+          { text: "Ага, дзен с дёргающимся глазом", sticker: "media/stickers/wink.gif" },
+          { text: "Навигатор хотя бы не матерится вслух", sticker: "media/stickers/smile.gif" }
         ]
       },
       {
         q: "Главное правило наших отношений на все годы вперёд?",
         opts: [
-          "Всегда делиться последним кусочком 🍕",
-          "Не бесить друг друга по пустякам 🤫",
-          "Быть вместе против любой проблемы 🤍",
-          "Кто первый встал, тот и ставит чайник ☕"
+          { text: "Всегда делиться последним кусочком", sticker: "media/stickers/sushi.gif" },
+          { text: "Не бесить друг друга по пустякам", sticker: "media/stickers/wink.gif" },
+          { text: "Быть вместе против любой проблемы", sticker: "media/stickers/love.gif" },
+          { text: "Кто первый встал, тот и ставит чайник", sticker: "media/stickers/relaxed.gif" }
         ],
         ans: 2,
         reactions: [
-          "Пицца — это святое, но есть вещи поважнее 🍕😋",
-          "Ну это невозможно, мы же любим побесить друг друга 😜",
-          "В точку! Что бы ни случилось — мы одна команда навсегда 🤍✨",
-          "Чайник подождёт, а вот мы — главное ☕"
+          { text: "Пицца — это святое, но есть вещи поважнее", sticker: "media/stickers/playful.gif" },
+          { text: "Ну это невозможно, мы же любим побесить друг друга", sticker: "media/stickers/teasing.gif" },
+          { text: "В точку! Что бы ни случилось — мы одна команда навсегда", sticker: "media/stickers/dancing.gif" },
+          { text: "Чайник подождёт, а вот мы — главное", sticker: "media/stickers/adore.gif" }
         ]
       }
     ];
@@ -2143,10 +2166,10 @@
 
       const box = document.getElementById('quizOptionsBox');
       box.innerHTML = '';
-      q.opts.forEach((optText, idx) => {
+      q.opts.forEach((opt, idx) => {
         const btn = document.createElement('button');
         btn.className = 'quiz-pill-choice';
-        btn.innerHTML = `<span>${optText}</span>`;
+        btn.innerHTML = `<span class="quiz-pill-text">${opt.text}</span><img src="${opt.sticker}" class="quiz-choice-cat" alt="cat">`;
         btn.addEventListener('click', () => handleQuizPick(idx, btn));
         box.appendChild(btn);
       });
@@ -2156,14 +2179,14 @@
       const q = quizQuestions[currentQ];
       const mascot = document.getElementById('quizCatMascot');
       const toast = document.getElementById('quizFeedbackToast');
-      const reactionText = q.reactions[idx];
+      const reaction = q.reactions[idx];
 
       if (idx === q.ans) {
         btn.classList.add('correct');
-        if (mascot) mascot.src = 'media/stickers/happy.gif';
+        if (mascot) mascot.src = reaction.sticker;
         const rect = btn.getBoundingClientRect();
-        spawnBurstParticles(rect.left + rect.width/2, rect.top + rect.height/2, 14, ['✨', '💖', '🥰', '🌸', '👑']);
-        toast.innerHTML = `<img src="media/stickers/happy.gif" alt="Кот"> <span>${reactionText}</span>`;
+        spawnBurstParticles(rect.left + rect.width/2, rect.top + rect.height/2, 12, ['✨', '💖', '🌸']);
+        toast.innerHTML = `<img src="${reaction.sticker}" alt="Кот"> <span>${reaction.text}</span>`;
 
         setTimeout(() => {
           currentQ++;
@@ -2171,18 +2194,18 @@
             renderQuiz();
           } else {
             if (mascot) mascot.src = 'media/stickers/dancing.gif';
-            toast.innerHTML = '<img src="media/stickers/dancing.gif" alt="Кот"> <span>100% совпадение! Ты знаешь меня лучше всех на свете 💖💫</span>';
+            toast.innerHTML = '<img src="media/stickers/dancing.gif" alt="Кот"> <span>100% совпадение! Ты знаешь меня лучше всех на свете!</span>';
             setTimeout(() => goToScreen(3), 1100);
           }
         }, 950);
       } else {
         btn.classList.add('wrong');
-        if (mascot) mascot.src = 'media/stickers/giggle.gif';
-        toast.innerHTML = `<img src="media/stickers/giggle.gif" alt="Кот"> <span>${reactionText}</span>`;
+        if (mascot) mascot.src = reaction.sticker;
+        toast.innerHTML = `<img src="${reaction.sticker}" alt="Кот"> <span>${reaction.text}</span>`;
         setTimeout(() => {
           btn.classList.remove('wrong');
           if (mascot) mascot.src = 'media/stickers/teasing.gif';
-        }, 800);
+        }, 850);
       }
     }
     renderQuiz();
