@@ -6,3 +6,5 @@ video_frames/
 test_*.jpg
 crop_test.jpg
 *.tmp
+
+scratch/

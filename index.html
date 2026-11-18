@@ -622,15 +622,17 @@
       line-height: 1.3;
     }
     .quiz-choice-cat {
-      width: 32px;
-      height: 32px;
-      object-fit: contain;
+      width: 36px;
+      height: 36px;
+      object-fit: cover;
       flex-shrink: 0;
-      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.35));
+      border-radius: 10px;
+      border: 1px solid rgba(255, 185, 222, 0.4);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.35);
       transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     .quiz-pill-choice:hover .quiz-choice-cat {
-      transform: scale(1.18) rotate(-4deg);
+      transform: scale(1.15) rotate(-3deg);
     }
     .quiz-pill-choice.correct {
       background: rgba(46, 213, 115, 0.22);
@@ -663,14 +665,17 @@
       gap: 10px;
       padding: 6px 14px;
       border-radius: 14px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 185, 222, 0.25);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
       margin-top: 4px;
     }
     .quiz-feedback-toast img {
-      width: 28px;
-      height: 28px;
-      object-fit: contain;
+      width: 32px;
+      height: 32px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 185, 222, 0.4);
       flex-shrink: 0;
     }
 
@@ -1344,7 +1349,12 @@
       top: -38px;
       right: 12px;
       width: 58px;
-      height: auto;
+      height: 58px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2.5px solid rgba(255, 140, 180, 0.75);
+      box-shadow: 0 6px 20px rgba(255, 82, 123, 0.45);
+      background: rgba(30, 8, 38, 0.9);
       z-index: 15;
       filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
       transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -1468,7 +1478,7 @@
         <button class="dodging-btn-no" id="btnNo">
           <span>НЕТ 💔 😜</span>
           <div class="comic-speech-bubble" id="speechBubble">
-            <img src="media/stickers/fast.gif" alt="Котик">
+            <img src="media/stickers/real_cats/cat_dodge_no.gif" alt="Котик">
             <span id="bubbleText">Ой! Я улетела! 🏃‍♀️💨</span>
           </div>
         </button>
@@ -1482,10 +1492,10 @@
   <div class="screen" id="screen2">
     <div class="quiz-container-box">
       <div class="quiz-interactive-card">
-        <img src="media/stickers/encouragement.gif" class="quiz-cat-cheerleader" id="quizCatMascot" alt="Котик">
+        <img src="media/stickers/real_cats/cat_mascot_cheer.gif" class="quiz-cat-cheerleader" id="quizCatMascot" alt="Котик">
         <div class="quiz-top-row">
           <div class="quiz-love-badge">
-            <img src="media/stickers/adore.gif" alt="Котик">
+            <img src="media/stickers/real_cats/cat_tea_cozy.gif" alt="Котик">
             <span>Тест для любимой</span>
           </div>
           <div class="quiz-index-pill" id="quizStepPill">Вопрос 1 из 6</div>
@@ -2005,7 +2015,7 @@
       teaseAlert.style.background = "linear-gradient(135deg, rgba(46, 213, 115, 0.25) 0%, rgba(46, 213, 115, 0.15) 100%)";
       teaseAlert.style.borderColor = "#2ed573";
       teaseAlert.style.color = "#2ed573";
-      teaseAlert.innerHTML = '<img src="media/stickers/happy.gif" class="tease-cat-icon" alt="Кот"> <span>Умничка! Вот теперь нажимай ДА! 🥰</span>';
+      teaseAlert.innerHTML = '<img src="media/stickers/real_cats/cat_mascot_cheer.gif" class="tease-cat-icon" alt="Кот"> <span>Умничка! Вот теперь нажимай ДА! 🥰</span>';
 
       spawnBurstParticles(window.innerWidth / 2, btnYes.getBoundingClientRect().top + 25, 18, ['💖', '✨', '🤍', '🌸']);
     }
@@ -2053,103 +2063,103 @@
     }
 
     // ========================================================
-    // SCREEN 2: CUTE QUIZ DECK (WITH PASTEL TELEGRAM CAT STICKERS)
+    // SCREEN 2: CUTE QUIZ DECK (WITH AESTHETIC REAL LIVE CAT STICKERS)
     // ========================================================
     const quizQuestions = [
       {
         q: "Моя главная суперспособность в быту?",
         opts: [
-          { text: "Мыть посуду сразу после еды", sticker: "media/stickers/relaxed.gif" },
-          { text: "Генерировать гениальные шутки", sticker: "media/stickers/laughing.gif" },
-          { text: "Быть образцом идеального порядка", sticker: "media/stickers/serene.gif" },
-          { text: "Находить еду в пустом холодильнике", sticker: "media/stickers/sushi.gif" }
+          { text: "Мыть посуду сразу после еды", sticker: "media/stickers/real_cats/cat_dishes_suspicious.gif" },
+          { text: "Генерировать гениальные шутки", sticker: "media/stickers/real_cats/cat_laughing_joke.gif" },
+          { text: "Быть образцом идеального порядка", sticker: "media/stickers/real_cats/cat_sleeping_order.gif" },
+          { text: "Находить еду в пустом холодильнике", sticker: "media/stickers/real_cats/cat_fridge_munch.gif" }
         ],
         ans: 1,
         reactions: [
-          { text: "Ты меня точно ни с кем не перепутала?", sticker: "media/stickers/teasing.gif" },
-          { text: "100%! Причём смеюсь с них громче всех я сам", sticker: "media/stickers/happy.gif" },
-          { text: "Ага, в моих сладких снах разве что", sticker: "media/stickers/sleepy.gif" },
-          { text: "Там только мышь повесилась, ты чего", sticker: "media/stickers/giggle.gif" }
+          { text: "Ты меня точно ни с кем не перепутала?", sticker: "media/stickers/real_cats/cat_dishes_suspicious.gif" },
+          { text: "100%! Причём смеюсь с них громче всех я сам", sticker: "media/stickers/real_cats/cat_laughing_joke.gif" },
+          { text: "Ага, в моих сладких снах разве что", sticker: "media/stickers/real_cats/cat_sleep_forever.gif" },
+          { text: "Там только мышь повесилась, ты чего", sticker: "media/stickers/real_cats/cat_fridge_munch.gif" }
         ]
       },
       {
         q: "Как я обычно собираюсь на выход?",
         opts: [
-          { text: "Чётко по таймеру за 10 минут", sticker: "media/stickers/fast.gif" },
-          { text: "Сижу в ТикТоке до победного", sticker: "media/stickers/playful.gif" },
-          { text: "Полчаса наглаживаю стрелки на штанах", sticker: "media/stickers/sparkle.gif" },
-          { text: "Стою одетый у двери и жду тебя", sticker: "media/stickers/hello.gif" }
+          { text: "Чётко по таймеру за 10 минут", sticker: "media/stickers/real_cats/cat_speed_run.gif" },
+          { text: "Сижу в ТикТоке до победного", sticker: "media/stickers/real_cats/cat_tiktok_phone.gif" },
+          { text: "Полчаса наглаживаю стрелки на штанах", sticker: "media/stickers/real_cats/cat_grooming_pants.gif" },
+          { text: "Стою одетый у двери и жду тебя", sticker: "media/stickers/real_cats/cat_waiting_door.gif" }
         ],
         ans: 1,
         reactions: [
-          { text: "Ты в какой вселенной живёшь? В параллельной?", sticker: "media/stickers/teasing.gif" },
-          { text: "Ну ещё один видосик и точно выходим! (нет)", sticker: "media/stickers/laughing.gif" },
-          { text: "Я даже не знаю, где дома утюг лежит", sticker: "media/stickers/giggle.gif" },
-          { text: "Хотелось бы, конечно, выглядеть так солидно, но нет", sticker: "media/stickers/shy.gif" }
+          { text: "Ты в какой вселенной живёшь? В параллельной?", sticker: "media/stickers/real_cats/cat_dishes_suspicious.gif" },
+          { text: "Ну ещё один видосик и точно выходим! (нет)", sticker: "media/stickers/real_cats/cat_laughing_joke.gif" },
+          { text: "Я даже не знаю, где дома утюг лежит", sticker: "media/stickers/real_cats/cat_teasing_play.gif" },
+          { text: "Хотелось бы, конечно, выглядеть так солидно, но нет", sticker: "media/stickers/real_cats/cat_drama_sassy.gif" }
         ]
       },
       {
         q: "Кто из нас быстрее идёт мириться, если повздорили?",
         opts: [
-          { text: "Я, ведь я мудрый и взрослый", sticker: "media/stickers/serene.gif" },
-          { text: "Ты, потому что не можешь без меня", sticker: "media/stickers/wink.gif" },
-          { text: "Никто, кот мирит", sticker: "media/stickers/cat_love.gif" },
-          { text: "Мы две гордые обиженки", sticker: "media/stickers/shy.gif" }
+          { text: "Я, ведь я мудрый и взрослый", sticker: "media/stickers/real_cats/cat_grumpy_pout.gif" },
+          { text: "Ты, потому что не можешь без меня", sticker: "media/stickers/real_cats/cat_drama_sassy.gif" },
+          { text: "Никто, кот мирит", sticker: "media/stickers/real_cats/cat_unbothered_sleep.gif" },
+          { text: "Мы две гордые обиженки", sticker: "media/stickers/real_cats/cat_two_stubborn.gif" }
         ],
         ans: 3,
         reactions: [
-          { text: "Да я буду дуться из принципа до победного!", sticker: "media/stickers/teasing.gif" },
-          { text: "Ой, кто бы говорил, сама актриса драмы", sticker: "media/stickers/playful.gif" },
-          { text: "Коту вообще по барабану, он спит", sticker: "media/stickers/sleepy.gif" },
-          { text: "Сидим в разных углах и ждём, кто первый сдастся", sticker: "media/stickers/love.gif" }
+          { text: "Да я буду дуться из принципа до победного!", sticker: "media/stickers/real_cats/cat_grumpy_pout.gif" },
+          { text: "Ой, кто бы говорил, сама актриса драмы", sticker: "media/stickers/real_cats/cat_teasing_play.gif" },
+          { text: "Коту вообще по барабану, он спит", sticker: "media/stickers/real_cats/cat_unbothered_sleep.gif" },
+          { text: "Сидим в разных углах и ждём, кто первый сдастся", sticker: "media/stickers/real_cats/cat_teasing_play.gif" }
         ]
       },
       {
         q: "Сколько у меня заведено будильников на утро?",
         opts: [
-          { text: "Один, я дисциплинированный жаворонок", sticker: "media/stickers/energetic.gif" },
-          { text: "Зачем будильник, если встаёт солнышко?", sticker: "media/stickers/glowing.gif" },
-          { text: "Штук 15 с интервалом по 3 минуты", sticker: "media/stickers/fast.gif" },
-          { text: "Ноль, просыпаюсь по зову сердца", sticker: "media/stickers/adore.gif" }
+          { text: "Один, я дисциплинированный жаворонок", sticker: "media/stickers/real_cats/cat_morning_dead.gif" },
+          { text: "Зачем будильник, если встаёт солнышко?", sticker: "media/stickers/real_cats/cat_sun_blanket.gif" },
+          { text: "Штук 15 с интервалом по 3 минуты", sticker: "media/stickers/real_cats/cat_alarm_shock.gif" },
+          { text: "Ноль, просыпаюсь по зову сердца", sticker: "media/stickers/real_cats/cat_sleep_forever.gif" }
         ],
         ans: 2,
         reactions: [
-          { text: "Жаворонок умер ещё в понедельник утром", sticker: "media/stickers/sleepy.gif" },
-          { text: "Солнышко встало, а я перевернулся на другой бок", sticker: "media/stickers/relaxed.gif" },
-          { text: "07:00, 07:03, 07:06... и в итоге встаю в 08:30", sticker: "media/stickers/laughing.gif" },
-          { text: "Сердце говорит: \"Спи дальше, Вадим\"", sticker: "media/stickers/sleepy.gif" }
+          { text: "Жаворонок умер ещё в понедельник утром", sticker: "media/stickers/real_cats/cat_morning_dead.gif" },
+          { text: "Солнышко встало, а я перевернулся на другой бок", sticker: "media/stickers/real_cats/cat_sun_blanket.gif" },
+          { text: "07:00, 07:03, 07:06... и в итоге встаю в 08:30", sticker: "media/stickers/real_cats/cat_laughing_joke.gif" },
+          { text: "Сердце говорит: \"Спи дальше, Вадим\"", sticker: "media/stickers/real_cats/cat_sleep_forever.gif" }
         ]
       },
       {
         q: "Кто из нас громче всех ворчит в очередях или пробках?",
         opts: [
-          { text: "Я включаю режим душного деда", sticker: "media/stickers/teasing.gif" },
-          { text: "Ты, потому что у тебя нет терпения", sticker: "media/stickers/energetic.gif" },
-          { text: "Мы оба сидим на глубоком дзене", sticker: "media/stickers/serene.gif" },
-          { text: "Навигатор в телефоне", sticker: "media/stickers/playful.gif" }
+          { text: "Я включаю режим душного деда", sticker: "media/stickers/real_cats/cat_screaming_oldman.gif" },
+          { text: "Ты, потому что у тебя нет терпения", sticker: "media/stickers/real_cats/cat_arguing_talk.gif" },
+          { text: "Мы оба сидим на глубоком дзене", sticker: "media/stickers/real_cats/cat_zen_twitch.gif" },
+          { text: "Навигатор в телефоне", sticker: "media/stickers/real_cats/cat_headphones_nav.gif" }
         ],
         ans: 0,
         reactions: [
-          { text: "\"Куда он прёт?! Кто так водит?! В наше время такого не было!\"", sticker: "media/stickers/laughing.gif" },
-          { text: "Не переводи стрелки, главный душнила тут я!", sticker: "media/stickers/giggle.gif" },
-          { text: "Ага, дзен с дёргающимся глазом", sticker: "media/stickers/wink.gif" },
-          { text: "Навигатор хотя бы не матерится вслух", sticker: "media/stickers/smile.gif" }
+          { text: "\"Куда он прёт?! Кто так водит?! В наше время такого не было!\"", sticker: "media/stickers/real_cats/cat_screaming_oldman.gif" },
+          { text: "Не переводи стрелки, главный душнила тут я!", sticker: "media/stickers/real_cats/cat_arguing_talk.gif" },
+          { text: "Ага, дзен с дёргающимся глазом", sticker: "media/stickers/real_cats/cat_zen_twitch.gif" },
+          { text: "Навигатор хотя бы не матерится вслух", sticker: "media/stickers/real_cats/cat_headphones_nav.gif" }
         ]
       },
       {
         q: "Главное правило наших отношений на все годы вперёд?",
         opts: [
-          { text: "Всегда делиться последним кусочком", sticker: "media/stickers/sushi.gif" },
-          { text: "Не бесить друг друга по пустякам", sticker: "media/stickers/wink.gif" },
-          { text: "Быть вместе против любой проблемы", sticker: "media/stickers/love.gif" },
-          { text: "Кто первый встал, тот и ставит чайник", sticker: "media/stickers/relaxed.gif" }
+          { text: "Всегда делиться последним кусочком", sticker: "media/stickers/real_cats/cat_food_share.gif" },
+          { text: "Не бесить друг друга по пустякам", sticker: "media/stickers/real_cats/cat_teasing_play.gif" },
+          { text: "Быть вместе против любой проблемы", sticker: "media/stickers/real_cats/cat_team_cuddle.gif" },
+          { text: "Кто первый встал, тот и ставит чайник", sticker: "media/stickers/real_cats/cat_tea_cozy.gif" }
         ],
         ans: 2,
         reactions: [
-          { text: "Пицца — это святое, но есть вещи поважнее", sticker: "media/stickers/playful.gif" },
-          { text: "Ну это невозможно, мы же любим побесить друг друга", sticker: "media/stickers/teasing.gif" },
-          { text: "В точку! Что бы ни случилось — мы одна команда навсегда", sticker: "media/stickers/dancing.gif" },
-          { text: "Чайник подождёт, а вот мы — главное", sticker: "media/stickers/adore.gif" }
+          { text: "Пицца — это святое, но есть вещи поважнее", sticker: "media/stickers/real_cats/cat_food_share.gif" },
+          { text: "Ну это невозможно, мы же любим побесить друг друга", sticker: "media/stickers/real_cats/cat_teasing_play.gif" },
+          { text: "В точку! Что бы ни случилось — мы одна команда навсегда", sticker: "media/stickers/real_cats/cat_team_cuddle.gif" },
+          { text: "Чайник подождёт, а вот мы — главное", sticker: "media/stickers/real_cats/cat_tea_cozy.gif" }
         ]
       }
     ];
@@ -2162,7 +2172,7 @@
       document.getElementById('quizFeedbackToast').innerHTML = "";
 
       const mascot = document.getElementById('quizCatMascot');
-      if (mascot) mascot.src = (currentQ % 2 === 0 ? 'media/stickers/encouragement.gif' : 'media/stickers/wink.gif');
+      if (mascot) mascot.src = (currentQ % 2 === 0 ? 'media/stickers/real_cats/cat_mascot_cheer.gif' : 'media/stickers/real_cats/cat_teasing_play.gif');
 
       const box = document.getElementById('quizOptionsBox');
       box.innerHTML = '';
@@ -2193,18 +2203,18 @@
           if (currentQ < quizQuestions.length) {
             renderQuiz();
           } else {
-            if (mascot) mascot.src = 'media/stickers/dancing.gif';
-            toast.innerHTML = '<img src="media/stickers/dancing.gif" alt="Кот"> <span>100% совпадение! Ты знаешь меня лучше всех на свете!</span>';
-            setTimeout(() => goToScreen(3), 1100);
+            if (mascot) mascot.src = 'media/stickers/real_cats/cat_team_cuddle.gif';
+            toast.innerHTML = '<img src="media/stickers/real_cats/cat_team_cuddle.gif" alt="Кот"> <span>100% совпадение! Ты знаешь меня лучше всех на свете! 💖</span>';
+            setTimeout(() => goToScreen(3), 1200);
           }
-        }, 950);
+        }, 1050);
       } else {
         btn.classList.add('wrong');
         if (mascot) mascot.src = reaction.sticker;
         toast.innerHTML = `<img src="${reaction.sticker}" alt="Кот"> <span>${reaction.text}</span>`;
         setTimeout(() => {
           btn.classList.remove('wrong');
-          if (mascot) mascot.src = 'media/stickers/teasing.gif';
+          if (mascot) mascot.src = 'media/stickers/real_cats/cat_teasing_play.gif';
         }, 850);
       }
     }
