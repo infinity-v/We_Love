@@ -21,22 +21,22 @@ with open('d:/подарки пол года/media/galaxy_particles.json', 'r', 
 
 # Verified authentic memories (NO elevator photo! Elevator photo is exclusive to Celamur portrait)
 memory_files = [
-    {"name": "с чего все началось.jpg", "caption": "С чего всё началось", "date": "Начало нашей истории", "sticker": "nature_aesthetic/aesthetic_sparkles.gif"},
+    {"name": "с чего все началось.jpg", "caption": "С чего всё началось", "date": "Начало нашей истории", "sticker": "nature_aesthetic/aesthetic_candle.gif"},
     {"name": "первые цветы.jpg", "caption": "Твои первые цветы", "date": "Самый нежный момент", "sticker": "nature_aesthetic/aesthetic_bouquet.gif"},
-    {"name": "свидание на природе.jpg", "caption": "Наше свидание на природе", "date": "Только ты и я", "sticker": "nature_aesthetic/aesthetic_leaves_green.gif"},
-    {"name": "свидание на природе 2 фото.jpg", "caption": "Наше свидание на природе", "date": "Только ты и я", "sticker": "nature_aesthetic/aesthetic_leaves_falling.gif"},
+    {"name": "свидание на природе.jpg", "caption": "Наше свидание на природе", "date": "Только ты и я", "sticker": "nature_aesthetic/aesthetic_green_leaf.gif"},
+    {"name": "свидание на природе 2 фото.jpg", "caption": "Наше свидание на природе", "date": "Только ты и я", "sticker": "nature_aesthetic/aesthetic_butterfly.gif"},
     {"name": "IMG_20261115_230355_318.jpg", "caption": "Золотой закат на балконе — ты невероятно красива", "date": "Не могу оторвать взгляд", "sticker": "nature_aesthetic/aesthetic_sunset.gif"},
     {"name": "IMG_20261115_230620_235.jpg", "caption": "Счастливы вместе — настоящие мы", "date": "В любые трудности вместе", "sticker": "nature_aesthetic/aesthetic_white_heart.gif"},
     {"name": "IMG_20261115_232741_361.jpg", "caption": "Открытость, искренность и самые душевные разговоры", "date": "Тёплые разговоры", "sticker": "nature_aesthetic/aesthetic_love_letter.gif"},
-    {"name": "IMG_20261115_233109_723.jpg", "caption": "Хочу сделать так, чтобы ты всегда сияла", "date": "Моё сияние", "sticker": "nature_aesthetic/aesthetic_star_glow.gif"},
+    {"name": "IMG_20261115_233109_723.jpg", "caption": "Хочу сделать так, чтобы ты всегда сияла", "date": "Моё сияние", "sticker": "nature_aesthetic/aesthetic_crystal.gif"},
     {"name": "IMG_20261116_000248_096.jpg", "caption": "Навсегда в моём сердце", "date": "Любимый кадр", "sticker": "nature_aesthetic/aesthetic_pink_heart.gif"},
-    {"name": "5462926877434519487.jpg", "caption": "Твоя любимая улыбка", "date": "Самая милая", "sticker": "nature_aesthetic/aesthetic_rose_bloom.gif"},
+    {"name": "5462926877434519487.jpg", "caption": "Твоя любимая улыбка", "date": "Самая милая", "sticker": "nature_aesthetic/aesthetic_daisy.gif"},
     {"name": "5462926877434519488.jpg", "caption": "Счастье в простых моментах", "date": "Вкусные радости", "sticker": "nature_aesthetic/aesthetic_strawberry.gif"},
-    {"name": "5462926877434519489.jpg", "caption": "Всегда рядом с тобой", "date": "Наше тепло", "sticker": "nature_aesthetic/aesthetic_branch_cozy.gif"},
-    {"name": "5462926877434519490.jpg", "caption": "Самая прекрасная", "date": "Моё вдохновение", "sticker": "nature_aesthetic/aesthetic_petals_drift.gif"},
-    {"name": "5462926877434519491.jpg", "caption": "Твой любимый взгляд", "date": "В твоих глазах весь мир", "sticker": "nature_aesthetic/aesthetic_magic_twinkle.gif"},
+    {"name": "5462926877434519489.jpg", "caption": "Всегда рядом с тобой", "date": "Наше тепло", "sticker": "nature_aesthetic/aesthetic_coffee.gif"},
+    {"name": "5462926877434519490.jpg", "caption": "Самая прекрасная", "date": "Моё вдохновение", "sticker": "nature_aesthetic/aesthetic_sakura.gif"},
+    {"name": "5462926877434519491.jpg", "caption": "Твой любимый взгляд", "date": "В твоих глазах весь мир", "sticker": "nature_aesthetic/aesthetic_rose_bloom.gif"},
     {"name": "мы самые яркие звезды.mp4", "caption": "Мы — самые яркие звёзды", "date": "Наше сияние", "sticker": "nature_aesthetic/aesthetic_shooting_star.gif"},
-    {"name": "video5462926876974558922.mp4", "caption": "Дурачимся только вместе", "date": "Живые моменты", "sticker": "nature_aesthetic/aesthetic_laugh_sparks.gif"},
+    {"name": "video5462926876974558922.mp4", "caption": "Дурачимся только вместе", "date": "Живые моменты", "sticker": "nature_aesthetic/aesthetic_sparkler.gif"},
     {"name": "video5462926876974558921.mp4", "caption": "Тёплые воспоминания", "date": "Лето нашей любви", "sticker": "nature_aesthetic/aesthetic_vintage_film.gif"},
     {"name": "HnVideoEditor_2026_11_16_002803168.mp4", "caption": "Хочу мокнуть под дождём с тобой всегда", "date": "Полгода вместе", "sticker": "nature_aesthetic/aesthetic_cozy_rain.gif"}
 ]
@@ -1727,7 +1727,7 @@ html_template = f'''<!DOCTYPE html>
 
       <div class="story-details-footer">
         <div class="story-date-row">
-          <img id="storySticker" class="story-footer-cat-sticker" src="media/stickers/nature_aesthetic/aesthetic_sparkles.gif" alt="Эстетика">
+          <img id="storySticker" class="story-footer-cat-sticker" src="media/stickers/nature_aesthetic/aesthetic_candle.gif" alt="Эстетика">
           <div class="story-date-badge" id="storyDateBadge">Начало истории</div>
         </div>
         <div class="story-caption-title" id="storyCaption">Загрузка...</div>
