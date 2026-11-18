@@ -21,24 +21,24 @@ with open('d:/подарки пол года/media/galaxy_particles.json', 'r', 
 
 # Verified authentic memories (NO elevator photo! Elevator photo is exclusive to Celamur portrait)
 memory_files = [
-    {"name": "с чего все началось.jpg", "caption": "С чего всё началось 🤍", "date": "Начало нашей истории", "sticker": "hello.gif"},
-    {"name": "первые цветы.jpg", "caption": "Твои первые цветы 💐", "date": "Самый нежный момент", "sticker": "adore.gif"},
-    {"name": "свидание на природе.jpg", "caption": "Наше свидание на природе 🌿", "date": "Только ты и я 🍃", "sticker": "serene.gif"},
-    {"name": "свидание на природе 2 фото.jpg", "caption": "Наше свидание на природе 🌿", "date": "Только ты и я 🍃", "sticker": "serene.gif"},
-    {"name": "IMG_20261115_230355_318.jpg", "caption": "Золотой закат на балконе — ты невероятно красива 🌅", "date": "Не могу оторвать взгляд ✨", "sticker": "shy.gif"},
-    {"name": "IMG_20261115_230620_235.jpg", "caption": "Счастливы вместе — настоящие мы ✨", "date": "В любые трудности вместе 🤍", "sticker": "cat_love.gif"},
-    {"name": "IMG_20261115_232741_361.jpg", "caption": "Открытость, искренность и самые душевные разговоры 🤍", "date": "Тёплые разговоры 💌", "sticker": "smile.gif"},
-    {"name": "IMG_20261115_233109_723.jpg", "caption": "Хочу сделать так, чтобы ты всегда сияла 💫", "date": "Моё сияние ✨", "sticker": "glowing.gif"},
-    {"name": "IMG_20261116_000248_096.jpg", "caption": "Навсегда в моём сердце 💌", "date": "Любимый кадр", "sticker": "love.gif"},
-    {"name": "5462926877434519487.jpg", "caption": "Твоя любимая улыбка 🥰", "date": "Самая милая", "sticker": "happy.gif"},
-    {"name": "5462926877434519488.jpg", "caption": "Счастье в простых моментах 🍓", "date": "Вкусные радости", "sticker": "sushi.gif"},
-    {"name": "5462926877434519489.jpg", "caption": "Всегда рядом с тобой 🤍", "date": "Наше тепло", "sticker": "relaxed.gif"},
-    {"name": "5462926877434519490.jpg", "caption": "Самая прекрасная ✨", "date": "Моё вдохновение", "sticker": "sparkle.gif"},
-    {"name": "5462926877434519491.jpg", "caption": "Твой любимый взгляд 💫", "date": "В твоих глазах весь мир", "sticker": "wink.gif"},
-    {"name": "мы самые яркие звезды.mp4", "caption": "Мы — самые яркие звёзды ✨", "date": "Наше сияние 🎬", "sticker": "dancing.gif"},
-    {"name": "video5462926876974558922.mp4", "caption": "Дурачимся только вместе 😜🤍", "date": "Живые моменты 🎬", "sticker": "laughing.gif"},
-    {"name": "video5462926876974558921.mp4", "caption": "Тёплые воспоминания 🎞️", "date": "Лето нашей любви", "sticker": "playful.gif"},
-    {"name": "HnVideoEditor_2026_11_16_002803168.mp4", "caption": "Хочу мокнуть под дождём с тобой всегда 🌧️🤍", "date": "Полгода вместе 💖", "sticker": "rain.gif"}
+    {"name": "с чего все началось.jpg", "caption": "С чего всё началось", "date": "Начало нашей истории", "sticker": "nature_aesthetic/aesthetic_sparkles.gif"},
+    {"name": "первые цветы.jpg", "caption": "Твои первые цветы", "date": "Самый нежный момент", "sticker": "nature_aesthetic/aesthetic_bouquet.gif"},
+    {"name": "свидание на природе.jpg", "caption": "Наше свидание на природе", "date": "Только ты и я", "sticker": "nature_aesthetic/aesthetic_leaves_green.gif"},
+    {"name": "свидание на природе 2 фото.jpg", "caption": "Наше свидание на природе", "date": "Только ты и я", "sticker": "nature_aesthetic/aesthetic_leaves_falling.gif"},
+    {"name": "IMG_20261115_230355_318.jpg", "caption": "Золотой закат на балконе — ты невероятно красива", "date": "Не могу оторвать взгляд", "sticker": "nature_aesthetic/aesthetic_sunset.gif"},
+    {"name": "IMG_20261115_230620_235.jpg", "caption": "Счастливы вместе — настоящие мы", "date": "В любые трудности вместе", "sticker": "nature_aesthetic/aesthetic_white_heart.gif"},
+    {"name": "IMG_20261115_232741_361.jpg", "caption": "Открытость, искренность и самые душевные разговоры", "date": "Тёплые разговоры", "sticker": "nature_aesthetic/aesthetic_love_letter.gif"},
+    {"name": "IMG_20261115_233109_723.jpg", "caption": "Хочу сделать так, чтобы ты всегда сияла", "date": "Моё сияние", "sticker": "nature_aesthetic/aesthetic_star_glow.gif"},
+    {"name": "IMG_20261116_000248_096.jpg", "caption": "Навсегда в моём сердце", "date": "Любимый кадр", "sticker": "nature_aesthetic/aesthetic_pink_heart.gif"},
+    {"name": "5462926877434519487.jpg", "caption": "Твоя любимая улыбка", "date": "Самая милая", "sticker": "nature_aesthetic/aesthetic_rose_bloom.gif"},
+    {"name": "5462926877434519488.jpg", "caption": "Счастье в простых моментах", "date": "Вкусные радости", "sticker": "nature_aesthetic/aesthetic_strawberry.gif"},
+    {"name": "5462926877434519489.jpg", "caption": "Всегда рядом с тобой", "date": "Наше тепло", "sticker": "nature_aesthetic/aesthetic_branch_cozy.gif"},
+    {"name": "5462926877434519490.jpg", "caption": "Самая прекрасная", "date": "Моё вдохновение", "sticker": "nature_aesthetic/aesthetic_petals_drift.gif"},
+    {"name": "5462926877434519491.jpg", "caption": "Твой любимый взгляд", "date": "В твоих глазах весь мир", "sticker": "nature_aesthetic/aesthetic_magic_twinkle.gif"},
+    {"name": "мы самые яркие звезды.mp4", "caption": "Мы — самые яркие звёзды", "date": "Наше сияние", "sticker": "nature_aesthetic/aesthetic_shooting_star.gif"},
+    {"name": "video5462926876974558922.mp4", "caption": "Дурачимся только вместе", "date": "Живые моменты", "sticker": "nature_aesthetic/aesthetic_laugh_sparks.gif"},
+    {"name": "video5462926876974558921.mp4", "caption": "Тёплые воспоминания", "date": "Лето нашей любви", "sticker": "nature_aesthetic/aesthetic_vintage_film.gif"},
+    {"name": "HnVideoEditor_2026_11_16_002803168.mp4", "caption": "Хочу мокнуть под дождём с тобой всегда", "date": "Полгода вместе", "sticker": "nature_aesthetic/aesthetic_cozy_rain.gif"}
 ]
 
 memory_files_json = json.dumps(memory_files, ensure_ascii=False)
@@ -1432,8 +1432,59 @@ html_template = f'''<!DOCTYPE html>
     .story-footer-cat-sticker {{
       width: 38px;
       height: 38px;
-      object-fit: contain;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1.5px solid rgba(255, 185, 222, 0.45);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
       filter: drop-shadow(0 2px 8px rgba(255, 82, 123, 0.45));
+      flex-shrink: 0;
+    }}
+    .title-inline-gif {{
+      width: 22px;
+      height: 22px;
+      object-fit: cover;
+      vertical-align: -4px;
+      border-radius: 5px;
+      margin-left: 5px;
+      display: inline-block;
+    }}
+    .btn-inline-sticker {{
+      width: 24px;
+      height: 24px;
+      object-fit: cover;
+      border-radius: 6px;
+      vertical-align: -5px;
+      margin-right: 8px;
+      display: inline-block;
+    }}
+    .btn-inline-sticker-sm {{
+      width: 18px;
+      height: 18px;
+      object-fit: cover;
+      border-radius: 4px;
+      vertical-align: -3px;
+      margin-right: 6px;
+      margin-left: 4px;
+      display: inline-block;
+    }}
+    .badge-inline-heart, .signature-inline-heart {{
+      width: 18px;
+      height: 18px;
+      object-fit: cover;
+      border-radius: 4px;
+      vertical-align: -3px;
+      margin-left: 6px;
+      display: inline-block;
+    }}
+    .lb-inline-gif {{
+      width: 24px;
+      height: 24px;
+      object-fit: cover;
+      border-radius: 6px;
+      vertical-align: -4px;
+      margin-right: 8px;
+      border: 1px solid rgba(255, 185, 222, 0.4);
+      display: inline-block;
     }}
     @keyframes cuteStickerPop {{
       0% {{ transform: scale(0.6); opacity: 0; }}
@@ -1568,17 +1619,20 @@ html_template = f'''<!DOCTYPE html>
     <div class="celamur-controls-box">
       <!-- Signature title & exact subtitles -->
       <div class="celamur-main-title">Злата + Вадим</div>
-      <div class="celamur-subtitle-divine">Мы самая красивая пара ✨</div>
-      <div class="celamur-subtitle-languages"><span class="celamur-love-highlight">«Я тебя люблю»</span> на всех языках мира 💫</div>
+      <div class="celamur-subtitle-divine">Мы самая красивая пара <img src="media/stickers/nature_aesthetic/aesthetic_sparkles.gif" class="title-inline-gif" alt="✨"></div>
+      <div class="celamur-subtitle-languages"><span class="celamur-love-highlight">«Я тебя люблю»</span> на всех языках мира <img src="media/stickers/nature_aesthetic/aesthetic_shooting_star.gif" class="title-inline-gif" alt="💫"></div>
       <div class="celamur-drag-hint-pill" id="celamurHint">✦ покрути нашу галактику ✦</div>
 
       <!-- Action buttons -->
       <div class="celamur-actions-group">
         <button class="btn-marshmallow-pink" id="btnToggleGalaxy">
-          <span id="btnToggleText">Собрать портрет ✨</span>
+          <img src="media/stickers/nature_aesthetic/aesthetic_sparkles.gif" class="btn-inline-sticker-sm" alt="✨">
+          <span id="btnToggleText">Собрать портрет</span>
         </button>
         <button class="btn-marshmallow-glass" id="btnGotoFinale">
-          <span>Полгода вместе 💖 →</span>
+          <span>Полгода вместе</span>
+          <img src="media/stickers/nature_aesthetic/aesthetic_pink_heart.gif" class="btn-inline-sticker-sm" alt="💖">
+          <span>→</span>
         </button>
       </div>
     </div>
@@ -1592,9 +1646,13 @@ html_template = f'''<!DOCTYPE html>
       <!-- Top navigation with return to galaxy -->
       <div class="finale-top-nav-row">
         <button class="btn-back-galaxy" id="btnBackToGalaxy">
-          <span>← Галактика 🌌</span>
+          <img src="media/stickers/nature_aesthetic/aesthetic_galaxy_icon.gif" class="btn-inline-sticker-sm" alt="🌌">
+          <span>Галактика</span>
         </button>
-        <div class="finale-cute-badge">20.05.2026 19:40 🤍</div>
+        <div class="finale-cute-badge">
+          <span>20.05.2026 19:40</span>
+          <img src="media/stickers/nature_aesthetic/aesthetic_white_heart.gif" class="badge-inline-heart" alt="🤍">
+        </div>
       </div>
 
       <h1 class="finale-title-text">Полгода вместе</h1>
@@ -1621,14 +1679,18 @@ html_template = f'''<!DOCTYPE html>
 
       <!-- Verbatim quote requested by user -->
       <div class="letter-romantic-card">
-        <img src="media/stickers/cat_love.gif" class="letter-corner-cat" alt="Любовь">
+        <img src="media/stickers/nature_aesthetic/aesthetic_love_letter.gif" class="letter-corner-cat" alt="Письмо">
         «Вот мы уже пол года вместе, прошли много сложностей и неудач, но нас ждёт долгий и счастливый путь.»
-        <div class="letter-signature-tag">Навсегда твой 🤍</div>
+        <div class="letter-signature-tag">
+          <span>Навсегда твой</span>
+          <img src="media/stickers/nature_aesthetic/aesthetic_white_heart.gif" class="signature-inline-heart" alt="🤍">
+        </div>
       </div>
 
       <!-- Button to open memories -->
       <button class="btn-memories-trigger" id="btnOpenMemories">
-        <span>Открыть наш альбом воспоминаний 📸</span>
+        <img src="media/stickers/nature_aesthetic/aesthetic_camera_polaroid.gif" class="btn-inline-sticker" alt="📸">
+        <span>Открыть наш альбом воспоминаний</span>
       </button>
     </div>
   </div>
@@ -1658,7 +1720,7 @@ html_template = f'''<!DOCTYPE html>
 
       <div class="story-details-footer">
         <div class="story-date-row">
-          <img id="storySticker" class="story-footer-cat-sticker" src="media/stickers/hello.gif" alt="Котик">
+          <img id="storySticker" class="story-footer-cat-sticker" src="media/stickers/nature_aesthetic/aesthetic_sparkles.gif" alt="Эстетика">
           <div class="story-date-badge" id="storyDateBadge">Начало истории</div>
         </div>
         <div class="story-caption-title" id="storyCaption">Загрузка...</div>
@@ -2670,7 +2732,7 @@ html_template = f'''<!DOCTYPE html>
       const item = MEMORY_FILES[idx];
       lbCounter.textContent = `${{idx + 1}} / ${{MEMORY_FILES.length}}`;
       lbDate.textContent = item.date || "Наше мгновение";
-      lbCaption.textContent = item.caption;
+      lbCaption.innerHTML = `<img src="media/stickers/${{item.sticker}}" class="lb-inline-gif" alt="gif"> <span>${{item.caption}}</span>`;
 
       const isVideo = item.name.toLowerCase().endsWith('.mp4');
       const mediaPath = 'media/' + item.name;
